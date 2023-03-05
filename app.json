@@ -1,0 +1,1201 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.gruijter.otgw",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "OpenTherm Gateway MQTT"
+  },
+  "description": {
+    "en": "Central Heater management for control freaks.",
+    "nl": "CV Ketel management voor control freaks."
+  },
+  "category": [
+    "climate"
+  ],
+  "tags": {
+    "en": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Boiler",
+      "thermostat",
+      "Central Heat"
+    ],
+    "nl": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Boiler",
+      "CV",
+      "Thermostaat",
+      "Centrale verwarming"
+    ]
+  },
+  "brandColor": "#f39d72",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.jpg",
+    "large": "/assets/images/large.jpg",
+    "xlarge": "/assets/images/xlarge.jpg"
+  },
+  "author": {
+    "name": "Robin de Gruijter",
+    "email": "gruijter@hotmail.com"
+  },
+  "copyright": "Robin de Gruijter (gruijter@hotmail.com)",
+  "license": "GPL-3.0-or-later",
+  "contributors": {
+    "developers": [
+      {
+        "name": "Robin de Gruijter",
+        "email": "gruijter@hotmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "gruijter"
+      }
+    }
+  },
+  "homeyCommunityTopicId": 77190,
+  "bugs": {
+    "url": "https://github.com/gruijter/com.gruijter.otgw/issues",
+    "source": "https://github.com/gruijter/com.gruijter.otgw"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Fault Alarm turned On",
+          "nl": "Storing Alarm ging Aan"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "alarm_fault_false"
+      },
+      {
+        "title": {
+          "en": "Fault Alarm turned Off",
+          "nl": "Storing Alarm ging Uit"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "alarm_fault_true"
+      },
+      {
+        "title": {
+          "en": "Offline Alarm turned Off",
+          "nl": "Offline Alarm ging Uit"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "alarm_offline_false"
+      },
+      {
+        "title": {
+          "en": "Offline Alarm turned On",
+          "nl": "Offline Alarm ging Aan"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "alarm_offline_true"
+      },
+      {
+        "title": {
+          "en": "Central Heating turned Off",
+          "nl": "CV ging Uit"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "ch_onoff_false"
+      },
+      {
+        "title": {
+          "en": "Central Heating turned On",
+          "nl": "CV ging Aan"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "ch_onoff_true"
+      },
+      {
+        "title": {
+          "en": "DHW turned Off",
+          "nl": "Tapwater ging Uit"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "dhw_onoff_false"
+      },
+      {
+        "title": {
+          "en": "DHW turned On",
+          "nl": "Tapwater ging Aan"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "dhw_onoff_true"
+      },
+      {
+        "title": {
+          "en": "Flame turned Off",
+          "nl": "Vlam ging Uit"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "flame_onoff_false"
+      },
+      {
+        "title": {
+          "en": "Flame turned On",
+          "nl": "Vlam ging Aan"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "id": "flame_onoff_true"
+      },
+      {
+        "title": {
+          "en": "CH water pressure changed",
+          "nl": "CV waterdruk veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_pressure.ch",
+            "type": "number",
+            "title": {
+              "en": "CH water pressure",
+              "nl": "CV waterdruk"
+            },
+            "example": 1.5
+          }
+        ],
+        "id": "measure_pressure.ch_changed"
+      },
+      {
+        "title": {
+          "en": "Boiler temp changed",
+          "nl": "Ketel temp veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.boiler",
+            "type": "number",
+            "title": {
+              "en": "Boiler temp",
+              "nl": "Ketel temp"
+            },
+            "example": 65
+          }
+        ],
+        "id": "measure_temperature.boiler_changed"
+      },
+      {
+        "title": {
+          "en": "DHW temp changed",
+          "nl": "Tapwater temp veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.dhw",
+            "type": "number",
+            "title": {
+              "en": "DHW temp",
+              "nl": "Tapwater temp"
+            },
+            "example": 58
+          }
+        ],
+        "id": "measure_temperature.dhw_changed"
+      },
+      {
+        "title": {
+          "en": "Room temp changed",
+          "nl": "Ruimte temp veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_temperature.room",
+            "type": "number",
+            "title": {
+              "en": "Room temp",
+              "nl": "Ruimte temp"
+            },
+            "example": 25
+          }
+        ],
+        "id": "measure_temperature.room_changed"
+      },
+      {
+        "title": {
+          "en": "DHW flow changed",
+          "nl": "Tapwater flow veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "measure_water.dhw",
+            "type": "number",
+            "title": {
+              "en": "DHW flow",
+              "nl": "Tapwater flow"
+            },
+            "example": 4.5
+          }
+        ],
+        "id": "measure_water.dhw_changed"
+      },
+      {
+        "title": {
+          "en": "Burner Modulation changed",
+          "nl": "Brander Modulatie veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "meter_burner_modulation",
+            "type": "number",
+            "title": {
+              "en": "Burner Modulation",
+              "nl": "Brander Modulatie"
+            },
+            "example": 25
+          }
+        ],
+        "id": "meter_burner_modulation_changed"
+      },
+      {
+        "title": {
+          "en": "Boiler target temp changed",
+          "nl": "Ketel doel temp veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "target_temperature.boiler",
+            "type": "number",
+            "title": {
+              "en": "Boiler target temp",
+              "nl": "Ketel doel temp"
+            },
+            "example": 65
+          }
+        ],
+        "id": "target_temperature.boiler_changed"
+      },
+      {
+        "title": {
+          "en": "DHW target temp changed",
+          "nl": "Tapwater doel temp veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "target_temperature.dhw",
+            "type": "number",
+            "title": {
+              "en": "DHW target temp",
+              "nl": "Tapwater doel temp"
+            },
+            "example": 58
+          }
+        ],
+        "id": "target_temperature.dhw_changed"
+      },
+      {
+        "title": {
+          "en": "Room target temp changed",
+          "nl": "Ruimte doel temp veranderd"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "target_temperature.room",
+            "type": "number",
+            "title": {
+              "en": "Room target temp",
+              "nl": "Ruimte doel temp"
+            },
+            "example": 25
+          }
+        ],
+        "id": "target_temperature.room_changed"
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_dhw_block",
+        "title": {
+          "en": "Block DHW",
+          "nl": "Tapwater Blokkeren"
+        },
+        "titleFormatted": {
+          "en": "Block DHW [[block]]",
+          "nl": "Tapwater blokkeren [[block]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          },
+          {
+            "type": "checkbox",
+            "name": "block",
+            "value": false
+          }
+        ]
+      },
+      {
+        "id": "set_target_temp_boiler",
+        "title": {
+          "en": "Set max temp boiler water",
+          "nl": "Max temp CV water instellen"
+        },
+        "titleFormatted": {
+          "en": "Set max temp boiler water [[temp]]",
+          "nl": "CV water max temp instellen [[temp]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          },
+          {
+            "type": "range",
+            "name": "temp",
+            "min": 30,
+            "max": 90,
+            "step": 1,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "set_target_temp_dhw",
+        "title": {
+          "en": "Set target temperature DHW",
+          "nl": "Doeltemperatuur tapwater instellen"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature DHW [[temp]]",
+          "nl": "Tapwater doeltemperatuur [[temp]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          },
+          {
+            "type": "range",
+            "name": "temp",
+            "min": 40,
+            "max": 65,
+            "step": 1,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "set_target_temp_room",
+        "title": {
+          "en": "Set target temperature room",
+          "nl": "Doeltemperatuur ruimte instellen"
+        },
+        "titleFormatted": {
+          "en": "Set target temperature room [[temp]]",
+          "nl": "Ruimte doeltemperatuur [[temp]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          },
+          {
+            "type": "range",
+            "name": "temp",
+            "min": 1,
+            "max": 40,
+            "value": 20,
+            "step": 0.5,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "OTGW"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_temperature.room",
+        "target_temperature.room",
+        "measure_temperature.boiler",
+        "target_temperature.boiler",
+        "measure_temperature.dhw",
+        "target_temperature.dhw",
+        "measure_water.dhw",
+        "measure_pressure.ch",
+        "ch_onoff",
+        "dhw_onoff",
+        "flame_onoff",
+        "meter_burner_modulation",
+        "meter_burner_starts",
+        "meter_burner_hours",
+        "meter_burner_dhwhours",
+        "alarm_fault",
+        "alarm_offline",
+        "dhw_block_onoff"
+      ],
+      "capabilitiesOptions": {
+        "measure_temperature.room": {
+          "type": "number",
+          "title": {
+            "en": "Room temp",
+            "nl": "Ruimte temp"
+          },
+          "uiComponent": "thermostat",
+          "insights": true
+        },
+        "target_temperature.room": {
+          "type": "number",
+          "title": {
+            "en": "Room target temp",
+            "nl": "Ruimte doel temp"
+          },
+          "uiComponent": "thermostat",
+          "min": 1,
+          "max": 30,
+          "step": 0.1,
+          "settable": true,
+          "insights": true
+        },
+        "measure_pressure.ch": {
+          "type": "number",
+          "title": {
+            "en": "CH water pressure",
+            "nl": "CV waterdruk"
+          },
+          "units": {
+            "en": "Bar",
+            "nl": "Bar"
+          },
+          "decimals": 2,
+          "uiComponent": "sensor",
+          "insights": true
+        },
+        "measure_temperature.boiler": {
+          "type": "number",
+          "title": {
+            "en": "Boiler temp",
+            "nl": "Ketel temp"
+          },
+          "uiComponent": "thermostat",
+          "insights": true
+        },
+        "target_temperature.boiler": {
+          "type": "number",
+          "title": {
+            "en": "Boiler target/max temp",
+            "nl": "Ketel doel/max temp"
+          },
+          "uiComponent": "thermostat",
+          "min": 30,
+          "max": 90,
+          "step": 1,
+          "settable": true,
+          "insights": true
+        },
+        "measure_water.dhw": {
+          "type": "number",
+          "title": {
+            "en": "DHW flow",
+            "nl": "Tapwater flow"
+          },
+          "units": {
+            "en": "L/min",
+            "nl": "L/min"
+          },
+          "decimals": 2,
+          "uiComponent": "sensor",
+          "insights": true
+        },
+        "measure_temperature.dhw": {
+          "type": "number",
+          "title": {
+            "en": "DHW temp",
+            "nl": "Tapwater temp"
+          },
+          "uiComponent": "thermostat",
+          "insights": true
+        },
+        "target_temperature.dhw": {
+          "type": "number",
+          "title": {
+            "en": "DHW target temp",
+            "nl": "Tapwater doel temp"
+          },
+          "uiComponent": "thermostat",
+          "min": 40,
+          "max": 65,
+          "step": 1,
+          "settable": true,
+          "insights": true
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/otgw/assets/images/small.jpg",
+        "large": "/drivers/otgw/assets/images/large.jpg"
+      },
+      "energy": {
+        "approximation": {
+          "usageConstant": 2
+        }
+      },
+      "pair": [
+        {
+          "id": "mqtt_settings"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "otgw",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Gateway information"
+          },
+          "children": [
+            {
+              "id": "uid",
+              "type": "label",
+              "label": {
+                "en": "Unique ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "firmware_otgw",
+              "type": "label",
+              "label": {
+                "en": "OTGW Firmware"
+              },
+              "value": ""
+            },
+            {
+              "id": "firmware_pic",
+              "type": "label",
+              "label": {
+                "en": "PIC Firmware"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "MQTT settings"
+          },
+          "children": [
+            {
+              "id": "host",
+              "type": "text",
+              "label": {
+                "en": "Host"
+              },
+              "value": ""
+            },
+            {
+              "id": "port",
+              "type": "number",
+              "label": {
+                "en": "Port"
+              },
+              "value": 1883
+            },
+            {
+              "id": "tls",
+              "type": "checkbox",
+              "label": {
+                "en": "Use TLS"
+              },
+              "value": false
+            },
+            {
+              "id": "username",
+              "type": "text",
+              "label": {
+                "en": "Username"
+              },
+              "value": ""
+            },
+            {
+              "id": "password",
+              "type": "password",
+              "label": {
+                "en": "Password"
+              },
+              "value": ""
+            },
+            {
+              "id": "topic",
+              "type": "text",
+              "label": {
+                "en": "Base topic",
+                "nl": "Base topic"
+              },
+              "hint": {
+                "en": "The MQTT Topic where the Gateway is uniquely subscribed. E.g. OTGW/value/otgw-A31F222A38AD",
+                "nl": "Het MQTT topic waarop de Gateway uniek is geabonneerd. Bijv. OTGW/value/otgw-A31F222A38AD"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Room Temp Control",
+            "nl": "Ruimte Temp Besturing"
+          },
+          "children": [
+            {
+              "id": "room_target_temp_control",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable Control",
+                "nl": "Activeer Besturing"
+              },
+              "hint": {
+                "en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
+                "nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteund."
+              },
+              "value": false
+            },
+            {
+              "id": "room_target_temp_min",
+              "type": "number",
+              "label": {
+                "en": "Room Min Temp",
+                "nl": "Ruimte Min Temperatuur"
+              },
+              "hint": {
+                "en": "You will not be able to set a lower value from Homey",
+                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey"
+              },
+              "min": 1,
+              "max": 30,
+              "step": 0.1,
+              "value": 1
+            },
+            {
+              "id": "room_target_temp_max",
+              "type": "number",
+              "label": {
+                "en": "Room Max Temp",
+                "nl": "Ruimte Max Temperatuur"
+              },
+              "hint": {
+                "en": "You will not be able to set a higher value from Homey",
+                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey"
+              },
+              "min": 1,
+              "max": 30,
+              "step": 0.1,
+              "value": 30
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "DHW Temp Control",
+            "nl": "Tapwater Temp Besturing"
+          },
+          "children": [
+            {
+              "id": "dhw_block_control",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable DHW Blocking",
+                "nl": "Activeer Tapwater Blokkering"
+              },
+              "hint": {
+                "en": "When enabled you will be able to block the use of DHW from Homey, but only if your Boiler supports this.",
+                "nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteund."
+              },
+              "value": false
+            },
+            {
+              "id": "dhw_target_temp_control",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable Control",
+                "nl": "Activeer Besturing"
+              },
+              "hint": {
+                "en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
+                "nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteund. PAS OP: LEGIONELLA GEVAAR!"
+              },
+              "value": false
+            },
+            {
+              "id": "dhw_target_temp_min",
+              "type": "number",
+              "label": {
+                "en": "DHW Min Temp",
+                "nl": "Tapwater Min Temperatuur"
+              },
+              "hint": {
+                "en": "You will not be able to set a lower value from Homey. WARNING: LEGIONELLA DANGER!",
+                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!"
+              },
+              "min": 40,
+              "max": 65,
+              "step": 1,
+              "value": 55
+            },
+            {
+              "id": "dhw_target_temp_max",
+              "type": "number",
+              "label": {
+                "en": "Room Max Temp",
+                "nl": "Ruimte Max Temperatuur"
+              },
+              "hint": {
+                "en": "You will not be able to set a higher value from Homey. WARNING: LEGIONELLA DANGER!",
+                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!"
+              },
+              "min": 40,
+              "max": 65,
+              "step": 1,
+              "value": 65
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Boiler Water Temp Control",
+            "nl": "CV Water Temp Besturing"
+          },
+          "children": [
+            {
+              "id": "boiler_target_temp_control",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable Control",
+                "nl": "Activeer Besturing"
+              },
+              "hint": {
+                "en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",
+                "nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteund."
+              },
+              "value": false
+            },
+            {
+              "id": "boiler_target_temp_min",
+              "type": "number",
+              "label": {
+                "en": "Boiler Min Temp",
+                "nl": "CV Min Temperatuur"
+              },
+              "hint": {
+                "en": "You will not be able to set a lower value from Homey.",
+                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey."
+              },
+              "min": 30,
+              "max": 90,
+              "step": 1,
+              "value": 30
+            },
+            {
+              "id": "boiler_target_temp_max",
+              "type": "number",
+              "label": {
+                "en": "RooBoilerm Max Temp",
+                "nl": "CV Max Temperatuur"
+              },
+              "hint": {
+                "en": "You will not be able to set a higher value from Homey.",
+                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey."
+              },
+              "min": 30,
+              "max": 90,
+              "step": 1,
+              "value": 90
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "alarm_fault": {
+      "type": "boolean",
+      "title": {
+        "en": "Fault",
+        "nl": "Storing"
+      },
+      "desc": {
+        "en": "True when fault"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Fault Alarm On",
+        "nl": "Storing Alarm Aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Fault Alarm Off",
+        "nl": "Storing Alarm Uit"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "./assets/fault.svg"
+    },
+    "alarm_offline": {
+      "type": "boolean",
+      "title": {
+        "en": "Offline",
+        "nl": "Offline"
+      },
+      "desc": {
+        "en": "True when offline"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "OTGW Offline",
+        "nl": "OTGW Offline"
+      },
+      "insightsTitleFalse": {
+        "en": "OTGW Online",
+        "nl": "OTGW Online"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "./assets/offline.svg"
+    },
+    "ch_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Central Heating On",
+        "nl": "CV Aan"
+      },
+      "desc": {
+        "en": "True when on"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Central Heating On",
+        "nl": "CV Aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Central Heating Off",
+        "nl": "CV Uit"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "./assets/ch.svg"
+    },
+    "dhw_block_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "DHW Blocking",
+        "nl": "Tapwater Blokkade"
+      },
+      "desc": {
+        "en": "True when on"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "DHW Blocking On",
+        "nl": "Tapwater Blokkade Aan"
+      },
+      "insightsTitleFalse": {
+        "en": "DHW Blocking Off",
+        "nl": "Tapwater Blokkade Uit"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle"
+    },
+    "dhw_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "DHW On",
+        "nl": "Tapwater Aan"
+      },
+      "desc": {
+        "en": "True when on"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "DHW On",
+        "nl": "Tapwater Aan"
+      },
+      "insightsTitleFalse": {
+        "en": "DHW Off",
+        "nl": "Tapwater Uit"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "./assets/dhw.svg"
+    },
+    "flame_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Flame On",
+        "nl": "Vlam Aan"
+      },
+      "desc": {
+        "en": "True when fault"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Flame On",
+        "nl": "Vlam Aan"
+      },
+      "insightsTitleFalse": {
+        "en": "Flame Off",
+        "nl": "Vlam Uit"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "./assets/flame.svg"
+    },
+    "meter_burner_dhwhours": {
+      "type": "number",
+      "title": {
+        "en": "DHW Burner",
+        "nl": "Tapwater brander"
+      },
+      "insights": true,
+      "getable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "Hours",
+        "nl": "Uren"
+      },
+      "decimals": 0,
+      "icon": "./assets/burner_hours.svg"
+    },
+    "meter_burner_hours": {
+      "type": "number",
+      "title": {
+        "en": "Burner",
+        "nl": "Brander"
+      },
+      "insights": true,
+      "getable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "Hours",
+        "nl": "Uren"
+      },
+      "decimals": 0,
+      "icon": "./assets/burner_hours.svg"
+    },
+    "meter_burner_modulation": {
+      "type": "number",
+      "title": {
+        "en": "Burner Modulation",
+        "nl": "Brander Modulatie"
+      },
+      "insights": true,
+      "getable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "%",
+        "nl": "%"
+      },
+      "decimals": 0,
+      "icon": "./assets/burner_mod.svg"
+    },
+    "meter_burner_starts": {
+      "type": "number",
+      "title": {
+        "en": "Burner Startups",
+        "nl": "Brander Startups"
+      },
+      "insights": true,
+      "getable": true,
+      "uiComponent": "sensor",
+      "units": {
+        "en": "",
+        "nl": ""
+      },
+      "decimals": 0,
+      "icon": "./assets/burner_start.svg"
+    }
+  }
+}

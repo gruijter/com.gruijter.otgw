@@ -1,0 +1,13 @@
+{
+	"type": "number",
+	"title": {
+		"en": "Burner Startups",
+		"nl": "Brander Startups"
+	},
+	"insights": true,
+	"getable": true,
+	"uiComponent": "sensor",
+	"units": { "en": "", "nl": "" },
+	"decimals": 0,
+	"icon": "./assets/burner_start.svg"
+}

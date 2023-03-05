@@ -1,0 +1,16 @@
+{
+    "title": {
+        "en": "DHW turned Off",
+        "nl": "Tapwater ging Uit"
+    },
+    "highlight": true,
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        }
+    ]
+}
+
+

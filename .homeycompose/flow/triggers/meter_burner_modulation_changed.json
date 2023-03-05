@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "Burner Modulation changed",
+		"nl": "Brander Modulatie veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "meter_burner_modulation",
+			"type": "number",
+			"title": { 
+				"en": "Burner Modulation",
+				"nl": "Brander Modulatie"
+			},
+			"example": 25
+		}
+	]
+}

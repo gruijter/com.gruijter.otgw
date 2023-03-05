@@ -1,0 +1,23 @@
+{
+	"type": "boolean",
+	"title": {
+		"en": "Fault",
+		"nl": "Storing"
+	},
+	"desc": {
+		"en": "True when fault"
+	},
+	"insights": true,
+	"insightsTitleTrue": {
+		"en": "Fault Alarm On",
+		"nl": "Storing Alarm Aan"
+	},
+	"insightsTitleFalse": {
+		"en": "Fault Alarm Off",
+		"nl": "Storing Alarm Uit"
+	},
+	"getable": true,
+	"setable": false,
+	"uiComponent": "sensor",
+	"icon": "./assets/fault.svg"
+}

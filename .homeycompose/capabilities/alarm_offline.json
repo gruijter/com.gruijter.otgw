@@ -1,0 +1,23 @@
+{
+	"type": "boolean",
+	"title": {
+		"en": "Offline",
+		"nl": "Offline"
+	},
+	"desc": {
+		"en": "True when offline"
+	},
+	"insights": true,
+	"insightsTitleTrue": {
+		"en": "OTGW Offline",
+		"nl": "OTGW Offline"
+	},
+	"insightsTitleFalse": {
+		"en": "OTGW Online",
+		"nl": "OTGW Online"
+	},
+	"getable": true,
+	"setable": false,
+	"uiComponent": "sensor",
+	"icon": "./assets/offline.svg"
+}

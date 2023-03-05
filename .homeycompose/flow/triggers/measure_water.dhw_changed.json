@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "DHW flow changed",
+		"nl": "Tapwater flow veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_water.dhw",
+			"type": "number",
+			"title": { 
+				"en": "DHW flow",
+				"nl": "Tapwater flow"
+			},
+			"example": 4.5
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"type": "boolean",
+	"title": {
+	  "en": "Central Heating On",
+	  "nl": "CV Aan"
+	},
+	"desc": {
+		"en": "True when on"
+	},
+	"insights": true,
+	"insightsTitleTrue": {
+		"en": "Central Heating On",
+		"nl": "CV Aan"
+	},
+	"insightsTitleFalse": {
+		"en": "Central Heating Off",
+		"nl": "CV Uit"
+	},
+	"getable": true,
+	"setable": false,
+	"uiComponent": "sensor",
+	"icon": "./assets/ch.svg"
+}

@@ -1,0 +1,16 @@
+{
+    "title": {
+        "en": "Offline Alarm turned Off",
+        "nl": "Offline Alarm ging Uit"
+    },
+    "highlight": true,
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        }
+    ]
+}
+
+

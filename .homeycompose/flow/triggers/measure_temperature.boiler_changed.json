@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "Boiler temp changed",
+		"nl": "Ketel temp veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_temperature.boiler",
+			"type": "number",
+			"title": { 
+				"en": "Boiler temp",
+				"nl": "Ketel temp"
+			},
+			"example": 65
+		}
+	]
+}

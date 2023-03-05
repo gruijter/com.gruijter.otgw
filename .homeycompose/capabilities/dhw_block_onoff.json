@@ -1,0 +1,22 @@
+{
+	"type": "boolean",
+	"title": {
+	  "en": "DHW Blocking",
+	  "nl": "Tapwater Blokkade"
+	},
+	"desc": {
+		"en": "True when on"
+	},
+	"insights": true,
+	"insightsTitleTrue": {
+		"en": "DHW Blocking On",
+		"nl": "Tapwater Blokkade Aan"
+	},
+	"insightsTitleFalse": {
+		"en": "DHW Blocking Off",
+		"nl": "Tapwater Blokkade Uit"
+	},
+	"getable": true,
+	"setable": true,
+	"uiComponent": "toggle"
+}

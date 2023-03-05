@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "DHW target temp changed",
+		"nl": "Tapwater doel temp veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "target_temperature.dhw",
+			"type": "number",
+			"title": { 
+				"en": "DHW target temp",
+				"nl": "Tapwater doel temp"
+			},
+			"example": 58
+		}
+	]
+}

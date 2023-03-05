@@ -1,0 +1,23 @@
+{
+	"type": "boolean",
+	"title": {
+	  "en": "DHW On",
+	  "nl": "Tapwater Aan"
+	},
+	"desc": {
+		"en": "True when on"
+	},
+	"insights": true,
+	"insightsTitleTrue": {
+		"en": "DHW On",
+		"nl": "Tapwater Aan"
+	},
+	"insightsTitleFalse": {
+		"en": "DHW Off",
+		"nl": "Tapwater Uit"
+	},
+	"getable": true,
+	"setable": false,
+	"uiComponent": "sensor",
+	"icon": "./assets/dhw.svg"
+}

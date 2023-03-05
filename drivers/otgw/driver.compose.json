@@ -1,0 +1,129 @@
+{
+	"name": {
+		"en": "OTGW"
+	},
+	"class": "other",
+	"capabilities": [
+		"measure_temperature.room",
+		"target_temperature.room",
+
+		"measure_temperature.boiler",
+		"target_temperature.boiler",
+
+		"measure_temperature.dhw",
+		"target_temperature.dhw",
+
+		"measure_water.dhw",
+		"measure_pressure.ch",
+
+		"ch_onoff",
+		"dhw_onoff",
+		"flame_onoff",
+		"meter_burner_modulation",
+		
+		"meter_burner_starts",
+		"meter_burner_hours",
+		"meter_burner_dhwhours",
+		"alarm_fault",
+		"alarm_offline",
+
+		"dhw_block_onoff"
+	],
+	"capabilitiesOptions": {
+		"measure_temperature.room": {
+			"type": "number",
+			"title": { "en": "Room temp", "nl": "Ruimte temp" },
+			"uiComponent": "thermostat",
+			"insights": true
+		},
+		"target_temperature.room": {
+			"type": "number",
+			"title": { "en": "Room target temp", "nl": "Ruimte doel temp" },
+			"uiComponent": "thermostat",
+			"min": 1,
+			"max": 30,
+			"step": 0.1,
+			"settable": true,
+			"insights": true
+		},
+		"measure_pressure.ch": {
+			"type": "number",
+			"title": { "en": "CH water pressure", "nl": "CV waterdruk" },
+			"units": { "en": "Bar", "nl": "Bar" },
+			"decimals": 2,
+			"uiComponent": "sensor",
+			"insights": true
+		},
+		"measure_temperature.boiler": {
+			"type": "number",
+			"title": { "en": "Boiler temp", "nl": "Ketel temp" },
+			"uiComponent": "thermostat",
+			"insights": true
+		},
+		"target_temperature.boiler": {
+			"type": "number",
+			"title": { "en": "Boiler target/max temp", "nl": "Ketel doel/max temp" },
+			"uiComponent": "thermostat",
+			"min": 30,
+			"max": 90,
+			"step": 1,
+			"settable": true,
+			"insights": true
+		},
+		"measure_water.dhw": {
+			"type": "number",
+			"title": { "en": "DHW flow", "nl": "Tapwater flow" },
+			"units": { "en": "L/min", "nl": "L/min" },
+			"decimals": 2,
+			"uiComponent": "sensor",
+			"insights": true
+		},
+		"measure_temperature.dhw": {
+			"type": "number",
+			"title": { "en": "DHW temp", "nl": "Tapwater temp" },
+			"uiComponent": "thermostat",
+			"insights": true
+		},
+		"target_temperature.dhw": {
+			"type": "number",
+			"title": { "en": "DHW target temp", "nl": "Tapwater doel temp" },
+			"uiComponent": "thermostat",
+			"min": 40,
+			"max": 65,
+			"step": 1,
+			"settable": true,
+			"insights": true
+		}
+	},
+	"platforms": [
+		"local"
+	],
+	"connectivity": [
+		"lan"
+	],
+	"images": {
+		"small": "{{driverAssetsPath}}/images/small.jpg",
+		"large": "{{driverAssetsPath}}/images/large.jpg"
+	},
+	"energy": {
+		"approximation": {
+			"usageConstant": 2
+		}
+	},
+	"pair": [
+		{
+			"id": "mqtt_settings"
+		},
+		{
+			"id": "list_devices",
+			"template": "list_devices",
+			"navigation": {
+				"next": "add_devices"
+			}
+		},
+		{
+			"id": "add_devices",
+			"template": "add_devices"
+		}
+	]
+}

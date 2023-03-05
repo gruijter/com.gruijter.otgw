@@ -1,0 +1,28 @@
+{
+    "id": "set_target_temp_boiler",
+    "title": {
+        "en": "Set max temp boiler water",
+        "nl": "Max temp CV water instellen"
+    },
+    "titleFormatted": {
+        "en": "Set max temp boiler water [[temp]]",
+        "nl": "CV water max temp instellen [[temp]]"
+    },
+    "highlight": true,
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        },
+        {
+            "type": "range",
+            "name": "temp",
+            "min": 30,
+            "max": 90,
+            "step": 1,
+            "label": "°C",
+            "labelDecimals": 1
+        }
+    ]
+}

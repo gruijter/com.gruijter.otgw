@@ -1,0 +1,23 @@
+{
+	"type": "boolean",
+	"title": {
+	  "en": "Flame On",
+	  "nl": "Vlam Aan"
+	},
+	"desc": {
+		"en": "True when fault"
+	},
+	"insights": true,
+	"insightsTitleTrue": {
+		"en": "Flame On",
+		"nl": "Vlam Aan"
+	},
+	"insightsTitleFalse": {
+		"en": "Flame Off",
+		"nl": "Vlam Uit"
+	},
+	"getable": true,
+	"setable": false,
+	"uiComponent": "sensor",
+	"icon": "./assets/flame.svg"
+}

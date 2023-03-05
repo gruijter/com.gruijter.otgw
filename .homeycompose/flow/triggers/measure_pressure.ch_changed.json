@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "CH water pressure changed",
+		"nl": "CV waterdruk veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_pressure.ch",
+			"type": "number",
+			"title": { 
+				"en": "CH water pressure",
+				"nl": "CV waterdruk"
+			},
+			"example": 1.5
+		}
+	]
+}

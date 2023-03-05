@@ -1,0 +1,13 @@
+{
+	"type": "number",
+	"title": {
+		"en": "Burner Modulation",
+		"nl": "Brander Modulatie"
+	},
+	"insights": true,
+	"getable": true,
+	"uiComponent": "sensor",
+	"units": { "en": "%", "nl": "%" },
+	"decimals": 0,
+	"icon": "./assets/burner_mod.svg"
+}

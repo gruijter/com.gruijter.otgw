@@ -1,0 +1,28 @@
+{
+    "id": "set_target_temp_dhw",
+    "title": {
+        "en": "Set target temperature DHW",
+        "nl": "Doeltemperatuur tapwater instellen"
+    },
+    "titleFormatted": {
+        "en": "Set target temperature DHW [[temp]]",
+        "nl": "Tapwater doeltemperatuur [[temp]]"
+    },
+    "highlight": true,
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        },
+        {
+            "type": "range",
+            "name": "temp",
+            "min": 40,
+            "max": 65,
+            "step": 1,
+            "label": "°C",
+            "labelDecimals": 1
+        }
+    ]
+}

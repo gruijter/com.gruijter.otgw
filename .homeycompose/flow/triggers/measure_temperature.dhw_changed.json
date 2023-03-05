@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "DHW temp changed",
+		"nl": "Tapwater temp veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "measure_temperature.dhw",
+			"type": "number",
+			"title": { 
+				"en": "DHW temp",
+				"nl": "Tapwater temp"
+			},
+			"example": 58
+		}
+	]
+}

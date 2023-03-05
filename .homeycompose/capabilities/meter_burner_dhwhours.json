@@ -1,0 +1,13 @@
+{
+	"type": "number",
+	"title": {
+		"en": "DHW Burner",
+		"nl": "Tapwater brander"
+	},
+	"insights": true,
+	"getable": true,
+	"uiComponent": "sensor",
+	"units": { "en": "Hours", "nl": "Uren" },
+	"decimals": 0,
+	"icon": "./assets/burner_hours.svg"
+}

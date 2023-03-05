@@ -1,0 +1,25 @@
+{
+	"title": { 
+		"en": "Boiler target temp changed",
+		"nl": "Ketel doel temp veranderd"
+	},
+	"highlight": true,
+	"args": [
+		{
+				"type": "device",
+				"name": "device",
+				"filter": "driver_id=otgw"
+		}
+	],
+	"tokens": [
+		{
+			"name": "target_temperature.boiler",
+			"type": "number",
+			"title": { 
+				"en": "Boiler target temp",
+				"nl": "Ketel doel temp"
+			},
+			"example": 65
+		}
+	]
+}

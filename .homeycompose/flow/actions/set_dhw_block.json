@@ -1,0 +1,23 @@
+{
+    "id": "set_dhw_block",
+    "title": {
+        "en": "Block DHW",
+        "nl": "Tapwater Blokkeren"
+    },
+    "titleFormatted": {
+        "en": "Block DHW [[block]]",
+        "nl": "Tapwater blokkeren [[block]]"
+    },
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        },
+        {
+            "type": "checkbox",
+            "name": "block",
+            "value": false
+        }
+    ]
+}

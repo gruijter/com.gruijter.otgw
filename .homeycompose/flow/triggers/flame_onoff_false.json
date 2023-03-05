@@ -1,0 +1,16 @@
+{
+    "title": {
+        "en": "Flame turned Off",
+        "nl": "Vlam ging Uit"
+    },
+    "highlight": true,
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        }
+    ]
+}
+
+
