@@ -1,5 +1,8 @@
 {
   "1.0.0": {
     "en": "First release"
+  },
+  "1.0.1": {
+    "en": "Readme extended. Removed Flame on/off timeline. Small text fixes. Branding color updated. App and device icons updated."
   }
 }

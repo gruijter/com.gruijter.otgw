@@ -1,6 +1,6 @@
 {
   "id": "com.gruijter.otgw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -37,7 +37,7 @@
       "Centrale verwarming"
     ]
   },
-  "brandColor": "#f39d72",
+  "brandColor": "#0F556F",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.jpg",

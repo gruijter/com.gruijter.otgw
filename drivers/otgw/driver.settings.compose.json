@@ -108,7 +108,7 @@
 				},
 				"hint" : {
 					"en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
-					"nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteund."
+					"nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteunt."
 				},
 				"value": false
 			},
@@ -162,7 +162,7 @@
 				},
 				"hint" : {
 					"en": "When enabled you will be able to block the use of DHW from Homey, but only if your Boiler supports this.",
-					"nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteund."
+					"nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteunt."
 				},
 				"value": false
 			},
@@ -175,7 +175,7 @@
 				},
 				"hint" : {
 					"en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
-					"nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteund. PAS OP: LEGIONELLA GEVAAR!"
+					"nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt. PAS OP: LEGIONELLA GEVAAR!"
 				},
 				"value": false
 			},
@@ -199,8 +199,8 @@
 				"id": "dhw_target_temp_max",
 				"type": "number",
 				"label": {
-					"en": "Room Max Temp",
-					"nl": "Ruimte Max Temperatuur"
+					"en": "DHW Max Temp",
+					"nl": "Tapwater Max Temperatuur"
 				},
 				"hint" : {
 					"en": "You will not be able to set a higher value from Homey. WARNING: LEGIONELLA DANGER!",
@@ -229,7 +229,7 @@
 				},
 				"hint" : {
 					"en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",
-					"nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteund."
+					"nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt."
 				},
 				"value": false
 			},

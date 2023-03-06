@@ -7,7 +7,7 @@
 	"desc": {
 		"en": "True when fault"
 	},
-	"insights": true,
+	"insights": false,
 	"insightsTitleTrue": {
 		"en": "Flame On",
 		"nl": "Vlam Aan"
