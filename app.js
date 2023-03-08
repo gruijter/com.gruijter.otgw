@@ -42,6 +42,9 @@ class MyApp extends Homey.App {
 		const setDhwBlock = this.homey.flow.getActionCard('set_dhw_block');
 		setDhwBlock.registerRunListener((args) => args.device.setDhwBlock(args.block, 'flow'));
 
+		const sendCommand = this.homey.flow.getActionCard('send_command');
+		sendCommand.registerRunListener((args) => args.device.sendCommand(args.command, 'flow'));
+
 	}
 }
 

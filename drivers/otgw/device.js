@@ -147,6 +147,13 @@ class MyDevice extends Device {
 		}
 	}
 
+	async sendCommand(command, source) {
+		if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
+		await this.client.publish(`${this.gwSetTopic}/command`, command);
+		this.log(`Command sent by ${source}: ${command}`);
+		return Promise.resolve(true);
+	}
+
 	async setTargetTempRoom(temp, source) {
 		if (!this.settings.room_target_temp_control) return Promise.reject(Error('Control is disabled from settings'));
 		if (temp > this.settings.room_target_temp_max

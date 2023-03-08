@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.otgw",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -459,6 +459,32 @@
       }
     ],
     "actions": [
+      {
+        "id": "send_command",
+        "title": {
+          "en": "Send a command",
+          "nl": "Stuur een commando"
+        },
+        "hint": {
+          "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
+        },
+        "titleFormatted": {
+          "en": "Send command: [[command]]",
+          "nl": "Stuur commando: [[command]]"
+        },
+        "highlight": true,
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+          },
+          {
+            "type": "text",
+            "name": "command"
+          }
+        ]
+      },
       {
         "id": "set_dhw_block",
         "title": {

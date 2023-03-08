@@ -1,0 +1,26 @@
+{
+    "id": "send_command",
+    "title": {
+        "en": "Send a command",
+        "nl": "Stuur een commando"
+    },
+    "hint": { 
+        "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
+    },
+    "titleFormatted": {
+        "en": "Send command: [[command]]",
+        "nl": "Stuur commando: [[command]]"
+    },
+    "highlight": true,
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=otgw"
+        },
+        {
+            "type": "text",
+            "name": "command"
+        }
+    ]
+}
