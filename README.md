@@ -14,7 +14,7 @@ I tried to install it on my new Homey Pro 2023, but that was a no-go. Installing
 
 I found out that OTGW can work with MQTT. So I spent my weekend and a bit more on writing a new OTGW app based on the MQTT interface. A good thing about MQTT is that it is a very stable method, and that the connection can be shared with other users like Home Assistant or Node-RED. Downside is: you need to have or setup an MQTT broker. But if you don't already have an MQTT broker, you can simply install one on Homey: https://homey.app/en-us/app/nl.scanno.mqttbroker/MQTT-Broker/
 
-<img src="[https://mma.prnewswire.com/media/1513369/Educative_Logo.jpg](https://global.discourse-cdn.com/business4/uploads/athom/original/3X/1/d/1deced71cc147a3a9a7b989a2b15f3c7ba0b6676.jpeg)" width="40%" height="40%">
+<img src="https://global.discourse-cdn.com/business4/uploads/athom/original/3X/1/d/1deced71cc147a3a9a7b989a2b15f3c7ba0b6676.jpeg" width="40%" height="40%">
 
 **OTGW: Central Heater management for control freaks.**
 
