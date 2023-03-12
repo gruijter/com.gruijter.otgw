@@ -13,7 +13,7 @@ I tried to install it on my new Homey Pro 2023, but that was a no-go. Installing
 **HP2023 and MQTT support**
 I found out that OTGW can work with MQTT. So I spent my weekend and a bit more on writing a new OTGW app based on the MQTT interface. A good thing about MQTT is that it is a very stable method, and that the connection can be shared with other users like Home Assistant or Node-RED. Downside is: you need to have or setup an MQTT broker. But if you don't already have an MQTT broker, you can simply install one on Homey: https://homey.app/en-us/app/nl.scanno.mqttbroker/MQTT-Broker/
 
-![](upload://uPQGrSl4tmgFSKEl8q8BcLTz9a8.jpeg)
+![](https://global.discourse-cdn.com/business4/uploads/athom/original/3X/1/d/1deced71cc147a3a9a7b989a2b15f3c7ba0b6676.jpeg)
 
 **OTGW: Central Heater management for control freaks.**
 The OpenTherm Gateway is placed between your thermostat and your Central Heater.
@@ -22,9 +22,9 @@ It provides real time monitoring of many sensors and temperatures in your centra
 The OpenTherm GateWay is an open source device. It can be built by yourself, or purchased online. I bought it completely built with wifi adapter: https://www.nodo-shop.nl/
 The firmware used to develop the Homey app was written by https://github.com/rvdbreemen .The firmware was already installed when I got the device.
 
-![](upload://24RaBR87dIFMkGqfHGgvhTytG1e.jpeg)
+![](https://global.discourse-cdn.com/business4/uploads/athom/optimized/3X/e/3/e3824d92c157828827caf42a4a5c1c22b6891fe3_2_225x500.jpeg)
 
-![](upload://YUKhYPPhe9HiHYfei96UteFhFx.jpeg)
+![](https://global.discourse-cdn.com/business4/uploads/athom/optimized/3X/3/a/3a8dfa24c6df1d3a5cc2f6727ba0de2020646b0c_2_225x500.jpeg)
 
 **Shower Timer Use Case**
 About why I wanted to get an OTGW: I have built a fully automatic shower timer. If a family member showers longer then 8 minutes, lights start blinking. If the shower is still on after 10 minutes, lights out :rofl:
