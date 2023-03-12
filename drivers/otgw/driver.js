@@ -29,6 +29,8 @@ const capabilities = [
 	'measure_temperature.room',
 	'target_temperature.room',
 
+	'measure_temperature.return',
+
 	'measure_temperature.boiler',
 	'target_temperature.boiler',
 
@@ -55,8 +57,9 @@ const capabilities = [
 class MyDriver extends Driver {
 
 	async onInit() {
-		// // connect to mqtt host
-		// await this.connectHost();
+		this.ds = {
+			deviceCapabilities: capabilities,
+		};
 		this.log('OTGW driver has been initialized');
 	}
 

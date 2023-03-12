@@ -604,6 +604,7 @@
       "capabilities": [
         "measure_temperature.room",
         "target_temperature.room",
+        "measure_temperature.return",
         "measure_temperature.boiler",
         "target_temperature.boiler",
         "measure_temperature.dhw",
@@ -637,7 +638,7 @@
             "en": "Room target temp",
             "nl": "Ruimte doel temp"
           },
-          "uiComponent": "thermostat",
+          "uiComponent": "sensor",
           "min": 1,
           "max": 30,
           "step": 0.1,
@@ -664,14 +665,14 @@
             "en": "Boiler temp",
             "nl": "Ketel temp"
           },
-          "uiComponent": "thermostat",
+          "uiComponent": "sensor",
           "insights": true
         },
         "target_temperature.boiler": {
           "type": "number",
           "title": {
-            "en": "Boiler target/max temp",
-            "nl": "Ketel doel/max temp"
+            "en": "Boiler target temp",
+            "nl": "Ketel doel temp"
           },
           "uiComponent": "thermostat",
           "min": 30,
@@ -700,7 +701,7 @@
             "en": "DHW temp",
             "nl": "Tapwater temp"
           },
-          "uiComponent": "thermostat",
+          "uiComponent": "sensor",
           "insights": true
         },
         "target_temperature.dhw": {
@@ -714,6 +715,15 @@
           "max": 65,
           "step": 1,
           "settable": true,
+          "insights": true
+        },
+        "measure_temperature.return": {
+          "type": "number",
+          "title": {
+            "en": "Return temp",
+            "nl": "Retour temp"
+          },
+          "uiComponent": "sensor",
           "insights": true
         }
       },

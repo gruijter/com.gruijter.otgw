@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 /*
 Copyright 2023, Robin de Gruijter (gruijter@hotmail.com)
 
@@ -36,6 +37,8 @@ const map = {
 	'/Tr': (val) => ['measure_temperature.room', Number(val)], // 19.4
 	'/TrSet': (val) => ['target_temperature.room', Number(val)], // 20
 
+	'/Tret': (val) => ['measure_temperature.return', Number(val)], // 30.41
+
 	'/CHPressure': (val) => ['measure_pressure.ch', Number(val)], // 1.43
 	'/DHWFlowRate': (val) => ['measure_water.dhw', Number(val)], // 2.52
 
@@ -71,15 +74,47 @@ class MyDevice extends Device {
 			await this.registerListeners();
 
 			this.restarting = false;
+			this.setAvailable();
 			this.log('OTGW has been initialized');
 		} catch (error) {
 			this.error(error);
+			this.restartDevice(60 * 1000).catch(this.error);
 		}
 	}
 
 	async migrate() {
 		try {
 			this.log(`checking device migration for ${this.getName()}`);
+
+			// store the capability states before migration
+			const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
+			const state = this[sym];
+			// check and repair incorrect capability(order)
+			const correctCaps = this.driver.ds.deviceCapabilities;
+			for (let index = 0; index < correctCaps.length; index += 1) {
+				const caps = this.getCapabilities();
+				const newCap = correctCaps[index];
+				if (caps[index] !== newCap) {
+					this.setUnavailable('Device is migrating. Please wait!');
+					// remove all caps from here
+					for (let i = index; i < caps.length; i += 1) {
+						this.log(`removing capability ${caps[i]} for ${this.getName()}`);
+						await this.removeCapability(caps[i])
+							.catch((error) => this.log(error));
+						await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+					}
+					// add the new cap
+					this.log(`adding capability ${newCap} for ${this.getName()}`);
+					await this.addCapability(newCap);
+					// restore capability state
+					if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
+					// else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
+					await this.setCapability(newCap, state[newCap]);
+					await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+				}
+			}
+
+			// add optional DHW_block onoff
 			if (this.settings.dhw_block_control !== this.getCapabilities().includes('dhw_block_onoff')) {
 				if (this.settings.dhw_block_control) {
 					this.log(`adding capability dhw_block_onoff for ${this.getName()}`);
