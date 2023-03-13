@@ -31,6 +31,8 @@ const capabilities = [
 
 	'measure_temperature.return',
 
+	'target_temperature.boiler_max',
+
 	'measure_temperature.boiler',
 	'target_temperature.boiler',
 

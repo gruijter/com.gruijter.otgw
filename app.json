@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.otgw",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -509,14 +509,13 @@
         ]
       },
       {
-        "id": "set_target_temp_boiler",
         "title": {
-          "en": "Set max temp boiler water",
-          "nl": "Max temp CV water instellen"
+          "en": "Set max target temp boiler water",
+          "nl": "Max doel temp CV instellen"
         },
         "titleFormatted": {
-          "en": "Set max temp boiler water [[temp]]",
-          "nl": "CV water max temp instellen [[temp]]"
+          "en": "Set max target temp boiler [[temp]]",
+          "nl": "CV max doel temp instellen [[temp]]"
         },
         "highlight": true,
         "args": [
@@ -534,7 +533,8 @@
             "label": "°C",
             "labelDecimals": 1
           }
-        ]
+        ],
+        "id": "set_max_target_temp_boiler"
       },
       {
         "id": "set_target_temp_dhw",
@@ -605,6 +605,7 @@
         "measure_temperature.room",
         "target_temperature.room",
         "measure_temperature.return",
+        "target_temperature.boiler_max",
         "measure_temperature.boiler",
         "target_temperature.boiler",
         "measure_temperature.dhw",
@@ -673,6 +674,19 @@
           "title": {
             "en": "Boiler target temp",
             "nl": "Ketel doel temp"
+          },
+          "uiComponent": "sensor",
+          "min": 10,
+          "max": 90,
+          "step": 1,
+          "settable": true,
+          "insights": true
+        },
+        "target_temperature.boiler_max": {
+          "type": "number",
+          "title": {
+            "en": "Boiler max target temp",
+            "nl": "Ketel max doel temp"
           },
           "uiComponent": "thermostat",
           "min": 30,
@@ -864,8 +878,8 @@
               "id": "room_target_temp_control",
               "type": "checkbox",
               "label": {
-                "en": "Enable Control",
-                "nl": "Activeer Besturing"
+                "en": "Enable Temp Control",
+                "nl": "Activeer Temp Besturing"
               },
               "hint": {
                 "en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
@@ -931,8 +945,8 @@
               "id": "dhw_target_temp_control",
               "type": "checkbox",
               "label": {
-                "en": "Enable Control",
-                "nl": "Activeer Besturing"
+                "en": "Enable Temp Control",
+                "nl": "Activeer Temp Besturing"
               },
               "hint": {
                 "en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
@@ -977,16 +991,16 @@
         {
           "type": "group",
           "label": {
-            "en": "Boiler Water Temp Control",
-            "nl": "CV Water Temp Besturing"
+            "en": "Boiler Target Temp Control",
+            "nl": "CV Doeltemp Besturing"
           },
           "children": [
             {
               "id": "boiler_target_temp_control",
               "type": "checkbox",
               "label": {
-                "en": "Enable Control",
-                "nl": "Activeer Besturing"
+                "en": "Enable Temp Control",
+                "nl": "Activeer Temp Besturing"
               },
               "hint": {
                 "en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",

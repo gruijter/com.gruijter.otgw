@@ -33,8 +33,8 @@ class MyApp extends Homey.App {
 		const setTargetTempRoom = this.homey.flow.getActionCard('set_target_temp_room');
 		setTargetTempRoom.registerRunListener((args) => args.device.setTargetTempRoom(args.temp, 'flow'));
 
-		const setTargetTempBoiler = this.homey.flow.getActionCard('set_target_temp_boiler');
-		setTargetTempBoiler.registerRunListener((args) => args.device.setTargetTempBoiler(args.temp, 'flow'));
+		const setMaxTargetTempBoiler = this.homey.flow.getActionCard('set_max_target_temp_boiler');
+		setMaxTargetTempBoiler.registerRunListener((args) => args.device.setMaxTargetTempBoiler(args.temp, 'flow'));
 
 		const setTargetTempDhw = this.homey.flow.getActionCard('set_target_temp_dhw');
 		setTargetTempDhw.registerRunListener((args) => args.device.setTargetTempDhw(args.temp, 'flow'));

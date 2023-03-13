@@ -103,8 +103,8 @@
 				"id": "room_target_temp_control",
 				"type": "checkbox",
 				"label": {
-						"en": "Enable Control",
-						"nl": "Activeer Besturing"
+						"en": "Enable Temp Control",
+						"nl": "Activeer Temp Besturing"
 				},
 				"hint" : {
 					"en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
@@ -170,8 +170,8 @@
 				"id": "dhw_target_temp_control",
 				"type": "checkbox",
 				"label": {
-						"en": "Enable Control",
-						"nl": "Activeer Besturing"
+						"en": "Enable Temp Control",
+						"nl": "Activeer Temp Besturing"
 				},
 				"hint" : {
 					"en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
@@ -216,16 +216,16 @@
 	{
 		"type": "group",
 		"label": {
-				"en": "Boiler Water Temp Control",
-				"nl": "CV Water Temp Besturing"
+				"en": "Boiler Target Temp Control",
+				"nl": "CV Doeltemp Besturing"
 		},
 		"children": [
 			{
 				"id": "boiler_target_temp_control",
 				"type": "checkbox",
 				"label": {
-						"en": "Enable Control",
-						"nl": "Activeer Besturing"
+						"en": "Enable Temp Control",
+						"nl": "Activeer Temp Besturing"
 				},
 				"hint" : {
 					"en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",

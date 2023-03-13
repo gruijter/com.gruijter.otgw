@@ -9,6 +9,8 @@
 
 		"measure_temperature.return",
 
+		"target_temperature.boiler_max",
+
 		"measure_temperature.boiler",
 		"target_temperature.boiler",
 
@@ -64,7 +66,17 @@
 		},
 		"target_temperature.boiler": {
 			"type": "number",
-			"title": { "en": "Boiler (max)target temp", "nl": "Ketel (max)doel temp" },
+			"title": { "en": "Boiler target temp", "nl": "Ketel doel temp" },
+			"uiComponent": "sensor",
+			"min": 10,
+			"max": 90,
+			"step": 1,
+			"settable": true,
+			"insights": true
+		},
+		"target_temperature.boiler_max": {
+			"type": "number",
+			"title": { "en": "Boiler max target temp", "nl": "Ketel max doel temp" },
 			"uiComponent": "thermostat",
 			"min": 30,
 			"max": 90,

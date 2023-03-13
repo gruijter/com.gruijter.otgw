@@ -30,6 +30,7 @@ const map = {
 	// For capabilities
 	'/Tboiler': (val) => ['measure_temperature.boiler', Number(val)], // 36.68
 	'/TSet': (val) => ['target_temperature.boiler', Number(val)], // 57
+	'/MaxTSet': (val) => ['target_temperature.boiler_max', Number(val)], // 57
 
 	'/Tdhw': (val) => ['measure_temperature.dhw', Number(val)], // 35.31
 	'/TdhwSet': (val) => ['target_temperature.dhw', Number(val)], // 57
@@ -109,7 +110,7 @@ class MyDevice extends Device {
 					// restore capability state
 					if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
 					// else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
-					await this.setCapability(newCap, state[newCap]);
+					if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
 					await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
 				}
 			}
@@ -162,7 +163,7 @@ class MyDevice extends Device {
 	}
 
 	setCapability(capability, value) {
-		if (this.hasCapability(capability)) {
+		if (this.hasCapability(capability) && value !== undefined) {
 			this.setCapabilityValue(capability, value)
 				.catch((error) => {
 					this.log(error, capability, value);
@@ -200,6 +201,11 @@ class MyDevice extends Device {
 	}
 
 	async setTargetTempBoiler(temp, source) {
+		this.error('Trying to set the TargetTempBoiler');
+		throw Error('Setting the Boiler Control Point is not possible.');
+	}
+
+	async setMaxTargetTempBoiler(temp, source) {
 		if (!this.settings.boiler_target_temp_control) return Promise.reject(Error('Control is disabled from settings'));
 		if (temp > this.settings.boiler_target_temp_max
 			|| temp < this.settings.boiler_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
@@ -294,6 +300,7 @@ class MyDevice extends Device {
 			this.registerCapabilityListener('target_temperature.room', (temp) => this.setTargetTempRoom(temp, 'app'));
 			this.registerCapabilityListener('target_temperature.dhw', (temp) => this.setTargetTempDhw(temp, 'app'));
 			this.registerCapabilityListener('target_temperature.boiler', (temp) => this.setTargetTempBoiler(temp, 'app'));
+			this.registerCapabilityListener('target_temperature.boiler_max', (temp) => this.setMaxTargetTempBoiler(temp, 'app'));
 			this.registerCapabilityListener('dhw_block_onoff', (onoff) => this.setDhwBlock(onoff, 'app'));
 
 			// this.registerMultipleCapabilityListener(['charge_target_slow', 'charge_target_fast'], async (values) => {
