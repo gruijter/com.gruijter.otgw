@@ -1,7 +1,7 @@
 {
     "title": {
-        "en": "Fault Alarm turned Off",
-        "nl": "Storing Alarm ging Uit"
+        "en": "Fault Alarm turned On",
+        "nl": "Storing Alarm ging Aan"
     },
     "highlight": true,
     "args": [

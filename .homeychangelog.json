@@ -10,5 +10,8 @@
   },
   "1.1.0": {
     "en": "Max CH target temp thermostat added. Return temperature sensor added. Moved all temperature readings to sensor tab. Renamed Boiler (max)target temp. Readme updated."
+  },
+  "1.1.1": {
+    "en": "Fixed alarm_fault action cards."
   }
 }
