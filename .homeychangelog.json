@@ -13,5 +13,8 @@
   },
   "1.1.1": {
     "en": "Fixed alarm_fault action cards."
+  },
+  "2.0.0": {
+    "en": "Changed room target temperature to Homey defaults. AI translation to all Homey languages."
   }
 }

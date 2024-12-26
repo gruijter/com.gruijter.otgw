@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "Central Heating turned On",
-        "nl": "CV ging Aan"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "Central Heating turned On",
+    "nl": "CV ging Aan",
+    "da": "Centralvarme tændt",
+    "de": "Zentralheizung eingeschaltet",
+    "es": "Calefacción central activada",
+    "fr": "Chauffage central activé",
+    "it": "Riscaldamento centralizzato acceso",
+    "no": "Sentralvarme slått på",
+    "sv": "Centralvärme påslagen",
+    "pl": "Centralne ogrzewanie włączone",
+    "ru": "Центральное отопление включено",
+    "ko": "중앙 난방 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

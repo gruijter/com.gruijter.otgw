@@ -1,23 +1,63 @@
 {
-	"type": "boolean",
-	"title": {
-		"en": "Fault",
-		"nl": "Storing"
-	},
-	"desc": {
-		"en": "True when fault"
-	},
-	"insights": true,
-	"insightsTitleTrue": {
-		"en": "Fault Alarm On",
-		"nl": "Storing Alarm Aan"
-	},
-	"insightsTitleFalse": {
-		"en": "Fault Alarm Off",
-		"nl": "Storing Alarm Uit"
-	},
-	"getable": true,
-	"setable": false,
-	"uiComponent": "sensor",
-	"icon": "./assets/fault.svg"
+  "type": "boolean",
+  "title": {
+    "en": "Fault",
+    "nl": "Storing",
+    "da": "Fejl",
+    "de": "Fehler",
+    "es": "Falla",
+    "fr": "Défaut",
+    "it": "Guasto",
+    "no": "Feil",
+    "sv": "Fel",
+    "pl": "Błąd",
+    "ru": "Ошибка",
+    "ko": "고장"
+  },
+  "desc": {
+    "en": "True when fault",
+    "da": "Sand, når fejl",
+    "de": "Wahr bei Fehler",
+    "es": "Verdadero cuando hay fallo",
+    "fr": "Vrai en cas de défaut",
+    "it": "Vero quando c'è un guasto",
+    "no": "Sant når feil",
+    "sv": "Sant vid fel",
+    "pl": "Prawda, gdy błąd",
+    "ru": "Истина при ошибке",
+    "ko": "고장일 때 참"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Fault Alarm On",
+    "nl": "Storing Alarm Aan",
+    "da": "Fejlalarm Til",
+    "de": "Fehlalarm An",
+    "es": "Alarma de fallo activada",
+    "fr": "Alarme de défaut activée",
+    "it": "Allarme guasto attivato",
+    "no": "Feilalarm På",
+    "sv": "Fellarm På",
+    "pl": "Alarm błędu Włączony",
+    "ru": "Тревога об ошибке Вкл",
+    "ko": "고장 알람 켜짐"
+  },
+  "insightsTitleFalse": {
+    "en": "Fault Alarm Off",
+    "nl": "Storing Alarm Uit",
+    "da": "Fejlalarm Fra",
+    "de": "Fehlalarm Aus",
+    "es": "Alarma de fallo desactivada",
+    "fr": "Alarme de défaut désactivée",
+    "it": "Allarme guasto disattivato",
+    "no": "Feilalarm Av",
+    "sv": "Fellarm Av",
+    "pl": "Alarm błędu Wyłączony",
+    "ru": "Тревога об ошибке Выкл",
+    "ko": "고장 알람 꺼짐"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "./assets/fault.svg"
 }

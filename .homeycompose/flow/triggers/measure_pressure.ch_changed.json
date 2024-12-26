@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "CH water pressure changed",
-		"nl": "CV waterdruk veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_pressure.ch",
-			"type": "number",
-			"title": { 
-				"en": "CH water pressure",
-				"nl": "CV waterdruk"
-			},
-			"example": 1.5
-		}
-	]
+  "title": {
+    "en": "CH water pressure changed",
+    "nl": "CV waterdruk veranderd",
+    "da": "CH vandtryk ændret",
+    "de": "CH Wasserdruck geändert",
+    "es": "Presión de agua CH cambiada",
+    "fr": "Pression d'eau CH modifiée",
+    "it": "Pressione dell'acqua CH cambiata",
+    "no": "CH vanntrykk endret",
+    "sv": "CH vattentryck ändrat",
+    "pl": "Ciśnienie wody CH zmienione",
+    "ru": "Давление воды CH изменилось",
+    "ko": "CH 수압 변경됨"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_pressure.ch",
+      "type": "number",
+      "title": {
+        "en": "CH water pressure",
+        "nl": "CV waterdruk",
+        "da": "CH vandtryk",
+        "de": "CH Wasserdruck",
+        "es": "Presión de agua CH",
+        "fr": "Pression d'eau CH",
+        "it": "Pressione dell'acqua CH",
+        "no": "CH vanntrykk",
+        "sv": "CH vattentryck",
+        "pl": "Ciśnienie wody CH",
+        "ru": "Давление воды CH",
+        "ko": "CH 수압"
+      },
+      "example": 1.5
+    }
+  ]
 }

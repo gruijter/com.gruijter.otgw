@@ -1,27 +1,47 @@
 {
-    "title": {
-        "en": "Set max target temp boiler water",
-        "nl": "Max doel temp CV instellen"
+  "title": {
+    "en": "Set max target temp boiler water",
+    "nl": "Max doel temp CV instellen",
+    "da": "Indstil maks. mål temp kedelvand",
+    "de": "Maximale Zieltemperatur Kesselwasser einstellen",
+    "es": "Establecer temperatura máxima objetivo del agua de la caldera",
+    "fr": "Définir la température cible max de l'eau de la chaudière",
+    "it": "Imposta la temperatura obiettivo max dell'acqua della caldaia",
+    "no": "Sett maks målt temp kjelvann",
+    "sv": "Ställ in max måltemperatur för pannvatten",
+    "pl": "Ustaw maksymalną docelową temperaturę wody w kotle",
+    "ru": "Установить макс. целевую темп. котельной воды",
+    "ko": "보일러 물의 최대 목표 온도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set max target temp boiler [[temp]]",
+    "nl": "CV max doel temp instellen [[temp]]",
+    "da": "Indstil maks. mål temp kedel [[temp]]",
+    "de": "Maximale Zieltemperatur Kessel einstellen [[temp]]",
+    "es": "Establecer temperatura máxima objetivo de la caldera [[temp]]",
+    "fr": "Définir la température cible max de la chaudière [[temp]]",
+    "it": "Imposta la temperatura obiettivo max della caldaia [[temp]]",
+    "no": "Sett maks målt temp kjel [[temp]]",
+    "sv": "Ställ in max måltemperatur för panna [[temp]]",
+    "pl": "Ustaw maksymalną docelową temperaturę kotła [[temp]]",
+    "ru": "Установить макс. целевую темп. котла [[temp]]",
+    "ko": "보일러 [[temp]]의 최대 목표 온도 설정"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
     },
-    "titleFormatted": {
-        "en": "Set max target temp boiler [[temp]]",
-        "nl": "CV max doel temp instellen [[temp]]"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        },
-        {
-            "type": "range",
-            "name": "temp",
-            "min": 30,
-            "max": 90,
-            "step": 1,
-            "label": "°C",
-            "labelDecimals": 1
-        }
-    ]
+    {
+      "type": "range",
+      "name": "temp",
+      "min": 30,
+      "max": 90,
+      "step": 1,
+      "label": "°C",
+      "labelDecimals": 1
+    }
+  ]
 }

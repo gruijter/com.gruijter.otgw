@@ -1,17 +1,37 @@
 {
   "id": "com.gruijter.otgw",
-  "version": "1.1.1",
-  "compatibility": ">=5.0.0",
+  "version": "2.0.0",
+  "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "OpenTherm Gateway MQTT"
+    "en": "OpenTherm Gateway MQTT",
+    "da": "OpenTherm Gateway MQTT",
+    "de": "OpenTherm Gateway MQTT",
+    "es": "OpenTherm Gateway MQTT",
+    "fr": "OpenTherm Gateway MQTT",
+    "it": "OpenTherm Gateway MQTT",
+    "no": "OpenTherm Gateway MQTT",
+    "sv": "OpenTherm Gateway MQTT",
+    "pl": "OpenTherm Gateway MQTT",
+    "ru": "OpenTherm Gateway MQTT",
+    "ko": "오픈썸 게이트웨이 MQTT"
   },
   "description": {
     "en": "Central Heater management for control freaks.",
-    "nl": "CV Ketel management voor control freaks."
+    "nl": "CV Ketel management voor control freaks.",
+    "da": "Centralvarme styring for kontrol-freaks.",
+    "de": "Zentralheizungsmanagement für Kontrollfreaks.",
+    "es": "Gestión de calefacción central para fanáticos del control.",
+    "fr": "Gestion du chauffage central pour les control freaks.",
+    "it": "Gestione del riscaldamento centrale per maniaci del controllo.",
+    "no": "Sentralvarme styring for kontrollfreaks.",
+    "sv": "Centralvärmehantering för kontrollfreaks.",
+    "pl": "Zarządzanie ogrzewaniem centralnym dla fanatyków kontroli.",
+    "ru": "Управление центральным отоплением для тех, кто любит контроль.",
+    "ko": "컨트롤 매니아를 위한 중앙 난방 관리."
   },
   "category": [
     "climate"
@@ -35,6 +55,96 @@
       "CV",
       "Thermostaat",
       "Centrale verwarming"
+    ],
+    "da": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kedel",
+      "termostat",
+      "Central varme"
+    ],
+    "de": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kessel",
+      "Thermostat",
+      "Zentralheizung"
+    ],
+    "es": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Caldera",
+      "termostato",
+      "Calor central"
+    ],
+    "fr": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Chaudière",
+      "thermostat",
+      "Chauffage central"
+    ],
+    "it": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Caldaia",
+      "termostato",
+      "Riscaldamento centrale"
+    ],
+    "no": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kjele",
+      "termostat",
+      "Sentral varme"
+    ],
+    "sv": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Panna",
+      "termostat",
+      "Central värme"
+    ],
+    "pl": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kocioł",
+      "termostat",
+      "Centralne ogrzewanie"
+    ],
+    "ru": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Котел",
+      "термостат",
+      "Центральное отопление"
+    ],
+    "ko": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "보일러",
+      "온도 조절기",
+      "중앙 난방"
     ]
   },
   "brandColor": "#0F556F",

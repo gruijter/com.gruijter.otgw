@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "Burner Modulation changed",
-		"nl": "Brander Modulatie veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "meter_burner_modulation",
-			"type": "number",
-			"title": { 
-				"en": "Burner Modulation",
-				"nl": "Brander Modulatie"
-			},
-			"example": 25
-		}
-	]
+  "title": {
+    "en": "Burner Modulation changed",
+    "nl": "Brander Modulatie veranderd",
+    "da": "Burner Modulation ændret",
+    "de": "Brennermodulation geändert",
+    "es": "Modulación del quemador cambiada",
+    "fr": "Modulation du brûleur modifiée",
+    "it": "Modulazione del bruciatore cambiata",
+    "no": "Brennermodulering endret",
+    "sv": "Brännarmodulering ändrad",
+    "pl": "Zmieniono modulację palnika",
+    "ru": "Изменение модуляции горелки",
+    "ko": "버너 변조 변경"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "meter_burner_modulation",
+      "type": "number",
+      "title": {
+        "en": "Burner Modulation",
+        "nl": "Brander Modulatie",
+        "da": "Burner Modulation",
+        "de": "Brennermodulation",
+        "es": "Modulación del quemador",
+        "fr": "Modulation du brûleur",
+        "it": "Modulazione del bruciatore",
+        "no": "Brennermodulering",
+        "sv": "Brännarmodulering",
+        "pl": "Modulacja palnika",
+        "ru": "Модуляция горелки",
+        "ko": "버너 변조"
+      },
+      "example": 25
+    }
+  ]
 }

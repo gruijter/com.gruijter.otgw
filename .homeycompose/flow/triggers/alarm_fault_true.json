@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "Fault Alarm turned On",
-        "nl": "Storing Alarm ging Aan"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "Fault Alarm turned On",
+    "nl": "Storing Alarm ging Aan",
+    "da": "Fejlalarm aktiveret",
+    "de": "Fehlalarm eingeschaltet",
+    "es": "Alarma de falla activada",
+    "fr": "Alarme de défaut activée",
+    "it": "Allarme di guasto attivato",
+    "no": "Feilalarm slått på",
+    "sv": "Felfunktion larm aktiverat",
+    "pl": "Alarm awarii włączony",
+    "ru": "Сигнал об ошибке включен",
+    "ko": "오류 알람이 켜졌습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

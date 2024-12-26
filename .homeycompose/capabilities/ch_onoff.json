@@ -1,23 +1,63 @@
 {
-	"type": "boolean",
-	"title": {
-	  "en": "Central Heating On",
-	  "nl": "CV Aan"
-	},
-	"desc": {
-		"en": "True when on"
-	},
-	"insights": true,
-	"insightsTitleTrue": {
-		"en": "Central Heating On",
-		"nl": "CV Aan"
-	},
-	"insightsTitleFalse": {
-		"en": "Central Heating Off",
-		"nl": "CV Uit"
-	},
-	"getable": true,
-	"setable": false,
-	"uiComponent": "sensor",
-	"icon": "./assets/ch.svg"
+  "type": "boolean",
+  "title": {
+    "en": "Central Heating On",
+    "nl": "CV Aan",
+    "da": "Centralvarme tændt",
+    "de": "Zentralheizung an",
+    "es": "Calefacción central encendida",
+    "fr": "Chauffage central allumé",
+    "it": "Riscaldamento centralizzato acceso",
+    "no": "Sentralfyringen er på",
+    "sv": "Centralvärme på",
+    "pl": "Centralne ogrzewanie włączone",
+    "ru": "Центральное отопление включено",
+    "ko": "중앙 난방 켜짐"
+  },
+  "desc": {
+    "en": "True when on",
+    "da": "Sandt når tændt",
+    "de": "Wahr, wenn eingeschaltet",
+    "es": "Verdadero cuando está encendido",
+    "fr": "Vrai quand allumé",
+    "it": "Vero quando acceso",
+    "no": "Sann når på",
+    "sv": "Sant när på",
+    "pl": "Prawda, gdy włączone",
+    "ru": "Истина, когда включено",
+    "ko": "켜져 있을 때 진실"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Central Heating On",
+    "nl": "CV Aan",
+    "da": "Centralvarme tændt",
+    "de": "Zentralheizung an",
+    "es": "Calefacción central encendida",
+    "fr": "Chauffage central allumé",
+    "it": "Riscaldamento centralizzato acceso",
+    "no": "Sentralfyringen er på",
+    "sv": "Centralvärme på",
+    "pl": "Centralne ogrzewanie włączone",
+    "ru": "Центральное отопление включено",
+    "ko": "중앙 난방 켜짐"
+  },
+  "insightsTitleFalse": {
+    "en": "Central Heating Off",
+    "nl": "CV Uit",
+    "da": "Centralvarme slukket",
+    "de": "Zentralheizung aus",
+    "es": "Calefacción central apagada",
+    "fr": "Chauffage central éteint",
+    "it": "Riscaldamento centralizzato spento",
+    "no": "Sentralfyringen er av",
+    "sv": "Centralvärme av",
+    "pl": "Centralne ogrzewanie wyłączone",
+    "ru": "Центральное отопление выключено",
+    "ko": "중앙 난방 꺼짐"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "./assets/ch.svg"
 }

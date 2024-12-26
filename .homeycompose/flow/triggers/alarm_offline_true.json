@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "Offline Alarm turned On",
-        "nl": "Offline Alarm ging Aan"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "Offline Alarm turned On",
+    "nl": "Offline Alarm ging Aan",
+    "da": "Offline Alarm tændt",
+    "de": "Offline-Alarm aktiviert",
+    "es": "Alarma fuera de línea activada",
+    "fr": "Alarme hors ligne activée",
+    "it": "Allarme offline attivato",
+    "no": "Frakoblet alarm slått på",
+    "sv": "Offline-larm aktiverat",
+    "pl": "Alarm offline włączony",
+    "ru": "Оффлайн-сигнализация включена",
+    "ko": "오프라인 알람이 켜졌습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

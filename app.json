@@ -1,18 +1,38 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.gruijter.otgw",
-  "version": "1.1.1",
-  "compatibility": ">=5.0.0",
+  "version": "2.0.0",
+  "compatibility": ">=12.0.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "OpenTherm Gateway MQTT"
+    "en": "OpenTherm Gateway MQTT",
+    "da": "OpenTherm Gateway MQTT",
+    "de": "OpenTherm Gateway MQTT",
+    "es": "OpenTherm Gateway MQTT",
+    "fr": "OpenTherm Gateway MQTT",
+    "it": "OpenTherm Gateway MQTT",
+    "no": "OpenTherm Gateway MQTT",
+    "sv": "OpenTherm Gateway MQTT",
+    "pl": "OpenTherm Gateway MQTT",
+    "ru": "OpenTherm Gateway MQTT",
+    "ko": "오픈썸 게이트웨이 MQTT"
   },
   "description": {
     "en": "Central Heater management for control freaks.",
-    "nl": "CV Ketel management voor control freaks."
+    "nl": "CV Ketel management voor control freaks.",
+    "da": "Centralvarme styring for kontrol-freaks.",
+    "de": "Zentralheizungsmanagement für Kontrollfreaks.",
+    "es": "Gestión de calefacción central para fanáticos del control.",
+    "fr": "Gestion du chauffage central pour les control freaks.",
+    "it": "Gestione del riscaldamento centrale per maniaci del controllo.",
+    "no": "Sentralvarme styring for kontrollfreaks.",
+    "sv": "Centralvärmehantering för kontrollfreaks.",
+    "pl": "Zarządzanie ogrzewaniem centralnym dla fanatyków kontroli.",
+    "ru": "Управление центральным отоплением для тех, кто любит контроль.",
+    "ko": "컨트롤 매니아를 위한 중앙 난방 관리."
   },
   "category": [
     "climate"
@@ -36,6 +56,96 @@
       "CV",
       "Thermostaat",
       "Centrale verwarming"
+    ],
+    "da": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kedel",
+      "termostat",
+      "Central varme"
+    ],
+    "de": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kessel",
+      "Thermostat",
+      "Zentralheizung"
+    ],
+    "es": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Caldera",
+      "termostato",
+      "Calor central"
+    ],
+    "fr": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Chaudière",
+      "thermostat",
+      "Chauffage central"
+    ],
+    "it": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Caldaia",
+      "termostato",
+      "Riscaldamento centrale"
+    ],
+    "no": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kjele",
+      "termostat",
+      "Sentral varme"
+    ],
+    "sv": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Panna",
+      "termostat",
+      "Central värme"
+    ],
+    "pl": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Kocioł",
+      "termostat",
+      "Centralne ogrzewanie"
+    ],
+    "ru": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "Котел",
+      "термостат",
+      "Центральное отопление"
+    ],
+    "ko": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "보일러",
+      "온도 조절기",
+      "중앙 난방"
     ]
   },
   "brandColor": "#0F556F",
@@ -76,7 +186,17 @@
       {
         "title": {
           "en": "Fault Alarm turned Off",
-          "nl": "Storing Alarm ging Uit"
+          "nl": "Storing Alarm ging Uit",
+          "da": "Fejlalarm slukket",
+          "de": "Fehleralarm ausgeschaltet",
+          "es": "Alarma de falla desactivada",
+          "fr": "Alarme de défaut désactivée",
+          "it": "Allarme guasto disattivato",
+          "no": "Feilalarm slått av",
+          "sv": "Felalarm avstängd",
+          "pl": "Alarm awarii wyłączony",
+          "ru": "Сигнализация ошибки отключена",
+          "ko": "고장 경보 해제됨"
         },
         "highlight": true,
         "args": [
@@ -90,8 +210,18 @@
       },
       {
         "title": {
-          "en": "Fault Alarm turned Onn",
-          "nl": "Storing Alarm ging Aan"
+          "en": "Fault Alarm turned On",
+          "nl": "Storing Alarm ging Aan",
+          "da": "Fejlalarm aktiveret",
+          "de": "Fehlalarm eingeschaltet",
+          "es": "Alarma de falla activada",
+          "fr": "Alarme de défaut activée",
+          "it": "Allarme di guasto attivato",
+          "no": "Feilalarm slått på",
+          "sv": "Felfunktion larm aktiverat",
+          "pl": "Alarm awarii włączony",
+          "ru": "Сигнал об ошибке включен",
+          "ko": "오류 알람이 켜졌습니다"
         },
         "highlight": true,
         "args": [
@@ -106,7 +236,17 @@
       {
         "title": {
           "en": "Offline Alarm turned Off",
-          "nl": "Offline Alarm ging Uit"
+          "nl": "Offline Alarm ging Uit",
+          "da": "Offline Alarm slået fra",
+          "de": "Offline Alarm ausgeschaltet",
+          "es": "Alarma desconectada",
+          "fr": "Alarme hors ligne désactivée",
+          "it": "Allarme offline disattivato",
+          "no": "Offline Alarm slått av",
+          "sv": "Offline Alarm avstängd",
+          "pl": "Alarm offline wyłączony",
+          "ru": "Офлайн сигнализация отключена",
+          "ko": "오프라인 경보 꺼짐"
         },
         "highlight": true,
         "args": [
@@ -121,7 +261,17 @@
       {
         "title": {
           "en": "Offline Alarm turned On",
-          "nl": "Offline Alarm ging Aan"
+          "nl": "Offline Alarm ging Aan",
+          "da": "Offline Alarm tændt",
+          "de": "Offline-Alarm aktiviert",
+          "es": "Alarma fuera de línea activada",
+          "fr": "Alarme hors ligne activée",
+          "it": "Allarme offline attivato",
+          "no": "Frakoblet alarm slått på",
+          "sv": "Offline-larm aktiverat",
+          "pl": "Alarm offline włączony",
+          "ru": "Оффлайн-сигнализация включена",
+          "ko": "오프라인 알람이 켜졌습니다"
         },
         "highlight": true,
         "args": [
@@ -136,7 +286,17 @@
       {
         "title": {
           "en": "Central Heating turned Off",
-          "nl": "CV ging Uit"
+          "nl": "CV ging Uit",
+          "da": "Centralvarme slukket",
+          "de": "Zentralheizung ausgeschaltet",
+          "es": "Calefacción central apagada",
+          "fr": "Chauffage central éteint",
+          "it": "Riscaldamento centrale spento",
+          "no": "Sentralvarme slått av",
+          "sv": "Centralvärme avstängd",
+          "pl": "Ogrzewanie centralne wyłączone",
+          "ru": "Центральное отопление выключено",
+          "ko": "중앙 난방 꺼짐"
         },
         "highlight": true,
         "args": [
@@ -151,7 +311,17 @@
       {
         "title": {
           "en": "Central Heating turned On",
-          "nl": "CV ging Aan"
+          "nl": "CV ging Aan",
+          "da": "Centralvarme tændt",
+          "de": "Zentralheizung eingeschaltet",
+          "es": "Calefacción central activada",
+          "fr": "Chauffage central activé",
+          "it": "Riscaldamento centralizzato acceso",
+          "no": "Sentralvarme slått på",
+          "sv": "Centralvärme påslagen",
+          "pl": "Centralne ogrzewanie włączone",
+          "ru": "Центральное отопление включено",
+          "ko": "중앙 난방 켜짐"
         },
         "highlight": true,
         "args": [
@@ -166,7 +336,17 @@
       {
         "title": {
           "en": "DHW turned Off",
-          "nl": "Tapwater ging Uit"
+          "nl": "Tapwater ging Uit",
+          "da": "VVB slukket",
+          "de": "WW aus",
+          "es": "ACS apagado",
+          "fr": "ECS éteint",
+          "it": "ACS disattivato",
+          "no": "VVB slått av",
+          "sv": "VV avstängd",
+          "pl": "CWU wyłączony",
+          "ru": "ГВС выключено",
+          "ko": "급탕 끄기"
         },
         "highlight": true,
         "args": [
@@ -181,7 +361,17 @@
       {
         "title": {
           "en": "DHW turned On",
-          "nl": "Tapwater ging Aan"
+          "nl": "Tapwater ging Aan",
+          "da": "VVB tændt",
+          "de": "WW eingeschaltet",
+          "es": "ACS encendido",
+          "fr": "ECS activé",
+          "it": "ACS acceso",
+          "no": "VVB slått på",
+          "sv": "VV slått på",
+          "pl": "CWU włączone",
+          "ru": "ГВС включен",
+          "ko": "온수 켜짐"
         },
         "highlight": true,
         "args": [
@@ -196,7 +386,17 @@
       {
         "title": {
           "en": "Flame turned Off",
-          "nl": "Vlam ging Uit"
+          "nl": "Vlam ging Uit",
+          "da": "Flamme slukket",
+          "de": "Flamme ausgeschaltet",
+          "es": "Llama apagada",
+          "fr": "Flamme éteinte",
+          "it": "Fiamma spenta",
+          "no": "Flammen slukket",
+          "sv": "Flamma släckt",
+          "pl": "Płomień zgaszony",
+          "ru": "Пламя потушено",
+          "ko": "불꽃이 꺼짐"
         },
         "highlight": true,
         "args": [
@@ -211,7 +411,17 @@
       {
         "title": {
           "en": "Flame turned On",
-          "nl": "Vlam ging Aan"
+          "nl": "Vlam ging Aan",
+          "da": "Flammen tændt",
+          "de": "Flamme eingeschaltet",
+          "es": "Llama encendida",
+          "fr": "Flamme allumée",
+          "it": "Fiamma accesa",
+          "no": "Flammen er på",
+          "sv": "Flamman är påslagen",
+          "pl": "Płomień włączony",
+          "ru": "Пламя включено",
+          "ko": "불꽃 켜짐"
         },
         "highlight": true,
         "args": [
@@ -226,7 +436,17 @@
       {
         "title": {
           "en": "CH water pressure changed",
-          "nl": "CV waterdruk veranderd"
+          "nl": "CV waterdruk veranderd",
+          "da": "CH vandtryk ændret",
+          "de": "CH Wasserdruck geändert",
+          "es": "Presión de agua CH cambiada",
+          "fr": "Pression d'eau CH modifiée",
+          "it": "Pressione dell'acqua CH cambiata",
+          "no": "CH vanntrykk endret",
+          "sv": "CH vattentryck ändrat",
+          "pl": "Ciśnienie wody CH zmienione",
+          "ru": "Давление воды CH изменилось",
+          "ko": "CH 수압 변경됨"
         },
         "highlight": true,
         "args": [
@@ -242,7 +462,17 @@
             "type": "number",
             "title": {
               "en": "CH water pressure",
-              "nl": "CV waterdruk"
+              "nl": "CV waterdruk",
+              "da": "CH vandtryk",
+              "de": "CH Wasserdruck",
+              "es": "Presión de agua CH",
+              "fr": "Pression d'eau CH",
+              "it": "Pressione dell'acqua CH",
+              "no": "CH vanntrykk",
+              "sv": "CH vattentryck",
+              "pl": "Ciśnienie wody CH",
+              "ru": "Давление воды CH",
+              "ko": "CH 수압"
             },
             "example": 1.5
           }
@@ -252,7 +482,17 @@
       {
         "title": {
           "en": "Boiler temp changed",
-          "nl": "Ketel temp veranderd"
+          "nl": "Ketel temp veranderd",
+          "da": "Kedlens temp ændret",
+          "de": "Kesseltemperatur geändert",
+          "es": "Temp de la caldera cambiada",
+          "fr": "Temp de la chaudière modifiée",
+          "it": "Temp caldaia modificata",
+          "no": "Kjeletemp endret",
+          "sv": "Pannans temperatur ändrad",
+          "pl": "Temp. kotła zmieniona",
+          "ru": "Температура котла изменена",
+          "ko": "보일러 온도 변경됨"
         },
         "highlight": true,
         "args": [
@@ -268,7 +508,17 @@
             "type": "number",
             "title": {
               "en": "Boiler temp",
-              "nl": "Ketel temp"
+              "nl": "Ketel temp",
+              "da": "Kedlens temp",
+              "de": "Kesseltemperatur",
+              "es": "Temp de la caldera",
+              "fr": "Temp de la chaudière",
+              "it": "Temp caldaia",
+              "no": "Kjeletemp",
+              "sv": "Pannans temperatur",
+              "pl": "Temp. kotła",
+              "ru": "Температура котла",
+              "ko": "보일러 온도"
             },
             "example": 65
           }
@@ -278,7 +528,17 @@
       {
         "title": {
           "en": "DHW temp changed",
-          "nl": "Tapwater temp veranderd"
+          "nl": "Tapwater temp veranderd",
+          "da": "VVB temp ændret",
+          "de": "DHW-Temperatur geändert",
+          "es": "Temp ACS cambiada",
+          "fr": "Temp ECS changée",
+          "it": "Temp DHW modificata",
+          "no": "DHW temp endret",
+          "sv": "VVC-temperatur ändrad",
+          "pl": "Temp CWU zmieniona",
+          "ru": "Температура ГВС изменена",
+          "ko": "DHW 온도 변경됨"
         },
         "highlight": true,
         "args": [
@@ -294,7 +554,17 @@
             "type": "number",
             "title": {
               "en": "DHW temp",
-              "nl": "Tapwater temp"
+              "nl": "Tapwater temp",
+              "da": "VVB temp",
+              "de": "DHW-Temperatur",
+              "es": "Temp ACS",
+              "fr": "Temp ECS",
+              "it": "Temp DHW",
+              "no": "DHW temp",
+              "sv": "VVC-temperatur",
+              "pl": "Temp CWU",
+              "ru": "Температура ГВС",
+              "ko": "DHW 온도"
             },
             "example": 58
           }
@@ -303,34 +573,18 @@
       },
       {
         "title": {
-          "en": "Room temp changed",
-          "nl": "Ruimte temp veranderd"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "measure_temperature.room",
-            "type": "number",
-            "title": {
-              "en": "Room temp",
-              "nl": "Ruimte temp"
-            },
-            "example": 25
-          }
-        ],
-        "id": "measure_temperature.room_changed"
-      },
-      {
-        "title": {
           "en": "DHW flow changed",
-          "nl": "Tapwater flow veranderd"
+          "nl": "Tapwater flow veranderd",
+          "da": "DHW-flow ændret",
+          "de": "DHW-Durchfluss geändert",
+          "es": "Flujo de ACS cambiado",
+          "fr": "Débit ECS modifié",
+          "it": "Flusso ACS modificato",
+          "no": "DHW-strøm endret",
+          "sv": "DHW-flöde ändrat",
+          "pl": "Przepływ CWU zmieniony",
+          "ru": "Поток ГВС изменен",
+          "ko": "온수 흐름 변경됨"
         },
         "highlight": true,
         "args": [
@@ -346,7 +600,17 @@
             "type": "number",
             "title": {
               "en": "DHW flow",
-              "nl": "Tapwater flow"
+              "nl": "Tapwater flow",
+              "da": "DHW-flow",
+              "de": "DHW-Durchfluss",
+              "es": "Flujo de ACS",
+              "fr": "Débit ECS",
+              "it": "Flusso ACS",
+              "no": "DHW-strøm",
+              "sv": "DHW-flöde",
+              "pl": "Przepływ CWU",
+              "ru": "Поток ГВС",
+              "ko": "온수 흐름"
             },
             "example": 4.5
           }
@@ -356,7 +620,17 @@
       {
         "title": {
           "en": "Burner Modulation changed",
-          "nl": "Brander Modulatie veranderd"
+          "nl": "Brander Modulatie veranderd",
+          "da": "Burner Modulation ændret",
+          "de": "Brennermodulation geändert",
+          "es": "Modulación del quemador cambiada",
+          "fr": "Modulation du brûleur modifiée",
+          "it": "Modulazione del bruciatore cambiata",
+          "no": "Brennermodulering endret",
+          "sv": "Brännarmodulering ändrad",
+          "pl": "Zmieniono modulację palnika",
+          "ru": "Изменение модуляции горелки",
+          "ko": "버너 변조 변경"
         },
         "highlight": true,
         "args": [
@@ -372,7 +646,17 @@
             "type": "number",
             "title": {
               "en": "Burner Modulation",
-              "nl": "Brander Modulatie"
+              "nl": "Brander Modulatie",
+              "da": "Burner Modulation",
+              "de": "Brennermodulation",
+              "es": "Modulación del quemador",
+              "fr": "Modulation du brûleur",
+              "it": "Modulazione del bruciatore",
+              "no": "Brennermodulering",
+              "sv": "Brännarmodulering",
+              "pl": "Modulacja palnika",
+              "ru": "Модуляция горелки",
+              "ko": "버너 변조"
             },
             "example": 25
           }
@@ -382,7 +666,17 @@
       {
         "title": {
           "en": "Boiler target temp changed",
-          "nl": "Ketel doel temp veranderd"
+          "nl": "Ketel doel temp veranderd",
+          "da": "Kedlens måltemperatur ændret",
+          "de": "Kesselzieltemperatur geändert",
+          "es": "Temperatura objetivo de la caldera cambiada",
+          "fr": "Température cible de la chaudière modifiée",
+          "it": "Temperatura obiettivo della caldaia cambiata",
+          "no": "Kjelens måltemperatur endret",
+          "sv": "Pannans måltemperatur ändrad",
+          "pl": "Zmiana temperatury docelowej bojlera",
+          "ru": "Целевая температура котла изменена",
+          "ko": "보일러 목표 온도가 변경되었습니다"
         },
         "highlight": true,
         "args": [
@@ -398,7 +692,17 @@
             "type": "number",
             "title": {
               "en": "Boiler target temp",
-              "nl": "Ketel doel temp"
+              "nl": "Ketel doel temp",
+              "da": "Kedelens måltemperatur",
+              "de": "Kesselzieltemperatur",
+              "es": "Temperatura objetivo de la caldera",
+              "fr": "Température cible de la chaudière",
+              "it": "Temperatura obiettivo della caldaia",
+              "no": "Kjelens måltemperatur",
+              "sv": "Pannans måltemperatur",
+              "pl": "Docelowa temperatura bojlera",
+              "ru": "Целевая температура котла",
+              "ko": "보일러 목표 온도"
             },
             "example": 65
           }
@@ -408,7 +712,17 @@
       {
         "title": {
           "en": "DHW target temp changed",
-          "nl": "Tapwater doel temp veranderd"
+          "nl": "Tapwater doel temp veranderd",
+          "da": "DHW måltemp ændret",
+          "de": "DHW Zieltemperatur geändert",
+          "es": "Temperatura objetivo de ACS cambiada",
+          "fr": "Temp cible ECS modifiée",
+          "it": "Temp target ACS modificata",
+          "no": "DHW måltemp endret",
+          "sv": "DHW måltantemp ändrad",
+          "pl": "Zmieniono temperaturę docelową CWU",
+          "ru": "Температура цели ГВС изменена",
+          "ko": "DHW 목표 온도 변경됨"
         },
         "highlight": true,
         "args": [
@@ -424,38 +738,22 @@
             "type": "number",
             "title": {
               "en": "DHW target temp",
-              "nl": "Tapwater doel temp"
+              "nl": "Tapwater doel temp",
+              "da": "DHW måltemperatur",
+              "de": "DHW Zieltemperatur",
+              "es": "Temperatura objetivo DHW",
+              "fr": "Temp cible ECS",
+              "it": "Temp target ACS",
+              "no": "DHW måltemperatur",
+              "sv": "DHW måltantemperatur",
+              "pl": "Temperatura docelowa CWU",
+              "ru": "Целевая температура ГВС",
+              "ko": "DHW 목표 온도"
             },
             "example": 58
           }
         ],
         "id": "target_temperature.dhw_changed"
-      },
-      {
-        "title": {
-          "en": "Room target temp changed",
-          "nl": "Ruimte doel temp veranderd"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "target_temperature.room",
-            "type": "number",
-            "title": {
-              "en": "Room target temp",
-              "nl": "Ruimte doel temp"
-            },
-            "example": 25
-          }
-        ],
-        "id": "target_temperature.room_changed"
       }
     ],
     "actions": [
@@ -463,14 +761,34 @@
         "id": "send_command",
         "title": {
           "en": "Send a command",
-          "nl": "Stuur een commando"
+          "nl": "Stuur een commando",
+          "da": "Send en kommando",
+          "de": "Senden Sie einen Befehl",
+          "es": "Enviar un comando",
+          "fr": "Envoyer une commande",
+          "it": "Invia un comando",
+          "no": "Send en kommando",
+          "sv": "Skicka ett kommando",
+          "pl": "Wyślij polecenie",
+          "ru": "Отправьте команду",
+          "ko": "명령 보내기"
         },
         "hint": {
           "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
         },
         "titleFormatted": {
           "en": "Send command: [[command]]",
-          "nl": "Stuur commando: [[command]]"
+          "nl": "Stuur commando: [[command]]",
+          "da": "Send kommando: [[command]]",
+          "de": "Befehl senden: [[command]]",
+          "es": "Enviar comando: [[command]]",
+          "fr": "Envoyer commande : [[command]]",
+          "it": "Invia comando: [[command]]",
+          "no": "Send kommando: [[command]]",
+          "sv": "Skicka kommando: [[command]]",
+          "pl": "Wyślij polecenie: [[command]]",
+          "ru": "Отправить команду: [[command]]",
+          "ko": "명령 보내기: [[command]]"
         },
         "highlight": true,
         "args": [
@@ -489,11 +807,31 @@
         "id": "set_dhw_block",
         "title": {
           "en": "Block DHW",
-          "nl": "Tapwater Blokkeren"
+          "nl": "Tapwater Blokkeren",
+          "da": "Blokér VVB",
+          "de": "DHW blockieren",
+          "es": "Bloquear ACS",
+          "fr": "Bloquer ECS",
+          "it": "Blocca ACS",
+          "no": "Blokker VVB",
+          "sv": "Blockera VVB",
+          "pl": "Zablokuj CWU",
+          "ru": "Блокировать ГВС",
+          "ko": "온수 차단"
         },
         "titleFormatted": {
           "en": "Block DHW [[block]]",
-          "nl": "Tapwater blokkeren [[block]]"
+          "nl": "Tapwater blokkeren [[block]]",
+          "da": "Blokér VVB [[block]]",
+          "de": "DHW blockieren [[block]]",
+          "es": "Bloquear ACS [[block]]",
+          "fr": "Bloquer ECS [[block]]",
+          "it": "Blocca ACS [[block]]",
+          "no": "Blokker VVB [[block]]",
+          "sv": "Blockera VVB [[block]]",
+          "pl": "Zablokuj CWU [[block]]",
+          "ru": "Блокировать ГВС [[block]]",
+          "ko": "온수 차단 [[block]]"
         },
         "args": [
           {
@@ -511,11 +849,31 @@
       {
         "title": {
           "en": "Set max target temp boiler water",
-          "nl": "Max doel temp CV instellen"
+          "nl": "Max doel temp CV instellen",
+          "da": "Indstil maks. mål temp kedelvand",
+          "de": "Maximale Zieltemperatur Kesselwasser einstellen",
+          "es": "Establecer temperatura máxima objetivo del agua de la caldera",
+          "fr": "Définir la température cible max de l'eau de la chaudière",
+          "it": "Imposta la temperatura obiettivo max dell'acqua della caldaia",
+          "no": "Sett maks målt temp kjelvann",
+          "sv": "Ställ in max måltemperatur för pannvatten",
+          "pl": "Ustaw maksymalną docelową temperaturę wody w kotle",
+          "ru": "Установить макс. целевую темп. котельной воды",
+          "ko": "보일러 물의 최대 목표 온도 설정"
         },
         "titleFormatted": {
           "en": "Set max target temp boiler [[temp]]",
-          "nl": "CV max doel temp instellen [[temp]]"
+          "nl": "CV max doel temp instellen [[temp]]",
+          "da": "Indstil maks. mål temp kedel [[temp]]",
+          "de": "Maximale Zieltemperatur Kessel einstellen [[temp]]",
+          "es": "Establecer temperatura máxima objetivo de la caldera [[temp]]",
+          "fr": "Définir la température cible max de la chaudière [[temp]]",
+          "it": "Imposta la temperatura obiettivo max della caldaia [[temp]]",
+          "no": "Sett maks målt temp kjel [[temp]]",
+          "sv": "Ställ in max måltemperatur för panna [[temp]]",
+          "pl": "Ustaw maksymalną docelową temperaturę kotła [[temp]]",
+          "ru": "Установить макс. целевую темп. котла [[temp]]",
+          "ko": "보일러 [[temp]]의 최대 목표 온도 설정"
         },
         "highlight": true,
         "args": [
@@ -540,11 +898,31 @@
         "id": "set_target_temp_dhw",
         "title": {
           "en": "Set target temperature DHW",
-          "nl": "Doeltemperatuur tapwater instellen"
+          "nl": "Doeltemperatuur tapwater instellen",
+          "da": "Indstil måltemperatur VVB",
+          "de": "Zieltemperatur für WW einstellen",
+          "es": "Establecer temperatura objetivo ACS",
+          "fr": "Définir la température cible ECS",
+          "it": "Imposta temperatura obiettivo ACS",
+          "no": "Sett måltemperatur VVB",
+          "sv": "Sätt måltemperatur VVB",
+          "pl": "Ustaw docelową temperaturę CWU",
+          "ru": "Установить целевую температуру ГВС",
+          "ko": "온수 목표 온도 설정"
         },
         "titleFormatted": {
           "en": "Set target temperature DHW [[temp]]",
-          "nl": "Tapwater doeltemperatuur [[temp]]"
+          "nl": "Tapwater doeltemperatuur [[temp]]",
+          "da": "Indstil måltemperatur VVB [[temp]]",
+          "de": "Zieltemperatur für WW [[temp]] einstellen",
+          "es": "Establecer temperatura objetivo ACS [[temp]]",
+          "fr": "Définir la température cible ECS [[temp]]",
+          "it": "Imposta temperatura obiettivo ACS [[temp]]",
+          "no": "Sett måltemperatur VVB [[temp]]",
+          "sv": "Sätt måltemperatur VVB [[temp]]",
+          "pl": "Ustaw docelową temperaturę CWU [[temp]]",
+          "ru": "Установить целевую температуру ГВС [[temp]]",
+          "ko": "온수 목표 온도 설정 [[temp]]"
         },
         "highlight": true,
         "args": [
@@ -563,35 +941,6 @@
             "labelDecimals": 1
           }
         ]
-      },
-      {
-        "id": "set_target_temp_room",
-        "title": {
-          "en": "Set target temperature room",
-          "nl": "Doeltemperatuur ruimte instellen"
-        },
-        "titleFormatted": {
-          "en": "Set target temperature room [[temp]]",
-          "nl": "Ruimte doeltemperatuur [[temp]]"
-        },
-        "highlight": true,
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-          },
-          {
-            "type": "range",
-            "name": "temp",
-            "min": 1,
-            "max": 40,
-            "value": 20,
-            "step": 0.5,
-            "label": "°C",
-            "labelDecimals": 1
-          }
-        ]
       }
     ]
   },
@@ -602,8 +951,8 @@
       },
       "class": "other",
       "capabilities": [
-        "measure_temperature.room",
-        "target_temperature.room",
+        "measure_temperature",
+        "target_temperature",
         "measure_temperature.return",
         "target_temperature.boiler_max",
         "measure_temperature.boiler",
@@ -624,33 +973,21 @@
         "dhw_block_onoff"
       ],
       "capabilitiesOptions": {
-        "measure_temperature.room": {
-          "type": "number",
-          "title": {
-            "en": "Room temp",
-            "nl": "Ruimte temp"
-          },
-          "uiComponent": "thermostat",
-          "insights": true
-        },
-        "target_temperature.room": {
-          "type": "number",
-          "title": {
-            "en": "Room target temp",
-            "nl": "Ruimte doel temp"
-          },
-          "uiComponent": "sensor",
-          "min": 1,
-          "max": 30,
-          "step": 0.1,
-          "settable": true,
-          "insights": true
-        },
         "measure_pressure.ch": {
           "type": "number",
           "title": {
             "en": "CH water pressure",
-            "nl": "CV waterdruk"
+            "nl": "CV waterdruk",
+            "da": "CH vandtryk",
+            "de": "CH Wasserdruck",
+            "es": "Presión de agua de CH",
+            "fr": "Pression d'eau CH",
+            "it": "Pressione dell'acqua CH",
+            "no": "CH vanntrykk",
+            "sv": "CH vattentryck",
+            "pl": "Ciśnienie wody CH",
+            "ru": "Давление воды CH",
+            "ko": "CH 물 압력"
           },
           "units": {
             "en": "Bar",
@@ -664,7 +1001,17 @@
           "type": "number",
           "title": {
             "en": "Boiler temp",
-            "nl": "Ketel temp"
+            "nl": "Ketel temp",
+            "da": "Kedlens temp",
+            "de": "Kesseltemp",
+            "es": "Temp de caldera",
+            "fr": "Temp chaudière",
+            "it": "Temp caldaia",
+            "no": "Kjeler temp",
+            "sv": "Panna temp",
+            "pl": "Tempora kotła",
+            "ru": "Температура котла",
+            "ko": "보일러 온도"
           },
           "uiComponent": "sensor",
           "insights": true
@@ -673,7 +1020,17 @@
           "type": "number",
           "title": {
             "en": "Boiler target temp",
-            "nl": "Ketel doel temp"
+            "nl": "Ketel doel temp",
+            "da": "Målkedele temp",
+            "de": "Zielkesseltemp",
+            "es": "Temp objetivo de la caldera",
+            "fr": "Temp cible chaudière",
+            "it": "Temp obiettivo caldaia",
+            "no": "Mål kjeler temp",
+            "sv": "Målpanna temp",
+            "pl": "Cel temp. kotła",
+            "ru": "Целевая темп котла",
+            "ko": "보일러 목표 온도"
           },
           "uiComponent": "sensor",
           "min": 10,
@@ -686,7 +1043,17 @@
           "type": "number",
           "title": {
             "en": "Boiler max target temp",
-            "nl": "Ketel max doel temp"
+            "nl": "Ketel max doel temp",
+            "da": "Kedel maks måltemp",
+            "de": "Kessel max Zieltemp",
+            "es": "Temp objetivo máx de la caldera",
+            "fr": "Temp max cible chaudière",
+            "it": "Temp max obiettivo caldaia",
+            "no": "Kjeler maks måltemp",
+            "sv": "Panna max måltemp",
+            "pl": "Max temp. kotła",
+            "ru": "Макс целевая темп котла",
+            "ko": "보일러 최대 목표 온도"
           },
           "uiComponent": "thermostat",
           "min": 30,
@@ -699,7 +1066,17 @@
           "type": "number",
           "title": {
             "en": "DHW flow",
-            "nl": "Tapwater flow"
+            "nl": "Tapwater flow",
+            "da": "DHW flow",
+            "de": "DHW-Fluss",
+            "es": "Flujo DHW",
+            "fr": "Débit ECS",
+            "it": "Flusso ACS",
+            "no": "DHW flyt",
+            "sv": "DHW-flöde",
+            "pl": "Przepływ CWU",
+            "ru": "Поток ГВС",
+            "ko": "온수 흐름"
           },
           "units": {
             "en": "L/min",
@@ -713,7 +1090,17 @@
           "type": "number",
           "title": {
             "en": "DHW temp",
-            "nl": "Tapwater temp"
+            "nl": "Tapwater temp",
+            "da": "DHW temp",
+            "de": "DHW Temperatur",
+            "es": "Temp DHW",
+            "fr": "Temp ECS",
+            "it": "Temp ACS",
+            "no": "DHW temp",
+            "sv": "DHW temp",
+            "pl": "Temp CWU",
+            "ru": "Температура ГВС",
+            "ko": "온수 온도"
           },
           "uiComponent": "sensor",
           "insights": true
@@ -722,7 +1109,17 @@
           "type": "number",
           "title": {
             "en": "DHW target temp",
-            "nl": "Tapwater doel temp"
+            "nl": "Tapwater doel temp",
+            "da": "DHW måltemp",
+            "de": "DHW-Zieltemp",
+            "es": "Temp objetivo DHW",
+            "fr": "Temp cible ECS",
+            "it": "Temp obiettivo ACS",
+            "no": "DHW måltemp",
+            "sv": "DHW måltemp",
+            "pl": "Cel temp. CWU",
+            "ru": "Целевая температура ГВС",
+            "ko": "온수 목표 온도"
           },
           "uiComponent": "thermostat",
           "min": 40,
@@ -735,7 +1132,17 @@
           "type": "number",
           "title": {
             "en": "Return temp",
-            "nl": "Retour temp"
+            "nl": "Retour temp",
+            "da": "Returtemp",
+            "de": "Rücklauftemp",
+            "es": "Temp de retorno",
+            "fr": "Temp retour",
+            "it": "Temp di ritorno",
+            "no": "Returtemp",
+            "sv": "Returtemp",
+            "pl": "Temp powrotu",
+            "ru": "Температура возврата",
+            "ko": "리턴 온도"
           },
           "uiComponent": "sensor",
           "insights": true
@@ -777,14 +1184,34 @@
         {
           "type": "group",
           "label": {
-            "en": "Gateway information"
+            "en": "Gateway information",
+            "da": "Gateway-information",
+            "de": "Gateway-Informationen",
+            "es": "Información del gateway",
+            "fr": "Informations de passerelle",
+            "it": "Informazioni sul gateway",
+            "no": "Gateway-informasjon",
+            "sv": "Gateway-information",
+            "pl": "Informacje o bramie",
+            "ru": "Информация о шлюзе",
+            "ko": "게이트웨이 정보"
           },
           "children": [
             {
               "id": "uid",
               "type": "label",
               "label": {
-                "en": "Unique ID"
+                "en": "Unique ID",
+                "da": "Unik ID",
+                "de": "Eindeutige ID",
+                "es": "ID único",
+                "fr": "ID unique",
+                "it": "ID unico",
+                "no": "Unik ID",
+                "sv": "Unik ID",
+                "pl": "Unikalne ID",
+                "ru": "Уникальный ID",
+                "ko": "고유 ID"
               },
               "value": ""
             },
@@ -792,7 +1219,17 @@
               "id": "firmware_otgw",
               "type": "label",
               "label": {
-                "en": "OTGW Firmware"
+                "en": "OTGW Firmware",
+                "da": "OTGW Firmware",
+                "de": "OTGW-Firmware",
+                "es": "Firmware OTGW",
+                "fr": "Firmware OTGW",
+                "it": "Firmware OTGW",
+                "no": "OTGW Firmware",
+                "sv": "OTGW Firmware",
+                "pl": "Oprogramowanie OTGW",
+                "ru": "Прошивка OTGW",
+                "ko": "OTGW 펌웨어"
               },
               "value": ""
             },
@@ -800,7 +1237,17 @@
               "id": "firmware_pic",
               "type": "label",
               "label": {
-                "en": "PIC Firmware"
+                "en": "PIC Firmware",
+                "da": "PIC Firmware",
+                "de": "PIC-Firmware",
+                "es": "Firmware PIC",
+                "fr": "Firmware PIC",
+                "it": "Firmware PIC",
+                "no": "PIC Firmware",
+                "sv": "PIC Firmware",
+                "pl": "Oprogramowanie PIC",
+                "ru": "Прошивка PIC",
+                "ko": "PIC 펌웨어"
               },
               "value": ""
             }
@@ -809,14 +1256,34 @@
         {
           "type": "group",
           "label": {
-            "en": "MQTT settings"
+            "en": "MQTT settings",
+            "da": "MQTT-indstillinger",
+            "de": "MQTT-Einstellungen",
+            "es": "Configuraciones MQTT",
+            "fr": "Paramètres MQTT",
+            "it": "Impostazioni MQTT",
+            "no": "MQTT-innstillinger",
+            "sv": "MQTT-inställningar",
+            "pl": "Ustawienia MQTT",
+            "ru": "Настройки MQTT",
+            "ko": "MQTT 설정"
           },
           "children": [
             {
               "id": "host",
               "type": "text",
               "label": {
-                "en": "Host"
+                "en": "Host",
+                "da": "Vært",
+                "de": "Host",
+                "es": "Anfitrión",
+                "fr": "Hôte",
+                "it": "Host",
+                "no": "Vert",
+                "sv": "Värd",
+                "pl": "Host",
+                "ru": "Хост",
+                "ko": "호스트"
               },
               "value": ""
             },
@@ -824,7 +1291,17 @@
               "id": "port",
               "type": "number",
               "label": {
-                "en": "Port"
+                "en": "Port",
+                "da": "Port",
+                "de": "Port",
+                "es": "Puerto",
+                "fr": "Port",
+                "it": "Porta",
+                "no": "Port",
+                "sv": "Port",
+                "pl": "Port",
+                "ru": "Порт",
+                "ko": "포트"
               },
               "value": 1883
             },
@@ -832,7 +1309,17 @@
               "id": "tls",
               "type": "checkbox",
               "label": {
-                "en": "Use TLS"
+                "en": "Use TLS",
+                "da": "Brug TLS",
+                "de": "TLS verwenden",
+                "es": "Usar TLS",
+                "fr": "Utiliser TLS",
+                "it": "Usa TLS",
+                "no": "Bruk TLS",
+                "sv": "Använd TLS",
+                "pl": "Użyj TLS",
+                "ru": "Использовать TLS",
+                "ko": "TLS 사용"
               },
               "value": false
             },
@@ -840,7 +1327,17 @@
               "id": "username",
               "type": "text",
               "label": {
-                "en": "Username"
+                "en": "Username",
+                "da": "Brugernavn",
+                "de": "Benutzername",
+                "es": "Nombre de usuario",
+                "fr": "Nom d'utilisateur",
+                "it": "Nome utente",
+                "no": "Brukernavn",
+                "sv": "Användarnamn",
+                "pl": "Nazwa użytkownika",
+                "ru": "Имя пользователя",
+                "ko": "사용자 이름"
               },
               "value": ""
             },
@@ -848,7 +1345,17 @@
               "id": "password",
               "type": "password",
               "label": {
-                "en": "Password"
+                "en": "Password",
+                "da": "Adgangskode",
+                "de": "Passwort",
+                "es": "Contraseña",
+                "fr": "Mot de passe",
+                "it": "Password",
+                "no": "Passord",
+                "sv": "Lösenord",
+                "pl": "Hasło",
+                "ru": "Пароль",
+                "ko": "비밀번호"
               },
               "value": ""
             },
@@ -857,11 +1364,31 @@
               "type": "text",
               "label": {
                 "en": "Base topic",
-                "nl": "Base topic"
+                "nl": "Base topic",
+                "da": "Basistemne",
+                "de": "Grundthema",
+                "es": "Tema base",
+                "fr": "Sujet de base",
+                "it": "Argomento base",
+                "no": "Basistema",
+                "sv": "Basämne",
+                "pl": "Temat podstawowy",
+                "ru": "Базовая тема",
+                "ko": "기본 주제"
               },
               "hint": {
                 "en": "The MQTT Topic where the Gateway is uniquely subscribed. E.g. OTGW/value/otgw-A31F222A38AD",
-                "nl": "Het MQTT topic waarop de Gateway uniek is geabonneerd. Bijv. OTGW/value/otgw-A31F222A38AD"
+                "nl": "Het MQTT topic waarop de Gateway uniek is geabonneerd. Bijv. OTGW/value/otgw-A31F222A38AD",
+                "da": "MQTT-temaet, hvor Gatewayen er unikt tilmeldt. F.eks. OTGW/value/otgw-A31F222A38AD",
+                "de": "Das MQTT-Thema, bei dem das Gateway eindeutig abonniert ist. Zum Beispiel OTGW/value/otgw-A31F222A38AD",
+                "es": "El tema MQTT al que el Gateway está suscrito de manera única. Por ejemplo, OTGW/value/otgw-A31F222A38AD",
+                "fr": "Le sujet MQTT auquel la passerelle est abonnée de manière unique. Par exemple : OTGW/value/otgw-A31F222A38AD",
+                "it": "Il tema MQTT a cui il gateway è unicamente iscritto. Ad esempio OTGW/value/otgw-A31F222A38AD",
+                "no": "MQTT-temaet der Gateway er unikt abonnert. F.eks. OTGW/value/otgw-A31F222A38AD",
+                "sv": "MQTT-ämnet där Gateway är unikt prenumererat. T.ex. OTGW/value/otgw-A31F222A38AD",
+                "pl": "Temat MQTT, na który Gateway jest unikalnie subskrybowany. Np. OTGW/value/otgw-A31F222A38AD",
+                "ru": "Тема MQTT, на которую шлюз подписан уникально. Например OTGW/value/otgw-A31F222A38AD",
+                "ko": "게이트웨이가 고유하게 구독하는 MQTT 주제입니다. 예: OTGW/value/otgw-A31F222A38AD"
               },
               "value": ""
             }
@@ -871,7 +1398,17 @@
           "type": "group",
           "label": {
             "en": "Room Temp Control",
-            "nl": "Ruimte Temp Besturing"
+            "nl": "Ruimte Temp Besturing",
+            "da": "Rummets Tempstyring",
+            "de": "Raumtemp-Steuerung",
+            "es": "Control de Temp de Habitación",
+            "fr": "Contrôle de température de pièce",
+            "it": "Controllo della temperatura della stanza",
+            "no": "Romtemperaturkontroll",
+            "sv": "Rumtemperaturkontroll",
+            "pl": "Sterowanie temp. pomieszczenia",
+            "ru": "Контроль температуры в комнате",
+            "ko": "실내 온도 제어"
           },
           "children": [
             {
@@ -879,11 +1416,31 @@
               "type": "checkbox",
               "label": {
                 "en": "Enable Temp Control",
-                "nl": "Activeer Temp Besturing"
+                "nl": "Activeer Temp Besturing",
+                "da": "Aktiver Tempstyring",
+                "de": "Temperatursteuerung aktivieren",
+                "es": "Habilitar Control de Temp",
+                "fr": "Activer le contrôle de température",
+                "it": "Abilita controllo temperatura",
+                "no": "Aktiver Temp-kontroll",
+                "sv": "Aktivera Temp-kontroll",
+                "pl": "Włącz sterowanie temperaturą",
+                "ru": "Включить контроль температуры",
+                "ko": "온도 제어 사용"
               },
               "hint": {
                 "en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
-                "nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteunt."
+                "nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteunt.",
+                "da": "Når aktiveret kan du styre rummets måltemperatur fra Homey, men kun hvis din termostat understøtter tilsidesættelse.",
+                "de": "Wenn aktiviert, können Sie die Raumzieltemperatur von Homey aus steuern, jedoch nur, wenn Ihr Thermostat eine Überschreibung unterstützt.",
+                "es": "Cuando está habilitado, podrás controlar la temperatura objetivo de la habitación desde Homey, pero solo si tu termostato admite anulación.",
+                "fr": "Quand activé, vous pourrez contrôler la température cible de la pièce depuis Homey, mais uniquement si votre thermostat prend en charge l'override.",
+                "it": "Quando abilitato, sarai in grado di controllare la temperatura target della stanza da Homey, ma solo se il tuo Termostato supporta l'override.",
+                "no": "Når aktivert, vil du kunne kontrollere rommets måltemperatur fra Homey, men bare hvis din termostat støtter overstyring.",
+                "sv": "När aktiverat kommer du att kunna styra rummets måltavla temperatur från Homey, men bara om din termostat stöder överstyrning.",
+                "pl": "Po włączeniu będziesz mógł sterować docelową temperaturą pomieszczenia z poziomu Homey, ale tylko jeśli Twój Termostat obsługuje nadpisanie.",
+                "ru": "После включения вы сможете управлять целевой температурой помещения с помощью Homey, но только если ваш термостат поддерживает переопределение.",
+                "ko": "활성화하면 Thermostat이 재정의를 지원하는 경우에만 Homey에서 방 목표 온도를 제어할 수 있습니다."
               },
               "value": false
             },
@@ -892,11 +1449,31 @@
               "type": "number",
               "label": {
                 "en": "Room Min Temp",
-                "nl": "Ruimte Min Temperatuur"
+                "nl": "Ruimte Min Temperatuur",
+                "da": "Rummets Min Temp",
+                "de": "Raum-Minimumtemperatur",
+                "es": "Temp Mínima de Habitación",
+                "fr": "Température Min de la Pièce",
+                "it": "Tempì Min di Stanza",
+                "no": "Minimum Romtemp",
+                "sv": "Min Rumstemperatur",
+                "pl": "Minimalna Temp. Pomieszczenia",
+                "ru": "Минимальная Температура в Комнате",
+                "ko": "실내 최저 온도"
               },
               "hint": {
                 "en": "You will not be able to set a lower value from Homey",
-                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey"
+                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey",
+                "da": "Du vil ikke kunne indstille en lavere værdi fra Homey",
+                "de": "Sie können keinen niedrigeren Wert von Homey aus einstellen",
+                "es": "No podrás establecer un valor más bajo desde Homey",
+                "fr": "Vous ne pourrez pas définir une valeur plus basse depuis Homey",
+                "it": "Non sarai in grado di impostare un valore inferiore da Homey",
+                "no": "Du vil ikke kunne sette en lavere verdi fra Homey",
+                "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey",
+                "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey",
+                "ru": "Вы не сможете установить более низкое значение с помощью Homey",
+                "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다"
               },
               "min": 1,
               "max": 30,
@@ -908,11 +1485,31 @@
               "type": "number",
               "label": {
                 "en": "Room Max Temp",
-                "nl": "Ruimte Max Temperatuur"
+                "nl": "Ruimte Max Temperatuur",
+                "da": "Rummets Max Temp",
+                "de": "Raum-Maximaltemperatur",
+                "es": "Temp Máxima de Habitación",
+                "fr": "Température Max de la Pièce",
+                "it": "Tempì Max di Stanza",
+                "no": "Maksimum Romtemp",
+                "sv": "Max Rumstemperatur",
+                "pl": "Maksymalna Temp. Pomieszczenia",
+                "ru": "Максимальная Температура в Комнате",
+                "ko": "실내 최고 온도"
               },
               "hint": {
                 "en": "You will not be able to set a higher value from Homey",
-                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey"
+                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey",
+                "da": "Du vil ikke kunne indstille en højere værdi fra Homey",
+                "de": "Sie können keinen höheren Wert von Homey aus einstellen",
+                "es": "No podrás establecer un valor más alto desde Homey",
+                "fr": "Vous ne pourrez pas définir une valeur plus élevée depuis Homey",
+                "it": "Non sarai in grado di impostare un valore superiore da Homey",
+                "no": "Du vil ikke kunne sette en høyere verdi fra Homey",
+                "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey",
+                "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey",
+                "ru": "Вы не сможете установить более высокое значение с помощью Homey",
+                "ko": "Homey에서 더 높은 값을 설정할 수 없습니다"
               },
               "min": 1,
               "max": 30,
@@ -925,7 +1522,17 @@
           "type": "group",
           "label": {
             "en": "DHW Temp Control",
-            "nl": "Tapwater Temp Besturing"
+            "nl": "Tapwater Temp Besturing",
+            "da": "VVC-styring",
+            "de": "DHW-Temperatursteuerung",
+            "es": "Control de Temp ACS",
+            "fr": "Contrôle de température ECS",
+            "it": "Controllo temperatura ACS",
+            "no": "DHW temp-kontroll",
+            "sv": "DHW temp-kontroll",
+            "pl": "Sterowanie temp. CWU",
+            "ru": "Контроль температуры вт",
+            "ko": "DHW 온도 제어"
           },
           "children": [
             {
@@ -933,11 +1540,31 @@
               "type": "checkbox",
               "label": {
                 "en": "Enable DHW Blocking",
-                "nl": "Activeer Tapwater Blokkering"
+                "nl": "Activeer Tapwater Blokkering",
+                "da": "Aktiver VVC-blokering",
+                "de": "DHW-Blockierung aktivieren",
+                "es": "Habilitar bloqueo ACS",
+                "fr": "Activer le blocage ECS",
+                "it": "Abilita blocco ACS",
+                "no": "Aktiver DHW-blokkering",
+                "sv": "Aktivera DHW-blockering",
+                "pl": "Włącz blokowanie CWU",
+                "ru": "Включить блокировку DHW",
+                "ko": "DHW 차단 활성화"
               },
               "hint": {
                 "en": "When enabled you will be able to block the use of DHW from Homey, but only if your Boiler supports this.",
-                "nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteunt."
+                "nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteunt.",
+                "da": "Når aktiveret kan du blokere brugen af VVC fra Homey, men kun hvis din kedel understøtter dette.",
+                "de": "Wenn aktiviert, können Sie die Verwendung von DHW von Homey aus blockieren, jedoch nur, wenn Ihr Kessel dies unterstützt.",
+                "es": "Cuando está habilitado, podrás bloquear el uso de ACS desde Homey, pero solo si tu caldera lo admite.",
+                "fr": "Quand activé, vous pourrez bloquer l'utilisation de ECS depuis Homey, mais uniquement si votre chauffe-eau le prend en charge.",
+                "it": "Quando abilitato, sarai in grado di bloccare l'uso di ACS da Homey, ma solo se la tua caldaia lo supporta.",
+                "no": "Når dette er aktivert, vil du kunne blokkere bruken av DHW fra Homey, men bare hvis kjelen støtter dette.",
+                "sv": "När aktiverat kommer du att kunna blockera användningen av DHW från Homey, men bara om din panna stöder detta.",
+                "pl": "Po włączeniu będziesz mógł blokować korzystanie z CWU z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje.",
+                "ru": "Когда это включено, вы сможете блокировать использование ГВС от Homey, но только если ваш котел поддерживает эту функцию.",
+                "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 사용을 차단할 수 있습니다."
               },
               "value": false
             },
@@ -946,11 +1573,31 @@
               "type": "checkbox",
               "label": {
                 "en": "Enable Temp Control",
-                "nl": "Activeer Temp Besturing"
+                "nl": "Activeer Temp Besturing",
+                "da": "Aktiver Tempstyring",
+                "de": "Temperaturkontrolle aktivieren",
+                "es": "Habilitar control de temperatura",
+                "fr": "Activer le contrôle de température",
+                "it": "Abilita controllo temperatura",
+                "no": "Aktiver Temp-kontroll",
+                "sv": "Aktivera Temp-kontroll",
+                "pl": "Włącz kontrolę temperatury",
+                "ru": "Включить контроль температуры",
+                "ko": "온도 제어 사용"
               },
               "hint": {
                 "en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
-                "nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt. PAS OP: LEGIONELLA GEVAAR!"
+                "nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt. PAS OP: LEGIONELLA GEVAAR!",
+                "da": "Når aktiveret kan du kontrollere VVC måltemperaturen fra Homey, men kun hvis din kedel understøtter dette. ADVARSEL: LEGIONELLA FARE!",
+                "de": "Wenn aktiviert, können Sie die DHW-Zieltemperatur von Homey aus steuern, jedoch nur, wenn Ihr Kessel dies unterstützt. WARNUNG: LEGIONELLA-GEFAHR!",
+                "es": "Cuando está habilitado, podrás controlar la temperatura objetivo de ACS desde Homey, pero solo si tu caldera lo admite. ADVERTENCIA: ¡PELIGRO DE LEGIONELA!",
+                "fr": "Quand activé, vous pourrez contrôler la température cible de ECS depuis Homey, mais uniquement si votre chauffe-eau le prend en charge. ATTENTION : DANGER DE LÉGIONELLE !",
+                "it": "Quando abilitato, sarai in grado di controllare la temperatura target di ACS da Homey, ma solo se la tua caldaia lo supporta. AVVERTENZA: PERICOLO LEGIONELLA!",
+                "no": "Når aktivert, kan du kontrollere DHW-måltemperaturen fra Homey, men bare hvis kjelen din støtter dette. ADVARSEL: LEGIONELLAFARE!",
+                "sv": "När aktiverat kommer du att kunna styra DHW-måltemperaturen från Homey, men bara om din panna stöder detta. VARNING: LEGIONELLAFARA!",
+                "pl": "Po włączeniu będziesz mógł kontrolować docelową temperaturę CWU z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
+                "ru": "Когда это включено, вы сможете регулировать целевую температуру горячей воды от Homey, но только если ваш котел это поддерживает. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
+                "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 목표 온도를 제어할 수 있습니다. 경고: 레지오넬라 위험!"
               },
               "value": false
             },
@@ -959,11 +1606,31 @@
               "type": "number",
               "label": {
                 "en": "DHW Min Temp",
-                "nl": "Tapwater Min Temperatuur"
+                "nl": "Tapwater Min Temperatuur",
+                "da": "Minimum VVC Temp",
+                "de": "Minimale DHW-Temperatur",
+                "es": "Temp Mínima ACS",
+                "fr": "Température Min ECS",
+                "it": "Temperatura Min ACS",
+                "no": "Minimum DHW Temp",
+                "sv": "Min DHW Temperatur",
+                "pl": "Minimalna temp. CWU",
+                "ru": "Минимальная температура ГВС",
+                "ko": "DHW 최저 온도"
               },
               "hint": {
                 "en": "You will not be able to set a lower value from Homey. WARNING: LEGIONELLA DANGER!",
-                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!"
+                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!",
+                "da": "Du vil ikke kunne indstille en lavere værdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+                "de": "Sie können keinen niedrigeren Wert von Homey aus einstellen. WARNUNG: LEGIONELLA-GEFAHR!",
+                "es": "No podrás establecer un valor más bajo desde Homey. ADVERTENCIA: ¡PELIGRO DE LEGIONELA!",
+                "fr": "Vous ne pourrez pas définir une valeur plus basse depuis Homey. ATTENTION : DANGER DE LÉGIONELLE !",
+                "it": "Non sarai in grado di impostare un valore inferiore da Homey. AVVERTENZA: PERICOLO LEGIONELLA!",
+                "no": "Du vil ikke kunne sette en lavere verdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+                "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey. VARNING: LEGIONELLA FARA!",
+                "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
+                "ru": "Вы не сможете установить более низкое значение с помощью Homey. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
+                "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!"
               },
               "min": 40,
               "max": 65,
@@ -975,11 +1642,31 @@
               "type": "number",
               "label": {
                 "en": "DHW Max Temp",
-                "nl": "Tapwater Max Temperatuur"
+                "nl": "Tapwater Max Temperatuur",
+                "da": "Maksimum VVC Temp",
+                "de": "Maximale DHW-Temperatur",
+                "es": "Temp Máxima ACS",
+                "fr": "Température Max ECS",
+                "it": "Temperatura Max ACS",
+                "no": "Maksimum DHW Temp",
+                "sv": "Max DHW Temperatur",
+                "pl": "Maksymalna temp. CWU",
+                "ru": "Максимальная температура ГВС",
+                "ko": "DHW 최고 온도"
               },
               "hint": {
                 "en": "You will not be able to set a higher value from Homey. WARNING: LEGIONELLA DANGER!",
-                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!"
+                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!",
+                "da": "Du vil ikke kunne indstille en højere værdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+                "de": "Sie können keinen höheren Wert von Homey aus einstellen. WARNUNG: LEGIONELLA-GEFAHR!",
+                "es": "No podrás establecer un valor más alto desde Homey. ADVERTENCIA: ¡PELIGRO DE LEGIONELA!",
+                "fr": "Vous ne pourrez pas définir une valeur plus élevée depuis Homey. ATTENTION : DANGER DE LÉGIONELLE !",
+                "it": "Non sarai in grado di impostare un valore superiore da Homey. AVVERTENZA: PERICOLO LEGIONELLA!",
+                "no": "Du vil ikke kunne sette en høyere verdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+                "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey. VARNING: LEGIONELLA FARA!",
+                "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
+                "ru": "Вы не сможете установить более высокое значение с помощью Homey. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
+                "ko": "Homey에서 더 높은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!"
               },
               "min": 40,
               "max": 65,
@@ -992,7 +1679,17 @@
           "type": "group",
           "label": {
             "en": "Boiler Target Temp Control",
-            "nl": "CV Doeltemp Besturing"
+            "nl": "CV Doeltemp Besturing",
+            "da": "Kedlets måltempstyring",
+            "de": "Steuerung der Kesselzieltemperatur",
+            "es": "Control de Temp Objetivo de la Caldera",
+            "fr": "Contrôle Température Cible de la Chaudière",
+            "it": "Controllo temperatura target della caldaia",
+            "no": "Kjels temp-kontroll",
+            "sv": "Pannans temp-kontroll",
+            "pl": "Sterowanie temp. docelową kotła",
+            "ru": "Контроль целевой температуры котла",
+            "ko": "보일러 목표 온도 제어"
           },
           "children": [
             {
@@ -1000,11 +1697,31 @@
               "type": "checkbox",
               "label": {
                 "en": "Enable Temp Control",
-                "nl": "Activeer Temp Besturing"
+                "nl": "Activeer Temp Besturing",
+                "da": "Aktiver Tempstyring",
+                "de": "Temperaturkontrolle aktivieren",
+                "es": "Habilitar Control de Temp",
+                "fr": "Activer le contrôle de température",
+                "it": "Abilita controllo temperatura",
+                "no": "Aktiver Temp-kontroll",
+                "sv": "Aktivera Temp-kontroll",
+                "pl": "Włącz kontrolę temperatury",
+                "ru": "Включить контроль температуры",
+                "ko": "온도 제어 사용"
               },
               "hint": {
                 "en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",
-                "nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt."
+                "nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt.",
+                "da": "Når aktiveret kan du kontrollere kedletsvandets maksimumtemperatur fra Homey, men kun hvis din kedel understøtter dette.",
+                "de": "Wenn aktiviert, können Sie die maximale Kesselwassertemperatur von Homey aus steuern, jedoch nur, wenn Ihr Kessel dies unterstützt.",
+                "es": "Cuando está habilitado, podrás controlar la temperatura máxima del agua de la caldera desde Homey, pero solo si tu caldera lo admite.",
+                "fr": "Quand activé, vous pourrez contrôler la température maximale de l'eau de la chaudière depuis Homey, mais uniquement si votre chaudière le prend en charge.",
+                "it": "Quando abilitato, sarai in grado di controllare la temperatura massima dell'acqua della caldaia da Homey, ma solo se la tua caldaia lo supporta.",
+                "no": "Når aktivert, vil du kunne kontrollere den maksimale temperaturen på kjelevannet fra Homey, men bare hvis kjelen støtter dette.",
+                "sv": "När aktiverat kommer du att kunna styra den maximala pannvattentemperaturen från Homey, men bara om din panna stöder detta.",
+                "pl": "Po włączeniu będziesz mógł kontrolować maksymalną temperaturę wody w kotle z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje.",
+                "ru": "Когда это включено, вы сможете регулировать максимальную температуру котловой воды от Homey, но только если ваш котел это поддерживает.",
+                "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 보일러의 최대 온도를 제어할 수 있습니다."
               },
               "value": false
             },
@@ -1013,11 +1730,31 @@
               "type": "number",
               "label": {
                 "en": "Boiler Min Temp",
-                "nl": "CV Min Temperatuur"
+                "nl": "CV Min Temperatuur",
+                "da": "Minimum Kedlet Temp",
+                "de": "Minimale Kesseltemperatur",
+                "es": "Temp Mínima de la Caldera",
+                "fr": "Température Min de la Chaudière",
+                "it": "Temperatura Min del Caldaia",
+                "no": "Minimum Kjels Temp",
+                "sv": "Min Pannans Temp",
+                "pl": "Minimalna temp. kotła",
+                "ru": "Минимальная температура котла",
+                "ko": "보일러 최저 온도"
               },
               "hint": {
                 "en": "You will not be able to set a lower value from Homey.",
-                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey."
+                "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey.",
+                "da": "Du vil ikke kunne indstille en lavere værdi fra Homey.",
+                "de": "Sie können keinen niedrigeren Wert von Homey aus einstellen.",
+                "es": "No podrás establecer un valor más bajo desde Homey.",
+                "fr": "Vous ne pourrez pas définir une valeur plus basse depuis Homey.",
+                "it": "Non potrai impostare un valore inferiore da Homey.",
+                "no": "Du vil ikke kunne sette en lavere verdi fra Homey.",
+                "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey.",
+                "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey.",
+                "ru": "Вы не сможете установить более низкое значение с помощью Homey.",
+                "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다."
               },
               "min": 30,
               "max": 90,
@@ -1029,11 +1766,31 @@
               "type": "number",
               "label": {
                 "en": "RooBoilerm Max Temp",
-                "nl": "CV Max Temperatuur"
+                "nl": "CV Max Temperatuur",
+                "da": "Maksimum kedlet Temp",
+                "de": "Maximale Kesseltemperatur",
+                "es": "Temp Máxima de la Caldera",
+                "fr": "Température Max de la Chaudière",
+                "it": "Temperatura Max del Caldaia",
+                "no": "Maksimum Kjels Temp",
+                "sv": "Max Pannans Temp",
+                "pl": "Maksymalna temp. kotła",
+                "ru": "Максимальная температура котла",
+                "ko": "보일러 최고 온도"
               },
               "hint": {
                 "en": "You will not be able to set a higher value from Homey.",
-                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey."
+                "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey.",
+                "da": "Du vil ikke kunne indstille en højere værdi fra Homey.",
+                "de": "Sie können keinen höheren Wert von Homey aus einstellen.",
+                "es": "No podrás establecer un valor más alto desde Homey.",
+                "fr": "Vous ne pourrez pas définir une valeur plus élevée depuis Homey.",
+                "it": "Non potrai impostare un valore superiore da Homey.",
+                "no": "Du vil ikke kunne sette en høyere verdi fra Homey.",
+                "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey.",
+                "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey.",
+                "ru": "Вы не сможете установить более высокое значение с помощью Homey.",
+                "ko": "Homey에서 더 높은 값을 설정할 수 없습니다."
               },
               "min": 30,
               "max": 90,
@@ -1050,19 +1807,59 @@
       "type": "boolean",
       "title": {
         "en": "Fault",
-        "nl": "Storing"
+        "nl": "Storing",
+        "da": "Fejl",
+        "de": "Fehler",
+        "es": "Falla",
+        "fr": "Défaut",
+        "it": "Guasto",
+        "no": "Feil",
+        "sv": "Fel",
+        "pl": "Błąd",
+        "ru": "Ошибка",
+        "ko": "고장"
       },
       "desc": {
-        "en": "True when fault"
+        "en": "True when fault",
+        "da": "Sand, når fejl",
+        "de": "Wahr bei Fehler",
+        "es": "Verdadero cuando hay fallo",
+        "fr": "Vrai en cas de défaut",
+        "it": "Vero quando c'è un guasto",
+        "no": "Sant når feil",
+        "sv": "Sant vid fel",
+        "pl": "Prawda, gdy błąd",
+        "ru": "Истина при ошибке",
+        "ko": "고장일 때 참"
       },
       "insights": true,
       "insightsTitleTrue": {
         "en": "Fault Alarm On",
-        "nl": "Storing Alarm Aan"
+        "nl": "Storing Alarm Aan",
+        "da": "Fejlalarm Til",
+        "de": "Fehlalarm An",
+        "es": "Alarma de fallo activada",
+        "fr": "Alarme de défaut activée",
+        "it": "Allarme guasto attivato",
+        "no": "Feilalarm På",
+        "sv": "Fellarm På",
+        "pl": "Alarm błędu Włączony",
+        "ru": "Тревога об ошибке Вкл",
+        "ko": "고장 알람 켜짐"
       },
       "insightsTitleFalse": {
         "en": "Fault Alarm Off",
-        "nl": "Storing Alarm Uit"
+        "nl": "Storing Alarm Uit",
+        "da": "Fejlalarm Fra",
+        "de": "Fehlalarm Aus",
+        "es": "Alarma de fallo desactivada",
+        "fr": "Alarme de défaut désactivée",
+        "it": "Allarme guasto disattivato",
+        "no": "Feilalarm Av",
+        "sv": "Fellarm Av",
+        "pl": "Alarm błędu Wyłączony",
+        "ru": "Тревога об ошибке Выкл",
+        "ko": "고장 알람 꺼짐"
       },
       "getable": true,
       "setable": false,
@@ -1073,19 +1870,59 @@
       "type": "boolean",
       "title": {
         "en": "Offline",
-        "nl": "Offline"
+        "nl": "Offline",
+        "da": "Offline",
+        "de": "Offline",
+        "es": "Desconectado",
+        "fr": "Hors ligne",
+        "it": "Offline",
+        "no": "Frakoblet",
+        "sv": "Offline",
+        "pl": "Offline",
+        "ru": "Офлайн",
+        "ko": "오프라인"
       },
       "desc": {
-        "en": "True when offline"
+        "en": "True when offline",
+        "da": "Sand, når offline",
+        "de": "Wahr, wenn offline",
+        "es": "Verdadero cuando está desconectado",
+        "fr": "Vrai quand hors ligne",
+        "it": "Vero quando offline",
+        "no": "Sant når frakoblet",
+        "sv": "Sant när offline",
+        "pl": "Prawda, gdy offline",
+        "ru": "Истина, когда офлайн",
+        "ko": "오프라인일 때 참"
       },
       "insights": true,
       "insightsTitleTrue": {
         "en": "OTGW Offline",
-        "nl": "OTGW Offline"
+        "nl": "OTGW Offline",
+        "da": "OTGW offline",
+        "de": "OTGW offline",
+        "es": "OTGW Desconectado",
+        "fr": "OTGW Hors ligne",
+        "it": "OTGW offline",
+        "no": "OTGW er frakoblet",
+        "sv": "OTGW Offline",
+        "pl": "OTGW offline",
+        "ru": "OTGW офлайн",
+        "ko": "OTGW 오프라인"
       },
       "insightsTitleFalse": {
         "en": "OTGW Online",
-        "nl": "OTGW Online"
+        "nl": "OTGW Online",
+        "da": "OTGW online",
+        "de": "OTGW online",
+        "es": "OTGW Conectado",
+        "fr": "OTGW En ligne",
+        "it": "OTGW online",
+        "no": "OTGW er tilkoblet",
+        "sv": "OTGW Online",
+        "pl": "OTGW online",
+        "ru": "OTGW онлайн",
+        "ko": "OTGW 온라인"
       },
       "getable": true,
       "setable": false,
@@ -1096,19 +1933,59 @@
       "type": "boolean",
       "title": {
         "en": "Central Heating On",
-        "nl": "CV Aan"
+        "nl": "CV Aan",
+        "da": "Centralvarme tændt",
+        "de": "Zentralheizung an",
+        "es": "Calefacción central encendida",
+        "fr": "Chauffage central allumé",
+        "it": "Riscaldamento centralizzato acceso",
+        "no": "Sentralfyringen er på",
+        "sv": "Centralvärme på",
+        "pl": "Centralne ogrzewanie włączone",
+        "ru": "Центральное отопление включено",
+        "ko": "중앙 난방 켜짐"
       },
       "desc": {
-        "en": "True when on"
+        "en": "True when on",
+        "da": "Sandt når tændt",
+        "de": "Wahr, wenn eingeschaltet",
+        "es": "Verdadero cuando está encendido",
+        "fr": "Vrai quand allumé",
+        "it": "Vero quando acceso",
+        "no": "Sann når på",
+        "sv": "Sant när på",
+        "pl": "Prawda, gdy włączone",
+        "ru": "Истина, когда включено",
+        "ko": "켜져 있을 때 진실"
       },
       "insights": true,
       "insightsTitleTrue": {
         "en": "Central Heating On",
-        "nl": "CV Aan"
+        "nl": "CV Aan",
+        "da": "Centralvarme tændt",
+        "de": "Zentralheizung an",
+        "es": "Calefacción central encendida",
+        "fr": "Chauffage central allumé",
+        "it": "Riscaldamento centralizzato acceso",
+        "no": "Sentralfyringen er på",
+        "sv": "Centralvärme på",
+        "pl": "Centralne ogrzewanie włączone",
+        "ru": "Центральное отопление включено",
+        "ko": "중앙 난방 켜짐"
       },
       "insightsTitleFalse": {
         "en": "Central Heating Off",
-        "nl": "CV Uit"
+        "nl": "CV Uit",
+        "da": "Centralvarme slukket",
+        "de": "Zentralheizung aus",
+        "es": "Calefacción central apagada",
+        "fr": "Chauffage central éteint",
+        "it": "Riscaldamento centralizzato spento",
+        "no": "Sentralfyringen er av",
+        "sv": "Centralvärme av",
+        "pl": "Centralne ogrzewanie wyłączone",
+        "ru": "Центральное отопление выключено",
+        "ko": "중앙 난방 꺼짐"
       },
       "getable": true,
       "setable": false,
@@ -1119,19 +1996,59 @@
       "type": "boolean",
       "title": {
         "en": "DHW Blocking",
-        "nl": "Tapwater Blokkade"
+        "nl": "Tapwater Blokkade",
+        "da": "VVB Blokering",
+        "de": "WW-Sperre",
+        "es": "Bloqueo ACS",
+        "fr": "Blocage ECS",
+        "it": "Blocco ACS",
+        "no": "VVB Blokkering",
+        "sv": "VVB Blockering",
+        "pl": "Blokowanie CWU",
+        "ru": "Блокировка ГВС",
+        "ko": "DHW 차단"
       },
       "desc": {
-        "en": "True when on"
+        "en": "True when on",
+        "da": "Sand når tændt",
+        "de": "Wahr, wenn eingeschaltet",
+        "es": "Verdadero cuando está encendido",
+        "fr": "Vrai quand allumé",
+        "it": "Vero quando acceso",
+        "no": "Sann når på",
+        "sv": "Sant när på",
+        "pl": "Prawda, gdy włączone",
+        "ru": "Истина, когда включено",
+        "ko": "켜져 있을 때 참"
       },
       "insights": true,
       "insightsTitleTrue": {
         "en": "DHW Blocking On",
-        "nl": "Tapwater Blokkade Aan"
+        "nl": "Tapwater Blokkade Aan",
+        "da": "VVB Blokering Tændt",
+        "de": "WW-Sperre Ein",
+        "es": "Bloqueo ACS Activado",
+        "fr": "Blocage ECS Activé",
+        "it": "Blocco ACS Attivo",
+        "no": "VVB Blokkering På",
+        "sv": "VVB Blockering På",
+        "pl": "Blokowanie CWU Włączone",
+        "ru": "Блокировка ГВС Включено",
+        "ko": "DHW 차단 켜짐"
       },
       "insightsTitleFalse": {
         "en": "DHW Blocking Off",
-        "nl": "Tapwater Blokkade Uit"
+        "nl": "Tapwater Blokkade Uit",
+        "da": "VVB Blokering Slukket",
+        "de": "WW-Sperre Aus",
+        "es": "Bloqueo ACS Desactivado",
+        "fr": "Blocage ECS Désactivé",
+        "it": "Blocco ACS Disattivo",
+        "no": "VVB Blokkering Av",
+        "sv": "VVB Blockering Av",
+        "pl": "Blokowanie CWU Wyłączone",
+        "ru": "Блокировка ГВС Выключено",
+        "ko": "DHW 차단 꺼짐"
       },
       "getable": true,
       "setable": true,
@@ -1141,19 +2058,59 @@
       "type": "boolean",
       "title": {
         "en": "DHW On",
-        "nl": "Tapwater Aan"
+        "nl": "Tapwater Aan",
+        "da": "VVB Til",
+        "de": "WW An",
+        "es": "ACS Encendido",
+        "fr": "ECS Allumé",
+        "it": "ACS Acceso",
+        "no": "VVB På",
+        "sv": "VVB På",
+        "pl": "CWU Włączony",
+        "ru": "ГВС Включено",
+        "ko": "온수기 켜짐"
       },
       "desc": {
-        "en": "True when on"
+        "en": "True when on",
+        "da": "Sand, når den er tændt",
+        "de": "Wahr, wenn an",
+        "es": "Verdadero cuando está encendido",
+        "fr": "Vrai quand allumé",
+        "it": "Vero quando acceso",
+        "no": "Sant når på",
+        "sv": "Sant när på",
+        "pl": "Prawda, gdy włączone",
+        "ru": "Истина, когда включено",
+        "ko": "켜졌을 때 참"
       },
       "insights": true,
       "insightsTitleTrue": {
         "en": "DHW On",
-        "nl": "Tapwater Aan"
+        "nl": "Tapwater Aan",
+        "da": "VVB Til",
+        "de": "WW An",
+        "es": "ACS Encendido",
+        "fr": "ECS Allumé",
+        "it": "ACS Acceso",
+        "no": "VVB På",
+        "sv": "VVB På",
+        "pl": "CWU Włączony",
+        "ru": "ГВС Включено",
+        "ko": "온수기 켜짐"
       },
       "insightsTitleFalse": {
         "en": "DHW Off",
-        "nl": "Tapwater Uit"
+        "nl": "Tapwater Uit",
+        "da": "VVB Fra",
+        "de": "WW Aus",
+        "es": "ACS Apagado",
+        "fr": "ECS Éteint",
+        "it": "ACS Spento",
+        "no": "VVB Av",
+        "sv": "VVB Av",
+        "pl": "CWU Wyłączony",
+        "ru": "ГВС Выключено",
+        "ko": "온수기 꺼짐"
       },
       "getable": true,
       "setable": false,
@@ -1164,19 +2121,59 @@
       "type": "boolean",
       "title": {
         "en": "Flame On",
-        "nl": "Vlam Aan"
+        "nl": "Vlam Aan",
+        "da": "Flamme Tændt",
+        "de": "Flamme An",
+        "es": "Llama Encendida",
+        "fr": "Flamme Allumée",
+        "it": "Fiamma Accesa",
+        "no": "Flamme På",
+        "sv": "Flamma På",
+        "pl": "Płomień Włączony",
+        "ru": "Пламя Включено",
+        "ko": "불꽃 켜짐"
       },
       "desc": {
-        "en": "True when fault"
+        "en": "True when fault",
+        "da": "Sandt ved fejl",
+        "de": "Wahr bei Fehler",
+        "es": "Verdadero en caso de falla",
+        "fr": "Vrai en cas de défaut",
+        "it": "Vero in caso di guasto",
+        "no": "Sant ved feil",
+        "sv": "Sant vid fel",
+        "pl": "Prawda w przypadku błędu",
+        "ru": "Истина при ошибке",
+        "ko": "오류 시 참"
       },
       "insights": false,
       "insightsTitleTrue": {
         "en": "Flame On",
-        "nl": "Vlam Aan"
+        "nl": "Vlam Aan",
+        "da": "Flamme Tændt",
+        "de": "Flamme An",
+        "es": "Llama Encendida",
+        "fr": "Flamme Allumée",
+        "it": "Fiamma Accesa",
+        "no": "Flamme På",
+        "sv": "Flamma På",
+        "pl": "Płomień Włączony",
+        "ru": "Пламя Включено",
+        "ko": "불꽃 켜짐"
       },
       "insightsTitleFalse": {
         "en": "Flame Off",
-        "nl": "Vlam Uit"
+        "nl": "Vlam Uit",
+        "da": "Flamme Slukket",
+        "de": "Flamme Aus",
+        "es": "Llama Apagada",
+        "fr": "Flamme Éteinte",
+        "it": "Fiamma Spenta",
+        "no": "Flamme Av",
+        "sv": "Flamma Av",
+        "pl": "Płomień Wyłączony",
+        "ru": "Пламя Выключено",
+        "ko": "불꽃 꺼짐"
       },
       "getable": true,
       "setable": false,
@@ -1187,14 +2184,34 @@
       "type": "number",
       "title": {
         "en": "DHW Burner",
-        "nl": "Tapwater brander"
+        "nl": "Tapwater brander",
+        "da": "VVB Brænder",
+        "de": "Warmwasserbrenner",
+        "es": "Quemador ACS",
+        "fr": "Brûleur ECS",
+        "it": "Bruciatore ACS",
+        "no": "VVB-brenner",
+        "sv": "VV-brännare",
+        "pl": "Palnik CWU",
+        "ru": "Горелка ГВС",
+        "ko": "온수기 버너"
       },
       "insights": true,
       "getable": true,
       "uiComponent": "sensor",
       "units": {
         "en": "Hours",
-        "nl": "Uren"
+        "nl": "Uren",
+        "da": "Timer",
+        "de": "Stunden",
+        "es": "Horas",
+        "fr": "Heures",
+        "it": "Ore",
+        "no": "Timer",
+        "sv": "Timmar",
+        "pl": "Godziny",
+        "ru": "Часы",
+        "ko": "시간"
       },
       "decimals": 0,
       "icon": "./assets/burner_hours.svg"
@@ -1203,14 +2220,34 @@
       "type": "number",
       "title": {
         "en": "Burner",
-        "nl": "Brander"
+        "nl": "Brander",
+        "da": "Brænder",
+        "de": "Brenner",
+        "es": "Quemador",
+        "fr": "Brûleur",
+        "it": "Bruciatore",
+        "no": "Brenner",
+        "sv": "Brännare",
+        "pl": "Palnik",
+        "ru": "Горелка",
+        "ko": "버너"
       },
       "insights": true,
       "getable": true,
       "uiComponent": "sensor",
       "units": {
         "en": "Hours",
-        "nl": "Uren"
+        "nl": "Uren",
+        "da": "Timer",
+        "de": "Stunden",
+        "es": "Horas",
+        "fr": "Heures",
+        "it": "Ore",
+        "no": "Timer",
+        "sv": "Timmar",
+        "pl": "Godziny",
+        "ru": "Часы",
+        "ko": "시간"
       },
       "decimals": 0,
       "icon": "./assets/burner_hours.svg"
@@ -1219,14 +2256,34 @@
       "type": "number",
       "title": {
         "en": "Burner Modulation",
-        "nl": "Brander Modulatie"
+        "nl": "Brander Modulatie",
+        "da": "Brænder Modulation",
+        "de": "Brenner Modulation",
+        "es": "Modulación del Quemador",
+        "fr": "Modulation du Brûleur",
+        "it": "Modulazione del Bruciatore",
+        "no": "Brennermodulasjon",
+        "sv": "Brännarmodulering",
+        "pl": "Modulacja Palnika",
+        "ru": "Модуляция Горелки",
+        "ko": "버너 변조"
       },
       "insights": true,
       "getable": true,
       "uiComponent": "sensor",
       "units": {
         "en": "%",
-        "nl": "%"
+        "nl": "%",
+        "da": "%",
+        "de": "%",
+        "es": "%",
+        "fr": "%",
+        "it": "%",
+        "no": "%",
+        "sv": "%",
+        "pl": "%",
+        "ru": "%",
+        "ko": "%"
       },
       "decimals": 0,
       "icon": "./assets/burner_mod.svg"
@@ -1235,14 +2292,34 @@
       "type": "number",
       "title": {
         "en": "Burner Startups",
-        "nl": "Brander Startups"
+        "nl": "Brander Startups",
+        "da": "Brænder Startups",
+        "de": "Brenner-Startups",
+        "es": "Startups de Quemadores",
+        "fr": "Démarrages de Brûleur",
+        "it": "Start-up del Bruciatore",
+        "no": "Brenner Startups",
+        "sv": "Brännare Startups",
+        "pl": "Startupy Palników",
+        "ru": "Стартапы Горелок",
+        "ko": "버너 스타트업"
       },
       "insights": true,
       "getable": true,
       "uiComponent": "sensor",
       "units": {
         "en": "",
-        "nl": ""
+        "nl": "",
+        "da": "",
+        "de": "",
+        "es": "",
+        "fr": "",
+        "it": "",
+        "no": "",
+        "sv": "",
+        "pl": "",
+        "ru": "",
+        "ko": ""
       },
       "decimals": 0,
       "icon": "./assets/burner_start.svg"

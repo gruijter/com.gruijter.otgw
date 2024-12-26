@@ -1,149 +1,235 @@
 {
-	"name": {
-		"en": "OTGW"
-	},
-	"class": "other",
-	"capabilities": [
-		"measure_temperature.room",
-		"target_temperature.room",
-
-		"measure_temperature.return",
-
-		"target_temperature.boiler_max",
-
-		"measure_temperature.boiler",
-		"target_temperature.boiler",
-
-		"measure_temperature.dhw",
-		"target_temperature.dhw",
-
-		"measure_water.dhw",
-		"measure_pressure.ch",
-
-		"ch_onoff",
-		"dhw_onoff",
-		"flame_onoff",
-		"meter_burner_modulation",
-		
-		"meter_burner_starts",
-		"meter_burner_hours",
-		"meter_burner_dhwhours",
-		"alarm_fault",
-		"alarm_offline",
-
-		"dhw_block_onoff"
-	],
-	"capabilitiesOptions": {
-		"measure_temperature.room": {
-			"type": "number",
-			"title": { "en": "Room temp", "nl": "Ruimte temp" },
-			"uiComponent": "thermostat",
-			"insights": true
-		},
-		"target_temperature.room": {
-			"type": "number",
-			"title": { "en": "Room target temp", "nl": "Ruimte doel temp" },
-			"uiComponent": "sensor",
-			"min": 1,
-			"max": 30,
-			"step": 0.1,
-			"settable": true,
-			"insights": true
-		},
-		"measure_pressure.ch": {
-			"type": "number",
-			"title": { "en": "CH water pressure", "nl": "CV waterdruk" },
-			"units": { "en": "Bar", "nl": "Bar" },
-			"decimals": 2,
-			"uiComponent": "sensor",
-			"insights": true
-		},
-		"measure_temperature.boiler": {
-			"type": "number",
-			"title": { "en": "Boiler temp", "nl": "Ketel temp" },
-			"uiComponent": "sensor",
-			"insights": true
-		},
-		"target_temperature.boiler": {
-			"type": "number",
-			"title": { "en": "Boiler target temp", "nl": "Ketel doel temp" },
-			"uiComponent": "sensor",
-			"min": 10,
-			"max": 90,
-			"step": 1,
-			"settable": true,
-			"insights": true
-		},
-		"target_temperature.boiler_max": {
-			"type": "number",
-			"title": { "en": "Boiler max target temp", "nl": "Ketel max doel temp" },
-			"uiComponent": "thermostat",
-			"min": 30,
-			"max": 90,
-			"step": 1,
-			"settable": true,
-			"insights": true
-		},
-		"measure_water.dhw": {
-			"type": "number",
-			"title": { "en": "DHW flow", "nl": "Tapwater flow" },
-			"units": { "en": "L/min", "nl": "L/min" },
-			"decimals": 2,
-			"uiComponent": "sensor",
-			"insights": true
-		},
-		"measure_temperature.dhw": {
-			"type": "number",
-			"title": { "en": "DHW temp", "nl": "Tapwater temp" },
-			"uiComponent": "sensor",
-			"insights": true
-		},
-		"target_temperature.dhw": {
-			"type": "number",
-			"title": { "en": "DHW target temp", "nl": "Tapwater doel temp" },
-			"uiComponent": "thermostat",
-			"min": 40,
-			"max": 65,
-			"step": 1,
-			"settable": true,
-			"insights": true
-		},
-		"measure_temperature.return": {
-			"type": "number",
-			"title": { "en": "Return temp", "nl": "Retour temp" },
-			"uiComponent": "sensor",
-			"insights": true
-		}
-	},
-	"platforms": [
-		"local"
-	],
-	"connectivity": [
-		"lan"
-	],
-	"images": {
-		"small": "{{driverAssetsPath}}/images/small.jpg",
-		"large": "{{driverAssetsPath}}/images/large.jpg"
-	},
-	"energy": {
-		"approximation": {
-			"usageConstant": 2
-		}
-	},
-	"pair": [
-		{
-			"id": "mqtt_settings"
-		},
-		{
-			"id": "list_devices",
-			"template": "list_devices",
-			"navigation": {
-				"next": "add_devices"
-			}
-		},
-		{
-			"id": "add_devices",
-			"template": "add_devices"
-		}
-	]
+  "name": {
+    "en": "OTGW"
+  },
+  "class": "other",
+  "capabilities": [
+    "measure_temperature",
+    "target_temperature",
+    "measure_temperature.return",
+    "target_temperature.boiler_max",
+    "measure_temperature.boiler",
+    "target_temperature.boiler",
+    "measure_temperature.dhw",
+    "target_temperature.dhw",
+    "measure_water.dhw",
+    "measure_pressure.ch",
+    "ch_onoff",
+    "dhw_onoff",
+    "flame_onoff",
+    "meter_burner_modulation",
+    "meter_burner_starts",
+    "meter_burner_hours",
+    "meter_burner_dhwhours",
+    "alarm_fault",
+    "alarm_offline",
+    "dhw_block_onoff"
+  ],
+  "capabilitiesOptions": {
+    "measure_pressure.ch": {
+      "type": "number",
+      "title": {
+        "en": "CH water pressure",
+        "nl": "CV waterdruk",
+        "da": "CH vandtryk",
+        "de": "CH Wasserdruck",
+        "es": "Presión de agua de CH",
+        "fr": "Pression d'eau CH",
+        "it": "Pressione dell'acqua CH",
+        "no": "CH vanntrykk",
+        "sv": "CH vattentryck",
+        "pl": "Ciśnienie wody CH",
+        "ru": "Давление воды CH",
+        "ko": "CH 물 압력"
+      },
+      "units": {
+        "en": "Bar",
+        "nl": "Bar"
+      },
+      "decimals": 2,
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "measure_temperature.boiler": {
+      "type": "number",
+      "title": {
+        "en": "Boiler temp",
+        "nl": "Ketel temp",
+        "da": "Kedlens temp",
+        "de": "Kesseltemp",
+        "es": "Temp de caldera",
+        "fr": "Temp chaudière",
+        "it": "Temp caldaia",
+        "no": "Kjeler temp",
+        "sv": "Panna temp",
+        "pl": "Tempora kotła",
+        "ru": "Температура котла",
+        "ko": "보일러 온도"
+      },
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "target_temperature.boiler": {
+      "type": "number",
+      "title": {
+        "en": "Boiler target temp",
+        "nl": "Ketel doel temp",
+        "da": "Målkedele temp",
+        "de": "Zielkesseltemp",
+        "es": "Temp objetivo de la caldera",
+        "fr": "Temp cible chaudière",
+        "it": "Temp obiettivo caldaia",
+        "no": "Mål kjeler temp",
+        "sv": "Målpanna temp",
+        "pl": "Cel temp. kotła",
+        "ru": "Целевая темп котла",
+        "ko": "보일러 목표 온도"
+      },
+      "uiComponent": "sensor",
+      "min": 10,
+      "max": 90,
+      "step": 1,
+      "settable": true,
+      "insights": true
+    },
+    "target_temperature.boiler_max": {
+      "type": "number",
+      "title": {
+        "en": "Boiler max target temp",
+        "nl": "Ketel max doel temp",
+        "da": "Kedel maks måltemp",
+        "de": "Kessel max Zieltemp",
+        "es": "Temp objetivo máx de la caldera",
+        "fr": "Temp max cible chaudière",
+        "it": "Temp max obiettivo caldaia",
+        "no": "Kjeler maks måltemp",
+        "sv": "Panna max måltemp",
+        "pl": "Max temp. kotła",
+        "ru": "Макс целевая темп котла",
+        "ko": "보일러 최대 목표 온도"
+      },
+      "uiComponent": "thermostat",
+      "min": 30,
+      "max": 90,
+      "step": 1,
+      "settable": true,
+      "insights": true
+    },
+    "measure_water.dhw": {
+      "type": "number",
+      "title": {
+        "en": "DHW flow",
+        "nl": "Tapwater flow",
+        "da": "DHW flow",
+        "de": "DHW-Fluss",
+        "es": "Flujo DHW",
+        "fr": "Débit ECS",
+        "it": "Flusso ACS",
+        "no": "DHW flyt",
+        "sv": "DHW-flöde",
+        "pl": "Przepływ CWU",
+        "ru": "Поток ГВС",
+        "ko": "온수 흐름"
+      },
+      "units": {
+        "en": "L/min",
+        "nl": "L/min"
+      },
+      "decimals": 2,
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "measure_temperature.dhw": {
+      "type": "number",
+      "title": {
+        "en": "DHW temp",
+        "nl": "Tapwater temp",
+        "da": "DHW temp",
+        "de": "DHW Temperatur",
+        "es": "Temp DHW",
+        "fr": "Temp ECS",
+        "it": "Temp ACS",
+        "no": "DHW temp",
+        "sv": "DHW temp",
+        "pl": "Temp CWU",
+        "ru": "Температура ГВС",
+        "ko": "온수 온도"
+      },
+      "uiComponent": "sensor",
+      "insights": true
+    },
+    "target_temperature.dhw": {
+      "type": "number",
+      "title": {
+        "en": "DHW target temp",
+        "nl": "Tapwater doel temp",
+        "da": "DHW måltemp",
+        "de": "DHW-Zieltemp",
+        "es": "Temp objetivo DHW",
+        "fr": "Temp cible ECS",
+        "it": "Temp obiettivo ACS",
+        "no": "DHW måltemp",
+        "sv": "DHW måltemp",
+        "pl": "Cel temp. CWU",
+        "ru": "Целевая температура ГВС",
+        "ko": "온수 목표 온도"
+      },
+      "uiComponent": "thermostat",
+      "min": 40,
+      "max": 65,
+      "step": 1,
+      "settable": true,
+      "insights": true
+    },
+    "measure_temperature.return": {
+      "type": "number",
+      "title": {
+        "en": "Return temp",
+        "nl": "Retour temp",
+        "da": "Returtemp",
+        "de": "Rücklauftemp",
+        "es": "Temp de retorno",
+        "fr": "Temp retour",
+        "it": "Temp di ritorno",
+        "no": "Returtemp",
+        "sv": "Returtemp",
+        "pl": "Temp powrotu",
+        "ru": "Температура возврата",
+        "ko": "리턴 온도"
+      },
+      "uiComponent": "sensor",
+      "insights": true
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.jpg",
+    "large": "{{driverAssetsPath}}/images/large.jpg"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 2
+    }
+  },
+  "pair": [
+    {
+      "id": "mqtt_settings"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

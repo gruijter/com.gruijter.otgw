@@ -1,28 +1,48 @@
 {
-    "id": "set_target_temp_dhw",
-    "title": {
-        "en": "Set target temperature DHW",
-        "nl": "Doeltemperatuur tapwater instellen"
+  "id": "set_target_temp_dhw",
+  "title": {
+    "en": "Set target temperature DHW",
+    "nl": "Doeltemperatuur tapwater instellen",
+    "da": "Indstil måltemperatur VVB",
+    "de": "Zieltemperatur für WW einstellen",
+    "es": "Establecer temperatura objetivo ACS",
+    "fr": "Définir la température cible ECS",
+    "it": "Imposta temperatura obiettivo ACS",
+    "no": "Sett måltemperatur VVB",
+    "sv": "Sätt måltemperatur VVB",
+    "pl": "Ustaw docelową temperaturę CWU",
+    "ru": "Установить целевую температуру ГВС",
+    "ko": "온수 목표 온도 설정"
+  },
+  "titleFormatted": {
+    "en": "Set target temperature DHW [[temp]]",
+    "nl": "Tapwater doeltemperatuur [[temp]]",
+    "da": "Indstil måltemperatur VVB [[temp]]",
+    "de": "Zieltemperatur für WW [[temp]] einstellen",
+    "es": "Establecer temperatura objetivo ACS [[temp]]",
+    "fr": "Définir la température cible ECS [[temp]]",
+    "it": "Imposta temperatura obiettivo ACS [[temp]]",
+    "no": "Sett måltemperatur VVB [[temp]]",
+    "sv": "Sätt måltemperatur VVB [[temp]]",
+    "pl": "Ustaw docelową temperaturę CWU [[temp]]",
+    "ru": "Установить целевую температуру ГВС [[temp]]",
+    "ko": "온수 목표 온도 설정 [[temp]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
     },
-    "titleFormatted": {
-        "en": "Set target temperature DHW [[temp]]",
-        "nl": "Tapwater doeltemperatuur [[temp]]"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        },
-        {
-            "type": "range",
-            "name": "temp",
-            "min": 40,
-            "max": 65,
-            "step": 1,
-            "label": "°C",
-            "labelDecimals": 1
-        }
-    ]
+    {
+      "type": "range",
+      "name": "temp",
+      "min": 40,
+      "max": 65,
+      "step": 1,
+      "label": "°C",
+      "labelDecimals": 1
+    }
+  ]
 }

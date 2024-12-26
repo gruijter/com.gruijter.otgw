@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "DHW turned Off",
-        "nl": "Tapwater ging Uit"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "DHW turned Off",
+    "nl": "Tapwater ging Uit",
+    "da": "VVB slukket",
+    "de": "WW aus",
+    "es": "ACS apagado",
+    "fr": "ECS éteint",
+    "it": "ACS disattivato",
+    "no": "VVB slått av",
+    "sv": "VV avstängd",
+    "pl": "CWU wyłączony",
+    "ru": "ГВС выключено",
+    "ko": "급탕 끄기"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

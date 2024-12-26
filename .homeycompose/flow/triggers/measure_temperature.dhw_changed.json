@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "DHW temp changed",
-		"nl": "Tapwater temp veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_temperature.dhw",
-			"type": "number",
-			"title": { 
-				"en": "DHW temp",
-				"nl": "Tapwater temp"
-			},
-			"example": 58
-		}
-	]
+  "title": {
+    "en": "DHW temp changed",
+    "nl": "Tapwater temp veranderd",
+    "da": "VVB temp ændret",
+    "de": "DHW-Temperatur geändert",
+    "es": "Temp ACS cambiada",
+    "fr": "Temp ECS changée",
+    "it": "Temp DHW modificata",
+    "no": "DHW temp endret",
+    "sv": "VVC-temperatur ändrad",
+    "pl": "Temp CWU zmieniona",
+    "ru": "Температура ГВС изменена",
+    "ko": "DHW 온도 변경됨"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_temperature.dhw",
+      "type": "number",
+      "title": {
+        "en": "DHW temp",
+        "nl": "Tapwater temp",
+        "da": "VVB temp",
+        "de": "DHW-Temperatur",
+        "es": "Temp ACS",
+        "fr": "Temp ECS",
+        "it": "Temp DHW",
+        "no": "DHW temp",
+        "sv": "VVC-temperatur",
+        "pl": "Temp CWU",
+        "ru": "Температура ГВС",
+        "ko": "DHW 온도"
+      },
+      "example": 58
+    }
+  ]
 }

@@ -1,26 +1,46 @@
 {
-    "id": "send_command",
-    "title": {
-        "en": "Send a command",
-        "nl": "Stuur een commando"
+  "id": "send_command",
+  "title": {
+    "en": "Send a command",
+    "nl": "Stuur een commando",
+    "da": "Send en kommando",
+    "de": "Senden Sie einen Befehl",
+    "es": "Enviar un comando",
+    "fr": "Envoyer une commande",
+    "it": "Invia un comando",
+    "no": "Send en kommando",
+    "sv": "Skicka ett kommando",
+    "pl": "Wyślij polecenie",
+    "ru": "Отправьте команду",
+    "ko": "명령 보내기"
+  },
+  "hint": {
+    "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
+  },
+  "titleFormatted": {
+    "en": "Send command: [[command]]",
+    "nl": "Stuur commando: [[command]]",
+    "da": "Send kommando: [[command]]",
+    "de": "Befehl senden: [[command]]",
+    "es": "Enviar comando: [[command]]",
+    "fr": "Envoyer commande : [[command]]",
+    "it": "Invia comando: [[command]]",
+    "no": "Send kommando: [[command]]",
+    "sv": "Skicka kommando: [[command]]",
+    "pl": "Wyślij polecenie: [[command]]",
+    "ru": "Отправить команду: [[command]]",
+    "ko": "명령 보내기: [[command]]"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
     },
-    "hint": { 
-        "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
-    },
-    "titleFormatted": {
-        "en": "Send command: [[command]]",
-        "nl": "Stuur commando: [[command]]"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        },
-        {
-            "type": "text",
-            "name": "command"
-        }
-    ]
+    {
+      "type": "text",
+      "name": "command"
+    }
+  ]
 }

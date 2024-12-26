@@ -1,5 +1,5 @@
 /*
-Copyright 2023, Robin de Gruijter (gruijter@hotmail.com)
+Copyright 2023 - 2024, Robin de Gruijter (gruijter@hotmail.com)
 
 This file is part of com.gruijter.otgw.
 
@@ -23,29 +23,29 @@ const Homey = require('homey');
 
 class MyApp extends Homey.App {
 
-	async onInit() {
-		this.registerFlowListeners();
-		this.log('App has been initialized');
-	}
+  async onInit() {
+    this.registerFlowListeners();
+    this.log('App has been initialized');
+  }
 
-	registerFlowListeners() {
-		// action cards
-		const setTargetTempRoom = this.homey.flow.getActionCard('set_target_temp_room');
-		setTargetTempRoom.registerRunListener((args) => args.device.setTargetTempRoom(args.temp, 'flow'));
+  registerFlowListeners() {
+    // action cards
+    // const setTargetTempRoom = this.homey.flow.getActionCard('set_target_temp_room');
+    // setTargetTempRoom.registerRunListener((args) => args.device.setTargetTempRoom(args.temp, 'flow'));
 
-		const setMaxTargetTempBoiler = this.homey.flow.getActionCard('set_max_target_temp_boiler');
-		setMaxTargetTempBoiler.registerRunListener((args) => args.device.setMaxTargetTempBoiler(args.temp, 'flow'));
+    const setMaxTargetTempBoiler = this.homey.flow.getActionCard('set_max_target_temp_boiler');
+    setMaxTargetTempBoiler.registerRunListener((args) => args.device.setMaxTargetTempBoiler(args.temp, 'flow'));
 
-		const setTargetTempDhw = this.homey.flow.getActionCard('set_target_temp_dhw');
-		setTargetTempDhw.registerRunListener((args) => args.device.setTargetTempDhw(args.temp, 'flow'));
+    const setTargetTempDhw = this.homey.flow.getActionCard('set_target_temp_dhw');
+    setTargetTempDhw.registerRunListener((args) => args.device.setTargetTempDhw(args.temp, 'flow'));
 
-		const setDhwBlock = this.homey.flow.getActionCard('set_dhw_block');
-		setDhwBlock.registerRunListener((args) => args.device.setDhwBlock(args.block, 'flow'));
+    const setDhwBlock = this.homey.flow.getActionCard('set_dhw_block');
+    setDhwBlock.registerRunListener((args) => args.device.setDhwBlock(args.block, 'flow'));
 
-		const sendCommand = this.homey.flow.getActionCard('send_command');
-		sendCommand.registerRunListener((args) => args.device.sendCommand(args.command, 'flow'));
+    const sendCommand = this.homey.flow.getActionCard('send_command');
+    sendCommand.registerRunListener((args) => args.device.sendCommand(args.command, 'flow'));
+  }
 
-	}
 }
 
 module.exports = MyApp;

@@ -1,270 +1,620 @@
 [
-	{
-		"type": "group",
-		"label": {
-				"en": "Gateway information"
-		},
-		"children": [
-			{
-				"id": "uid",
-				"type": "label",
-				"label": {
-						"en": "Unique ID"
-				},
-				"value": ""
-			},
-			{
-				"id": "firmware_otgw",
-				"type": "label",
-				"label": {
-						"en": "OTGW Firmware"
-				},
-				"value": ""
-			},
-			{
-				"id": "firmware_pic",
-				"type": "label",
-				"label": {
-						"en": "PIC Firmware"
-				},
-				"value": ""
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "MQTT settings"
-		},
-		"children": [
-			{
-				"id": "host",
-				"type": "text",
-				"label": {
-						"en": "Host"
-				},
-				"value": ""
-			},
-			{
-				"id": "port",
-				"type": "number",
-				"label": {
-						"en": "Port"
-				},
-				"value": 1883
-			},
-			{
-				"id": "tls",
-				"type": "checkbox",
-				"label": {
-						"en": "Use TLS"
-				},
-				"value": false
-			},
-			{
-				"id": "username",
-				"type": "text",
-				"label": {
-						"en": "Username"
-				},
-				"value": ""
-			},
-			{
-				"id": "password",
-				"type": "password",
-				"label": {
-						"en": "Password"
-				},
-				"value": ""
-			},
-			{
-				"id": "topic",
-				"type": "text",
-				"label": {
-						"en": "Base topic",
-						"nl": "Base topic"
-				},
-				"hint" : {
-					"en": "The MQTT Topic where the Gateway is uniquely subscribed. E.g. OTGW/value/otgw-A31F222A38AD",
-					"nl": "Het MQTT topic waarop de Gateway uniek is geabonneerd. Bijv. OTGW/value/otgw-A31F222A38AD"
-				},
-				"value": ""
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "Room Temp Control",
-				"nl": "Ruimte Temp Besturing"
-		},
-		"children": [
-			{
-				"id": "room_target_temp_control",
-				"type": "checkbox",
-				"label": {
-						"en": "Enable Temp Control",
-						"nl": "Activeer Temp Besturing"
-				},
-				"hint" : {
-					"en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
-					"nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteunt."
-				},
-				"value": false
-			},
-			{
-				"id": "room_target_temp_min",
-				"type": "number",
-				"label": {
-					"en": "Room Min Temp",
-					"nl": "Ruimte Min Temperatuur"
-				},
-				"hint" : {
-					"en": "You will not be able to set a lower value from Homey",
-					"nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey"
-				},
-				"min": 1,
-				"max": 30,
-				"step": 0.1,
-				"value": 1
-			},
-			{
-				"id": "room_target_temp_max",
-				"type": "number",
-				"label": {
-					"en": "Room Max Temp",
-					"nl": "Ruimte Max Temperatuur"
-				},
-				"hint" : {
-					"en": "You will not be able to set a higher value from Homey",
-					"nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey"
-				},
-				"min": 1,
-				"max": 30,
-				"step": 0.1,
-				"value": 30
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "DHW Temp Control",
-				"nl": "Tapwater Temp Besturing"
-		},
-		"children": [
-			{
-				"id": "dhw_block_control",
-				"type": "checkbox",
-				"label": {
-						"en": "Enable DHW Blocking",
-						"nl": "Activeer Tapwater Blokkering"
-				},
-				"hint" : {
-					"en": "When enabled you will be able to block the use of DHW from Homey, but only if your Boiler supports this.",
-					"nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteunt."
-				},
-				"value": false
-			},
-			{
-				"id": "dhw_target_temp_control",
-				"type": "checkbox",
-				"label": {
-						"en": "Enable Temp Control",
-						"nl": "Activeer Temp Besturing"
-				},
-				"hint" : {
-					"en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
-					"nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt. PAS OP: LEGIONELLA GEVAAR!"
-				},
-				"value": false
-			},
-			{
-				"id": "dhw_target_temp_min",
-				"type": "number",
-				"label": {
-					"en": "DHW Min Temp",
-					"nl": "Tapwater Min Temperatuur"
-				},
-				"hint" : {
-					"en": "You will not be able to set a lower value from Homey. WARNING: LEGIONELLA DANGER!",
-					"nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!"
-				},
-				"min": 40,
-				"max": 65,
-				"step": 1,
-				"value": 55
-			},
-			{
-				"id": "dhw_target_temp_max",
-				"type": "number",
-				"label": {
-					"en": "DHW Max Temp",
-					"nl": "Tapwater Max Temperatuur"
-				},
-				"hint" : {
-					"en": "You will not be able to set a higher value from Homey. WARNING: LEGIONELLA DANGER!",
-					"nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!"
-				},
-				"min": 40,
-				"max": 65,
-				"step": 1,
-				"value": 65
-			}
-		]
-	},
-	{
-		"type": "group",
-		"label": {
-				"en": "Boiler Target Temp Control",
-				"nl": "CV Doeltemp Besturing"
-		},
-		"children": [
-			{
-				"id": "boiler_target_temp_control",
-				"type": "checkbox",
-				"label": {
-						"en": "Enable Temp Control",
-						"nl": "Activeer Temp Besturing"
-				},
-				"hint" : {
-					"en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",
-					"nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt."
-				},
-				"value": false
-			},
-			{
-				"id": "boiler_target_temp_min",
-				"type": "number",
-				"label": {
-					"en": "Boiler Min Temp",
-					"nl": "CV Min Temperatuur"
-				},
-				"hint" : {
-					"en": "You will not be able to set a lower value from Homey.",
-					"nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey."
-				},
-				"min": 30,
-				"max": 90,
-				"step": 1,
-				"value": 30
-			},
-			{
-				"id": "boiler_target_temp_max",
-				"type": "number",
-				"label": {
-					"en": "RooBoilerm Max Temp",
-					"nl": "CV Max Temperatuur"
-				},
-				"hint" : {
-					"en": "You will not be able to set a higher value from Homey.",
-					"nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey."
-				},
-				"min": 30,
-				"max": 90,
-				"step": 1,
-				"value": 90
-			}
-		]
-	}
+  {
+    "type": "group",
+    "label": {
+      "en": "Gateway information",
+      "da": "Gateway-information",
+      "de": "Gateway-Informationen",
+      "es": "Información del gateway",
+      "fr": "Informations de passerelle",
+      "it": "Informazioni sul gateway",
+      "no": "Gateway-informasjon",
+      "sv": "Gateway-information",
+      "pl": "Informacje o bramie",
+      "ru": "Информация о шлюзе",
+      "ko": "게이트웨이 정보"
+    },
+    "children": [
+      {
+        "id": "uid",
+        "type": "label",
+        "label": {
+          "en": "Unique ID",
+          "da": "Unik ID",
+          "de": "Eindeutige ID",
+          "es": "ID único",
+          "fr": "ID unique",
+          "it": "ID unico",
+          "no": "Unik ID",
+          "sv": "Unik ID",
+          "pl": "Unikalne ID",
+          "ru": "Уникальный ID",
+          "ko": "고유 ID"
+        },
+        "value": ""
+      },
+      {
+        "id": "firmware_otgw",
+        "type": "label",
+        "label": {
+          "en": "OTGW Firmware",
+          "da": "OTGW Firmware",
+          "de": "OTGW-Firmware",
+          "es": "Firmware OTGW",
+          "fr": "Firmware OTGW",
+          "it": "Firmware OTGW",
+          "no": "OTGW Firmware",
+          "sv": "OTGW Firmware",
+          "pl": "Oprogramowanie OTGW",
+          "ru": "Прошивка OTGW",
+          "ko": "OTGW 펌웨어"
+        },
+        "value": ""
+      },
+      {
+        "id": "firmware_pic",
+        "type": "label",
+        "label": {
+          "en": "PIC Firmware",
+          "da": "PIC Firmware",
+          "de": "PIC-Firmware",
+          "es": "Firmware PIC",
+          "fr": "Firmware PIC",
+          "it": "Firmware PIC",
+          "no": "PIC Firmware",
+          "sv": "PIC Firmware",
+          "pl": "Oprogramowanie PIC",
+          "ru": "Прошивка PIC",
+          "ko": "PIC 펌웨어"
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "MQTT settings",
+      "da": "MQTT-indstillinger",
+      "de": "MQTT-Einstellungen",
+      "es": "Configuraciones MQTT",
+      "fr": "Paramètres MQTT",
+      "it": "Impostazioni MQTT",
+      "no": "MQTT-innstillinger",
+      "sv": "MQTT-inställningar",
+      "pl": "Ustawienia MQTT",
+      "ru": "Настройки MQTT",
+      "ko": "MQTT 설정"
+    },
+    "children": [
+      {
+        "id": "host",
+        "type": "text",
+        "label": {
+          "en": "Host",
+          "da": "Vært",
+          "de": "Host",
+          "es": "Anfitrión",
+          "fr": "Hôte",
+          "it": "Host",
+          "no": "Vert",
+          "sv": "Värd",
+          "pl": "Host",
+          "ru": "Хост",
+          "ko": "호스트"
+        },
+        "value": ""
+      },
+      {
+        "id": "port",
+        "type": "number",
+        "label": {
+          "en": "Port",
+          "da": "Port",
+          "de": "Port",
+          "es": "Puerto",
+          "fr": "Port",
+          "it": "Porta",
+          "no": "Port",
+          "sv": "Port",
+          "pl": "Port",
+          "ru": "Порт",
+          "ko": "포트"
+        },
+        "value": 1883
+      },
+      {
+        "id": "tls",
+        "type": "checkbox",
+        "label": {
+          "en": "Use TLS",
+          "da": "Brug TLS",
+          "de": "TLS verwenden",
+          "es": "Usar TLS",
+          "fr": "Utiliser TLS",
+          "it": "Usa TLS",
+          "no": "Bruk TLS",
+          "sv": "Använd TLS",
+          "pl": "Użyj TLS",
+          "ru": "Использовать TLS",
+          "ko": "TLS 사용"
+        },
+        "value": false
+      },
+      {
+        "id": "username",
+        "type": "text",
+        "label": {
+          "en": "Username",
+          "da": "Brugernavn",
+          "de": "Benutzername",
+          "es": "Nombre de usuario",
+          "fr": "Nom d'utilisateur",
+          "it": "Nome utente",
+          "no": "Brukernavn",
+          "sv": "Användarnamn",
+          "pl": "Nazwa użytkownika",
+          "ru": "Имя пользователя",
+          "ko": "사용자 이름"
+        },
+        "value": ""
+      },
+      {
+        "id": "password",
+        "type": "password",
+        "label": {
+          "en": "Password",
+          "da": "Adgangskode",
+          "de": "Passwort",
+          "es": "Contraseña",
+          "fr": "Mot de passe",
+          "it": "Password",
+          "no": "Passord",
+          "sv": "Lösenord",
+          "pl": "Hasło",
+          "ru": "Пароль",
+          "ko": "비밀번호"
+        },
+        "value": ""
+      },
+      {
+        "id": "topic",
+        "type": "text",
+        "label": {
+          "en": "Base topic",
+          "nl": "Base topic",
+          "da": "Basistemne",
+          "de": "Grundthema",
+          "es": "Tema base",
+          "fr": "Sujet de base",
+          "it": "Argomento base",
+          "no": "Basistema",
+          "sv": "Basämne",
+          "pl": "Temat podstawowy",
+          "ru": "Базовая тема",
+          "ko": "기본 주제"
+        },
+        "hint": {
+          "en": "The MQTT Topic where the Gateway is uniquely subscribed. E.g. OTGW/value/otgw-A31F222A38AD",
+          "nl": "Het MQTT topic waarop de Gateway uniek is geabonneerd. Bijv. OTGW/value/otgw-A31F222A38AD",
+          "da": "MQTT-temaet, hvor Gatewayen er unikt tilmeldt. F.eks. OTGW/value/otgw-A31F222A38AD",
+          "de": "Das MQTT-Thema, bei dem das Gateway eindeutig abonniert ist. Zum Beispiel OTGW/value/otgw-A31F222A38AD",
+          "es": "El tema MQTT al que el Gateway está suscrito de manera única. Por ejemplo, OTGW/value/otgw-A31F222A38AD",
+          "fr": "Le sujet MQTT auquel la passerelle est abonnée de manière unique. Par exemple : OTGW/value/otgw-A31F222A38AD",
+          "it": "Il tema MQTT a cui il gateway è unicamente iscritto. Ad esempio OTGW/value/otgw-A31F222A38AD",
+          "no": "MQTT-temaet der Gateway er unikt abonnert. F.eks. OTGW/value/otgw-A31F222A38AD",
+          "sv": "MQTT-ämnet där Gateway är unikt prenumererat. T.ex. OTGW/value/otgw-A31F222A38AD",
+          "pl": "Temat MQTT, na który Gateway jest unikalnie subskrybowany. Np. OTGW/value/otgw-A31F222A38AD",
+          "ru": "Тема MQTT, на которую шлюз подписан уникально. Например OTGW/value/otgw-A31F222A38AD",
+          "ko": "게이트웨이가 고유하게 구독하는 MQTT 주제입니다. 예: OTGW/value/otgw-A31F222A38AD"
+        },
+        "value": ""
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Room Temp Control",
+      "nl": "Ruimte Temp Besturing",
+      "da": "Rummets Tempstyring",
+      "de": "Raumtemp-Steuerung",
+      "es": "Control de Temp de Habitación",
+      "fr": "Contrôle de température de pièce",
+      "it": "Controllo della temperatura della stanza",
+      "no": "Romtemperaturkontroll",
+      "sv": "Rumtemperaturkontroll",
+      "pl": "Sterowanie temp. pomieszczenia",
+      "ru": "Контроль температуры в комнате",
+      "ko": "실내 온도 제어"
+    },
+    "children": [
+      {
+        "id": "room_target_temp_control",
+        "type": "checkbox",
+        "label": {
+          "en": "Enable Temp Control",
+          "nl": "Activeer Temp Besturing",
+          "da": "Aktiver Tempstyring",
+          "de": "Temperatursteuerung aktivieren",
+          "es": "Habilitar Control de Temp",
+          "fr": "Activer le contrôle de température",
+          "it": "Abilita controllo temperatura",
+          "no": "Aktiver Temp-kontroll",
+          "sv": "Aktivera Temp-kontroll",
+          "pl": "Włącz sterowanie temperaturą",
+          "ru": "Включить контроль температуры",
+          "ko": "온도 제어 사용"
+        },
+        "hint": {
+          "en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
+          "nl": "Bij activering kun je de ruimte doeltemperatuur instellen via Homey, maar alleen als je Thermostaat override ondersteunt.",
+          "da": "Når aktiveret kan du styre rummets måltemperatur fra Homey, men kun hvis din termostat understøtter tilsidesættelse.",
+          "de": "Wenn aktiviert, können Sie die Raumzieltemperatur von Homey aus steuern, jedoch nur, wenn Ihr Thermostat eine Überschreibung unterstützt.",
+          "es": "Cuando está habilitado, podrás controlar la temperatura objetivo de la habitación desde Homey, pero solo si tu termostato admite anulación.",
+          "fr": "Quand activé, vous pourrez contrôler la température cible de la pièce depuis Homey, mais uniquement si votre thermostat prend en charge l'override.",
+          "it": "Quando abilitato, sarai in grado di controllare la temperatura target della stanza da Homey, ma solo se il tuo Termostato supporta l'override.",
+          "no": "Når aktivert, vil du kunne kontrollere rommets måltemperatur fra Homey, men bare hvis din termostat støtter overstyring.",
+          "sv": "När aktiverat kommer du att kunna styra rummets måltavla temperatur från Homey, men bara om din termostat stöder överstyrning.",
+          "pl": "Po włączeniu będziesz mógł sterować docelową temperaturą pomieszczenia z poziomu Homey, ale tylko jeśli Twój Termostat obsługuje nadpisanie.",
+          "ru": "После включения вы сможете управлять целевой температурой помещения с помощью Homey, но только если ваш термостат поддерживает переопределение.",
+          "ko": "활성화하면 Thermostat이 재정의를 지원하는 경우에만 Homey에서 방 목표 온도를 제어할 수 있습니다."
+        },
+        "value": false
+      },
+      {
+        "id": "room_target_temp_min",
+        "type": "number",
+        "label": {
+          "en": "Room Min Temp",
+          "nl": "Ruimte Min Temperatuur",
+          "da": "Rummets Min Temp",
+          "de": "Raum-Minimumtemperatur",
+          "es": "Temp Mínima de Habitación",
+          "fr": "Température Min de la Pièce",
+          "it": "Tempì Min di Stanza",
+          "no": "Minimum Romtemp",
+          "sv": "Min Rumstemperatur",
+          "pl": "Minimalna Temp. Pomieszczenia",
+          "ru": "Минимальная Температура в Комнате",
+          "ko": "실내 최저 온도"
+        },
+        "hint": {
+          "en": "You will not be able to set a lower value from Homey",
+          "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey",
+          "da": "Du vil ikke kunne indstille en lavere værdi fra Homey",
+          "de": "Sie können keinen niedrigeren Wert von Homey aus einstellen",
+          "es": "No podrás establecer un valor más bajo desde Homey",
+          "fr": "Vous ne pourrez pas définir une valeur plus basse depuis Homey",
+          "it": "Non sarai in grado di impostare un valore inferiore da Homey",
+          "no": "Du vil ikke kunne sette en lavere verdi fra Homey",
+          "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey",
+          "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey",
+          "ru": "Вы не сможете установить более низкое значение с помощью Homey",
+          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다"
+        },
+        "min": 1,
+        "max": 30,
+        "step": 0.1,
+        "value": 1
+      },
+      {
+        "id": "room_target_temp_max",
+        "type": "number",
+        "label": {
+          "en": "Room Max Temp",
+          "nl": "Ruimte Max Temperatuur",
+          "da": "Rummets Max Temp",
+          "de": "Raum-Maximaltemperatur",
+          "es": "Temp Máxima de Habitación",
+          "fr": "Température Max de la Pièce",
+          "it": "Tempì Max di Stanza",
+          "no": "Maksimum Romtemp",
+          "sv": "Max Rumstemperatur",
+          "pl": "Maksymalna Temp. Pomieszczenia",
+          "ru": "Максимальная Температура в Комнате",
+          "ko": "실내 최고 온도"
+        },
+        "hint": {
+          "en": "You will not be able to set a higher value from Homey",
+          "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey",
+          "da": "Du vil ikke kunne indstille en højere værdi fra Homey",
+          "de": "Sie können keinen höheren Wert von Homey aus einstellen",
+          "es": "No podrás establecer un valor más alto desde Homey",
+          "fr": "Vous ne pourrez pas définir une valeur plus élevée depuis Homey",
+          "it": "Non sarai in grado di impostare un valore superiore da Homey",
+          "no": "Du vil ikke kunne sette en høyere verdi fra Homey",
+          "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey",
+          "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey",
+          "ru": "Вы не сможете установить более высокое значение с помощью Homey",
+          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다"
+        },
+        "min": 1,
+        "max": 30,
+        "step": 0.1,
+        "value": 30
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "DHW Temp Control",
+      "nl": "Tapwater Temp Besturing",
+      "da": "VVC-styring",
+      "de": "DHW-Temperatursteuerung",
+      "es": "Control de Temp ACS",
+      "fr": "Contrôle de température ECS",
+      "it": "Controllo temperatura ACS",
+      "no": "DHW temp-kontroll",
+      "sv": "DHW temp-kontroll",
+      "pl": "Sterowanie temp. CWU",
+      "ru": "Контроль температуры вт",
+      "ko": "DHW 온도 제어"
+    },
+    "children": [
+      {
+        "id": "dhw_block_control",
+        "type": "checkbox",
+        "label": {
+          "en": "Enable DHW Blocking",
+          "nl": "Activeer Tapwater Blokkering",
+          "da": "Aktiver VVC-blokering",
+          "de": "DHW-Blockierung aktivieren",
+          "es": "Habilitar bloqueo ACS",
+          "fr": "Activer le blocage ECS",
+          "it": "Abilita blocco ACS",
+          "no": "Aktiver DHW-blokkering",
+          "sv": "Aktivera DHW-blockering",
+          "pl": "Włącz blokowanie CWU",
+          "ru": "Включить блокировку DHW",
+          "ko": "DHW 차단 활성화"
+        },
+        "hint": {
+          "en": "When enabled you will be able to block the use of DHW from Homey, but only if your Boiler supports this.",
+          "nl": "Bij activering kun je warm tapwater blokkeren via Homey, maar alleen als je Ketel dit ondersteunt.",
+          "da": "Når aktiveret kan du blokere brugen af VVC fra Homey, men kun hvis din kedel understøtter dette.",
+          "de": "Wenn aktiviert, können Sie die Verwendung von DHW von Homey aus blockieren, jedoch nur, wenn Ihr Kessel dies unterstützt.",
+          "es": "Cuando está habilitado, podrás bloquear el uso de ACS desde Homey, pero solo si tu caldera lo admite.",
+          "fr": "Quand activé, vous pourrez bloquer l'utilisation de ECS depuis Homey, mais uniquement si votre chauffe-eau le prend en charge.",
+          "it": "Quando abilitato, sarai in grado di bloccare l'uso di ACS da Homey, ma solo se la tua caldaia lo supporta.",
+          "no": "Når dette er aktivert, vil du kunne blokkere bruken av DHW fra Homey, men bare hvis kjelen støtter dette.",
+          "sv": "När aktiverat kommer du att kunna blockera användningen av DHW från Homey, men bara om din panna stöder detta.",
+          "pl": "Po włączeniu będziesz mógł blokować korzystanie z CWU z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje.",
+          "ru": "Когда это включено, вы сможете блокировать использование ГВС от Homey, но только если ваш котел поддерживает эту функцию.",
+          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 사용을 차단할 수 있습니다."
+        },
+        "value": false
+      },
+      {
+        "id": "dhw_target_temp_control",
+        "type": "checkbox",
+        "label": {
+          "en": "Enable Temp Control",
+          "nl": "Activeer Temp Besturing",
+          "da": "Aktiver Tempstyring",
+          "de": "Temperaturkontrolle aktivieren",
+          "es": "Habilitar control de temperatura",
+          "fr": "Activer le contrôle de température",
+          "it": "Abilita controllo temperatura",
+          "no": "Aktiver Temp-kontroll",
+          "sv": "Aktivera Temp-kontroll",
+          "pl": "Włącz kontrolę temperatury",
+          "ru": "Включить контроль температуры",
+          "ko": "온도 제어 사용"
+        },
+        "hint": {
+          "en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
+          "nl": "Bij activering kun je de tapwater doeltemperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt. PAS OP: LEGIONELLA GEVAAR!",
+          "da": "Når aktiveret kan du kontrollere VVC måltemperaturen fra Homey, men kun hvis din kedel understøtter dette. ADVARSEL: LEGIONELLA FARE!",
+          "de": "Wenn aktiviert, können Sie die DHW-Zieltemperatur von Homey aus steuern, jedoch nur, wenn Ihr Kessel dies unterstützt. WARNUNG: LEGIONELLA-GEFAHR!",
+          "es": "Cuando está habilitado, podrás controlar la temperatura objetivo de ACS desde Homey, pero solo si tu caldera lo admite. ADVERTENCIA: ¡PELIGRO DE LEGIONELA!",
+          "fr": "Quand activé, vous pourrez contrôler la température cible de ECS depuis Homey, mais uniquement si votre chauffe-eau le prend en charge. ATTENTION : DANGER DE LÉGIONELLE !",
+          "it": "Quando abilitato, sarai in grado di controllare la temperatura target di ACS da Homey, ma solo se la tua caldaia lo supporta. AVVERTENZA: PERICOLO LEGIONELLA!",
+          "no": "Når aktivert, kan du kontrollere DHW-måltemperaturen fra Homey, men bare hvis kjelen din støtter dette. ADVARSEL: LEGIONELLAFARE!",
+          "sv": "När aktiverat kommer du att kunna styra DHW-måltemperaturen från Homey, men bara om din panna stöder detta. VARNING: LEGIONELLAFARA!",
+          "pl": "Po włączeniu będziesz mógł kontrolować docelową temperaturę CWU z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
+          "ru": "Когда это включено, вы сможете регулировать целевую температуру горячей воды от Homey, но только если ваш котел это поддерживает. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
+          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 목표 온도를 제어할 수 있습니다. 경고: 레지오넬라 위험!"
+        },
+        "value": false
+      },
+      {
+        "id": "dhw_target_temp_min",
+        "type": "number",
+        "label": {
+          "en": "DHW Min Temp",
+          "nl": "Tapwater Min Temperatuur",
+          "da": "Minimum VVC Temp",
+          "de": "Minimale DHW-Temperatur",
+          "es": "Temp Mínima ACS",
+          "fr": "Température Min ECS",
+          "it": "Temperatura Min ACS",
+          "no": "Minimum DHW Temp",
+          "sv": "Min DHW Temperatur",
+          "pl": "Minimalna temp. CWU",
+          "ru": "Минимальная температура ГВС",
+          "ko": "DHW 최저 온도"
+        },
+        "hint": {
+          "en": "You will not be able to set a lower value from Homey. WARNING: LEGIONELLA DANGER!",
+          "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!",
+          "da": "Du vil ikke kunne indstille en lavere værdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+          "de": "Sie können keinen niedrigeren Wert von Homey aus einstellen. WARNUNG: LEGIONELLA-GEFAHR!",
+          "es": "No podrás establecer un valor más bajo desde Homey. ADVERTENCIA: ¡PELIGRO DE LEGIONELA!",
+          "fr": "Vous ne pourrez pas définir une valeur plus basse depuis Homey. ATTENTION : DANGER DE LÉGIONELLE !",
+          "it": "Non sarai in grado di impostare un valore inferiore da Homey. AVVERTENZA: PERICOLO LEGIONELLA!",
+          "no": "Du vil ikke kunne sette en lavere verdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+          "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey. VARNING: LEGIONELLA FARA!",
+          "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
+          "ru": "Вы не сможете установить более низкое значение с помощью Homey. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
+          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!"
+        },
+        "min": 40,
+        "max": 65,
+        "step": 1,
+        "value": 55
+      },
+      {
+        "id": "dhw_target_temp_max",
+        "type": "number",
+        "label": {
+          "en": "DHW Max Temp",
+          "nl": "Tapwater Max Temperatuur",
+          "da": "Maksimum VVC Temp",
+          "de": "Maximale DHW-Temperatur",
+          "es": "Temp Máxima ACS",
+          "fr": "Température Max ECS",
+          "it": "Temperatura Max ACS",
+          "no": "Maksimum DHW Temp",
+          "sv": "Max DHW Temperatur",
+          "pl": "Maksymalna temp. CWU",
+          "ru": "Максимальная температура ГВС",
+          "ko": "DHW 최고 온도"
+        },
+        "hint": {
+          "en": "You will not be able to set a higher value from Homey. WARNING: LEGIONELLA DANGER!",
+          "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey. PAS OP: LEGIONELLA GEVAAR!",
+          "da": "Du vil ikke kunne indstille en højere værdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+          "de": "Sie können keinen höheren Wert von Homey aus einstellen. WARNUNG: LEGIONELLA-GEFAHR!",
+          "es": "No podrás establecer un valor más alto desde Homey. ADVERTENCIA: ¡PELIGRO DE LEGIONELA!",
+          "fr": "Vous ne pourrez pas définir une valeur plus élevée depuis Homey. ATTENTION : DANGER DE LÉGIONELLE !",
+          "it": "Non sarai in grado di impostare un valore superiore da Homey. AVVERTENZA: PERICOLO LEGIONELLA!",
+          "no": "Du vil ikke kunne sette en høyere verdi fra Homey. ADVARSEL: LEGIONELLA FARE!",
+          "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey. VARNING: LEGIONELLA FARA!",
+          "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
+          "ru": "Вы не сможете установить более высокое значение с помощью Homey. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
+          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!"
+        },
+        "min": 40,
+        "max": 65,
+        "step": 1,
+        "value": 65
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Boiler Target Temp Control",
+      "nl": "CV Doeltemp Besturing",
+      "da": "Kedlets måltempstyring",
+      "de": "Steuerung der Kesselzieltemperatur",
+      "es": "Control de Temp Objetivo de la Caldera",
+      "fr": "Contrôle Température Cible de la Chaudière",
+      "it": "Controllo temperatura target della caldaia",
+      "no": "Kjels temp-kontroll",
+      "sv": "Pannans temp-kontroll",
+      "pl": "Sterowanie temp. docelową kotła",
+      "ru": "Контроль целевой температуры котла",
+      "ko": "보일러 목표 온도 제어"
+    },
+    "children": [
+      {
+        "id": "boiler_target_temp_control",
+        "type": "checkbox",
+        "label": {
+          "en": "Enable Temp Control",
+          "nl": "Activeer Temp Besturing",
+          "da": "Aktiver Tempstyring",
+          "de": "Temperaturkontrolle aktivieren",
+          "es": "Habilitar Control de Temp",
+          "fr": "Activer le contrôle de température",
+          "it": "Abilita controllo temperatura",
+          "no": "Aktiver Temp-kontroll",
+          "sv": "Aktivera Temp-kontroll",
+          "pl": "Włącz kontrolę temperatury",
+          "ru": "Включить контроль температуры",
+          "ko": "온도 제어 사용"
+        },
+        "hint": {
+          "en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",
+          "nl": "Bij activering kun je de CV water maximum temperatuur instellen via Homey, maar alleen als je Ketel dit ondersteunt.",
+          "da": "Når aktiveret kan du kontrollere kedletsvandets maksimumtemperatur fra Homey, men kun hvis din kedel understøtter dette.",
+          "de": "Wenn aktiviert, können Sie die maximale Kesselwassertemperatur von Homey aus steuern, jedoch nur, wenn Ihr Kessel dies unterstützt.",
+          "es": "Cuando está habilitado, podrás controlar la temperatura máxima del agua de la caldera desde Homey, pero solo si tu caldera lo admite.",
+          "fr": "Quand activé, vous pourrez contrôler la température maximale de l'eau de la chaudière depuis Homey, mais uniquement si votre chaudière le prend en charge.",
+          "it": "Quando abilitato, sarai in grado di controllare la temperatura massima dell'acqua della caldaia da Homey, ma solo se la tua caldaia lo supporta.",
+          "no": "Når aktivert, vil du kunne kontrollere den maksimale temperaturen på kjelevannet fra Homey, men bare hvis kjelen støtter dette.",
+          "sv": "När aktiverat kommer du att kunna styra den maximala pannvattentemperaturen från Homey, men bara om din panna stöder detta.",
+          "pl": "Po włączeniu będziesz mógł kontrolować maksymalną temperaturę wody w kotle z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje.",
+          "ru": "Когда это включено, вы сможете регулировать максимальную температуру котловой воды от Homey, но только если ваш котел это поддерживает.",
+          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 보일러의 최대 온도를 제어할 수 있습니다."
+        },
+        "value": false
+      },
+      {
+        "id": "boiler_target_temp_min",
+        "type": "number",
+        "label": {
+          "en": "Boiler Min Temp",
+          "nl": "CV Min Temperatuur",
+          "da": "Minimum Kedlet Temp",
+          "de": "Minimale Kesseltemperatur",
+          "es": "Temp Mínima de la Caldera",
+          "fr": "Température Min de la Chaudière",
+          "it": "Temperatura Min del Caldaia",
+          "no": "Minimum Kjels Temp",
+          "sv": "Min Pannans Temp",
+          "pl": "Minimalna temp. kotła",
+          "ru": "Минимальная температура котла",
+          "ko": "보일러 최저 온도"
+        },
+        "hint": {
+          "en": "You will not be able to set a lower value from Homey.",
+          "nl": "Je zal niet in staat zijn een lagere waarde in te stellen vanuit Homey.",
+          "da": "Du vil ikke kunne indstille en lavere værdi fra Homey.",
+          "de": "Sie können keinen niedrigeren Wert von Homey aus einstellen.",
+          "es": "No podrás establecer un valor más bajo desde Homey.",
+          "fr": "Vous ne pourrez pas définir une valeur plus basse depuis Homey.",
+          "it": "Non potrai impostare un valore inferiore da Homey.",
+          "no": "Du vil ikke kunne sette en lavere verdi fra Homey.",
+          "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey.",
+          "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey.",
+          "ru": "Вы не сможете установить более низкое значение с помощью Homey.",
+          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다."
+        },
+        "min": 30,
+        "max": 90,
+        "step": 1,
+        "value": 30
+      },
+      {
+        "id": "boiler_target_temp_max",
+        "type": "number",
+        "label": {
+          "en": "RooBoilerm Max Temp",
+          "nl": "CV Max Temperatuur",
+          "da": "Maksimum kedlet Temp",
+          "de": "Maximale Kesseltemperatur",
+          "es": "Temp Máxima de la Caldera",
+          "fr": "Température Max de la Chaudière",
+          "it": "Temperatura Max del Caldaia",
+          "no": "Maksimum Kjels Temp",
+          "sv": "Max Pannans Temp",
+          "pl": "Maksymalna temp. kotła",
+          "ru": "Максимальная температура котла",
+          "ko": "보일러 최고 온도"
+        },
+        "hint": {
+          "en": "You will not be able to set a higher value from Homey.",
+          "nl": "Je zal niet in staat zijn een hogere waarde in te stellen vanuit Homey.",
+          "da": "Du vil ikke kunne indstille en højere værdi fra Homey.",
+          "de": "Sie können keinen höheren Wert von Homey aus einstellen.",
+          "es": "No podrás establecer un valor más alto desde Homey.",
+          "fr": "Vous ne pourrez pas définir une valeur plus élevée depuis Homey.",
+          "it": "Non potrai impostare un valore superiore da Homey.",
+          "no": "Du vil ikke kunne sette en høyere verdi fra Homey.",
+          "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey.",
+          "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey.",
+          "ru": "Вы не сможете установить более высокое значение с помощью Homey.",
+          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다."
+        },
+        "min": 30,
+        "max": 90,
+        "step": 1,
+        "value": 90
+      }
+    ]
+  }
 ]

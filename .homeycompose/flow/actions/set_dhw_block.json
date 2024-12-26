@@ -1,23 +1,43 @@
 {
-    "id": "set_dhw_block",
-    "title": {
-        "en": "Block DHW",
-        "nl": "Tapwater Blokkeren"
+  "id": "set_dhw_block",
+  "title": {
+    "en": "Block DHW",
+    "nl": "Tapwater Blokkeren",
+    "da": "Blokér VVB",
+    "de": "DHW blockieren",
+    "es": "Bloquear ACS",
+    "fr": "Bloquer ECS",
+    "it": "Blocca ACS",
+    "no": "Blokker VVB",
+    "sv": "Blockera VVB",
+    "pl": "Zablokuj CWU",
+    "ru": "Блокировать ГВС",
+    "ko": "온수 차단"
+  },
+  "titleFormatted": {
+    "en": "Block DHW [[block]]",
+    "nl": "Tapwater blokkeren [[block]]",
+    "da": "Blokér VVB [[block]]",
+    "de": "DHW blockieren [[block]]",
+    "es": "Bloquear ACS [[block]]",
+    "fr": "Bloquer ECS [[block]]",
+    "it": "Blocca ACS [[block]]",
+    "no": "Blokker VVB [[block]]",
+    "sv": "Blockera VVB [[block]]",
+    "pl": "Zablokuj CWU [[block]]",
+    "ru": "Блокировать ГВС [[block]]",
+    "ko": "온수 차단 [[block]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
     },
-    "titleFormatted": {
-        "en": "Block DHW [[block]]",
-        "nl": "Tapwater blokkeren [[block]]"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        },
-        {
-            "type": "checkbox",
-            "name": "block",
-            "value": false
-        }
-    ]
+    {
+      "type": "checkbox",
+      "name": "block",
+      "value": false
+    }
+  ]
 }

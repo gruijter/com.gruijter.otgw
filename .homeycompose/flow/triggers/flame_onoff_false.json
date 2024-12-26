@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "Flame turned Off",
-        "nl": "Vlam ging Uit"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "Flame turned Off",
+    "nl": "Vlam ging Uit",
+    "da": "Flamme slukket",
+    "de": "Flamme ausgeschaltet",
+    "es": "Llama apagada",
+    "fr": "Flamme éteinte",
+    "it": "Fiamma spenta",
+    "no": "Flammen slukket",
+    "sv": "Flamma släckt",
+    "pl": "Płomień zgaszony",
+    "ru": "Пламя потушено",
+    "ko": "불꽃이 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

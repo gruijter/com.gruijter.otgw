@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "DHW turned On",
-        "nl": "Tapwater ging Aan"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "DHW turned On",
+    "nl": "Tapwater ging Aan",
+    "da": "VVB tændt",
+    "de": "WW eingeschaltet",
+    "es": "ACS encendido",
+    "fr": "ECS activé",
+    "it": "ACS acceso",
+    "no": "VVB slått på",
+    "sv": "VV slått på",
+    "pl": "CWU włączone",
+    "ru": "ГВС включен",
+    "ko": "온수 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

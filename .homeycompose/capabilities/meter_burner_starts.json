@@ -1,13 +1,36 @@
 {
-	"type": "number",
-	"title": {
-		"en": "Burner Startups",
-		"nl": "Brander Startups"
-	},
-	"insights": true,
-	"getable": true,
-	"uiComponent": "sensor",
-	"units": { "en": "", "nl": "" },
-	"decimals": 0,
-	"icon": "./assets/burner_start.svg"
+  "type": "number",
+  "title": {
+    "en": "Burner Startups",
+    "nl": "Brander Startups",
+    "da": "Brænder Startups",
+    "de": "Brenner-Startups",
+    "es": "Startups de Quemadores",
+    "fr": "Démarrages de Brûleur",
+    "it": "Start-up del Bruciatore",
+    "no": "Brenner Startups",
+    "sv": "Brännare Startups",
+    "pl": "Startupy Palników",
+    "ru": "Стартапы Горелок",
+    "ko": "버너 스타트업"
+  },
+  "insights": true,
+  "getable": true,
+  "uiComponent": "sensor",
+  "units": {
+    "en": "",
+    "nl": "",
+    "da": "",
+    "de": "",
+    "es": "",
+    "fr": "",
+    "it": "",
+    "no": "",
+    "sv": "",
+    "pl": "",
+    "ru": "",
+    "ko": ""
+  },
+  "decimals": 0,
+  "icon": "./assets/burner_start.svg"
 }

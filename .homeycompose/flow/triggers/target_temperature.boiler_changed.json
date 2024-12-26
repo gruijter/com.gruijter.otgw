@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "Boiler target temp changed",
-		"nl": "Ketel doel temp veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "target_temperature.boiler",
-			"type": "number",
-			"title": { 
-				"en": "Boiler target temp",
-				"nl": "Ketel doel temp"
-			},
-			"example": 65
-		}
-	]
+  "title": {
+    "en": "Boiler target temp changed",
+    "nl": "Ketel doel temp veranderd",
+    "da": "Kedlens måltemperatur ændret",
+    "de": "Kesselzieltemperatur geändert",
+    "es": "Temperatura objetivo de la caldera cambiada",
+    "fr": "Température cible de la chaudière modifiée",
+    "it": "Temperatura obiettivo della caldaia cambiata",
+    "no": "Kjelens måltemperatur endret",
+    "sv": "Pannans måltemperatur ändrad",
+    "pl": "Zmiana temperatury docelowej bojlera",
+    "ru": "Целевая температура котла изменена",
+    "ko": "보일러 목표 온도가 변경되었습니다"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "target_temperature.boiler",
+      "type": "number",
+      "title": {
+        "en": "Boiler target temp",
+        "nl": "Ketel doel temp",
+        "da": "Kedelens måltemperatur",
+        "de": "Kesselzieltemperatur",
+        "es": "Temperatura objetivo de la caldera",
+        "fr": "Température cible de la chaudière",
+        "it": "Temperatura obiettivo della caldaia",
+        "no": "Kjelens måltemperatur",
+        "sv": "Pannans måltemperatur",
+        "pl": "Docelowa temperatura bojlera",
+        "ru": "Целевая температура котла",
+        "ko": "보일러 목표 온도"
+      },
+      "example": 65
+    }
+  ]
 }

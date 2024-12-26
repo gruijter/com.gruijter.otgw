@@ -1,23 +1,63 @@
 {
-	"type": "boolean",
-	"title": {
-		"en": "Offline",
-		"nl": "Offline"
-	},
-	"desc": {
-		"en": "True when offline"
-	},
-	"insights": true,
-	"insightsTitleTrue": {
-		"en": "OTGW Offline",
-		"nl": "OTGW Offline"
-	},
-	"insightsTitleFalse": {
-		"en": "OTGW Online",
-		"nl": "OTGW Online"
-	},
-	"getable": true,
-	"setable": false,
-	"uiComponent": "sensor",
-	"icon": "./assets/offline.svg"
+  "type": "boolean",
+  "title": {
+    "en": "Offline",
+    "nl": "Offline",
+    "da": "Offline",
+    "de": "Offline",
+    "es": "Desconectado",
+    "fr": "Hors ligne",
+    "it": "Offline",
+    "no": "Frakoblet",
+    "sv": "Offline",
+    "pl": "Offline",
+    "ru": "Офлайн",
+    "ko": "오프라인"
+  },
+  "desc": {
+    "en": "True when offline",
+    "da": "Sand, når offline",
+    "de": "Wahr, wenn offline",
+    "es": "Verdadero cuando está desconectado",
+    "fr": "Vrai quand hors ligne",
+    "it": "Vero quando offline",
+    "no": "Sant når frakoblet",
+    "sv": "Sant när offline",
+    "pl": "Prawda, gdy offline",
+    "ru": "Истина, когда офлайн",
+    "ko": "오프라인일 때 참"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "OTGW Offline",
+    "nl": "OTGW Offline",
+    "da": "OTGW offline",
+    "de": "OTGW offline",
+    "es": "OTGW Desconectado",
+    "fr": "OTGW Hors ligne",
+    "it": "OTGW offline",
+    "no": "OTGW er frakoblet",
+    "sv": "OTGW Offline",
+    "pl": "OTGW offline",
+    "ru": "OTGW офлайн",
+    "ko": "OTGW 오프라인"
+  },
+  "insightsTitleFalse": {
+    "en": "OTGW Online",
+    "nl": "OTGW Online",
+    "da": "OTGW online",
+    "de": "OTGW online",
+    "es": "OTGW Conectado",
+    "fr": "OTGW En ligne",
+    "it": "OTGW online",
+    "no": "OTGW er tilkoblet",
+    "sv": "OTGW Online",
+    "pl": "OTGW online",
+    "ru": "OTGW онлайн",
+    "ko": "OTGW 온라인"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "./assets/offline.svg"
 }

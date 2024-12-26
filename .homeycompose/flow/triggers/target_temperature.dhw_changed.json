@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "DHW target temp changed",
-		"nl": "Tapwater doel temp veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "target_temperature.dhw",
-			"type": "number",
-			"title": { 
-				"en": "DHW target temp",
-				"nl": "Tapwater doel temp"
-			},
-			"example": 58
-		}
-	]
+  "title": {
+    "en": "DHW target temp changed",
+    "nl": "Tapwater doel temp veranderd",
+    "da": "DHW måltemp ændret",
+    "de": "DHW Zieltemperatur geändert",
+    "es": "Temperatura objetivo de ACS cambiada",
+    "fr": "Temp cible ECS modifiée",
+    "it": "Temp target ACS modificata",
+    "no": "DHW måltemp endret",
+    "sv": "DHW måltantemp ändrad",
+    "pl": "Zmieniono temperaturę docelową CWU",
+    "ru": "Температура цели ГВС изменена",
+    "ko": "DHW 목표 온도 변경됨"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "target_temperature.dhw",
+      "type": "number",
+      "title": {
+        "en": "DHW target temp",
+        "nl": "Tapwater doel temp",
+        "da": "DHW måltemperatur",
+        "de": "DHW Zieltemperatur",
+        "es": "Temperatura objetivo DHW",
+        "fr": "Temp cible ECS",
+        "it": "Temp target ACS",
+        "no": "DHW måltemperatur",
+        "sv": "DHW måltantemperatur",
+        "pl": "Temperatura docelowa CWU",
+        "ru": "Целевая температура ГВС",
+        "ko": "DHW 목표 온도"
+      },
+      "example": 58
+    }
+  ]
 }

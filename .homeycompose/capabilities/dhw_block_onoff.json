@@ -1,22 +1,62 @@
 {
-	"type": "boolean",
-	"title": {
-	  "en": "DHW Blocking",
-	  "nl": "Tapwater Blokkade"
-	},
-	"desc": {
-		"en": "True when on"
-	},
-	"insights": true,
-	"insightsTitleTrue": {
-		"en": "DHW Blocking On",
-		"nl": "Tapwater Blokkade Aan"
-	},
-	"insightsTitleFalse": {
-		"en": "DHW Blocking Off",
-		"nl": "Tapwater Blokkade Uit"
-	},
-	"getable": true,
-	"setable": true,
-	"uiComponent": "toggle"
+  "type": "boolean",
+  "title": {
+    "en": "DHW Blocking",
+    "nl": "Tapwater Blokkade",
+    "da": "VVB Blokering",
+    "de": "WW-Sperre",
+    "es": "Bloqueo ACS",
+    "fr": "Blocage ECS",
+    "it": "Blocco ACS",
+    "no": "VVB Blokkering",
+    "sv": "VVB Blockering",
+    "pl": "Blokowanie CWU",
+    "ru": "Блокировка ГВС",
+    "ko": "DHW 차단"
+  },
+  "desc": {
+    "en": "True when on",
+    "da": "Sand når tændt",
+    "de": "Wahr, wenn eingeschaltet",
+    "es": "Verdadero cuando está encendido",
+    "fr": "Vrai quand allumé",
+    "it": "Vero quando acceso",
+    "no": "Sann når på",
+    "sv": "Sant när på",
+    "pl": "Prawda, gdy włączone",
+    "ru": "Истина, когда включено",
+    "ko": "켜져 있을 때 참"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "DHW Blocking On",
+    "nl": "Tapwater Blokkade Aan",
+    "da": "VVB Blokering Tændt",
+    "de": "WW-Sperre Ein",
+    "es": "Bloqueo ACS Activado",
+    "fr": "Blocage ECS Activé",
+    "it": "Blocco ACS Attivo",
+    "no": "VVB Blokkering På",
+    "sv": "VVB Blockering På",
+    "pl": "Blokowanie CWU Włączone",
+    "ru": "Блокировка ГВС Включено",
+    "ko": "DHW 차단 켜짐"
+  },
+  "insightsTitleFalse": {
+    "en": "DHW Blocking Off",
+    "nl": "Tapwater Blokkade Uit",
+    "da": "VVB Blokering Slukket",
+    "de": "WW-Sperre Aus",
+    "es": "Bloqueo ACS Desactivado",
+    "fr": "Blocage ECS Désactivé",
+    "it": "Blocco ACS Disattivo",
+    "no": "VVB Blokkering Av",
+    "sv": "VVB Blockering Av",
+    "pl": "Blokowanie CWU Wyłączone",
+    "ru": "Блокировка ГВС Выключено",
+    "ko": "DHW 차단 꺼짐"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle"
 }

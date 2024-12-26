@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "Central Heating turned Off",
-        "nl": "CV ging Uit"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "Central Heating turned Off",
+    "nl": "CV ging Uit",
+    "da": "Centralvarme slukket",
+    "de": "Zentralheizung ausgeschaltet",
+    "es": "Calefacción central apagada",
+    "fr": "Chauffage central éteint",
+    "it": "Riscaldamento centrale spento",
+    "no": "Sentralvarme slått av",
+    "sv": "Centralvärme avstängd",
+    "pl": "Ogrzewanie centralne wyłączone",
+    "ru": "Центральное отопление выключено",
+    "ko": "중앙 난방 꺼짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

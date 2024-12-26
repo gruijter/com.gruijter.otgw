@@ -1,23 +1,63 @@
 {
-	"type": "boolean",
-	"title": {
-	  "en": "Flame On",
-	  "nl": "Vlam Aan"
-	},
-	"desc": {
-		"en": "True when fault"
-	},
-	"insights": false,
-	"insightsTitleTrue": {
-		"en": "Flame On",
-		"nl": "Vlam Aan"
-	},
-	"insightsTitleFalse": {
-		"en": "Flame Off",
-		"nl": "Vlam Uit"
-	},
-	"getable": true,
-	"setable": false,
-	"uiComponent": "sensor",
-	"icon": "./assets/flame.svg"
+  "type": "boolean",
+  "title": {
+    "en": "Flame On",
+    "nl": "Vlam Aan",
+    "da": "Flamme Tændt",
+    "de": "Flamme An",
+    "es": "Llama Encendida",
+    "fr": "Flamme Allumée",
+    "it": "Fiamma Accesa",
+    "no": "Flamme På",
+    "sv": "Flamma På",
+    "pl": "Płomień Włączony",
+    "ru": "Пламя Включено",
+    "ko": "불꽃 켜짐"
+  },
+  "desc": {
+    "en": "True when fault",
+    "da": "Sandt ved fejl",
+    "de": "Wahr bei Fehler",
+    "es": "Verdadero en caso de falla",
+    "fr": "Vrai en cas de défaut",
+    "it": "Vero in caso di guasto",
+    "no": "Sant ved feil",
+    "sv": "Sant vid fel",
+    "pl": "Prawda w przypadku błędu",
+    "ru": "Истина при ошибке",
+    "ko": "오류 시 참"
+  },
+  "insights": false,
+  "insightsTitleTrue": {
+    "en": "Flame On",
+    "nl": "Vlam Aan",
+    "da": "Flamme Tændt",
+    "de": "Flamme An",
+    "es": "Llama Encendida",
+    "fr": "Flamme Allumée",
+    "it": "Fiamma Accesa",
+    "no": "Flamme På",
+    "sv": "Flamma På",
+    "pl": "Płomień Włączony",
+    "ru": "Пламя Включено",
+    "ko": "불꽃 켜짐"
+  },
+  "insightsTitleFalse": {
+    "en": "Flame Off",
+    "nl": "Vlam Uit",
+    "da": "Flamme Slukket",
+    "de": "Flamme Aus",
+    "es": "Llama Apagada",
+    "fr": "Flamme Éteinte",
+    "it": "Fiamma Spenta",
+    "no": "Flamme Av",
+    "sv": "Flamma Av",
+    "pl": "Płomień Wyłączony",
+    "ru": "Пламя Выключено",
+    "ko": "불꽃 꺼짐"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "./assets/flame.svg"
 }

@@ -1,16 +1,24 @@
 {
-    "title": {
-        "en": "Flame turned On",
-        "nl": "Vlam ging Aan"
-    },
-    "highlight": true,
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=otgw"
-        }
-    ]
+  "title": {
+    "en": "Flame turned On",
+    "nl": "Vlam ging Aan",
+    "da": "Flammen tændt",
+    "de": "Flamme eingeschaltet",
+    "es": "Llama encendida",
+    "fr": "Flamme allumée",
+    "it": "Fiamma accesa",
+    "no": "Flammen er på",
+    "sv": "Flamman är påslagen",
+    "pl": "Płomień włączony",
+    "ru": "Пламя включено",
+    "ko": "불꽃 켜짐"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ]
 }
-
-

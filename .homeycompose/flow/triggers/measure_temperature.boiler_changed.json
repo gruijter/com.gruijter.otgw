@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "Boiler temp changed",
-		"nl": "Ketel temp veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_temperature.boiler",
-			"type": "number",
-			"title": { 
-				"en": "Boiler temp",
-				"nl": "Ketel temp"
-			},
-			"example": 65
-		}
-	]
+  "title": {
+    "en": "Boiler temp changed",
+    "nl": "Ketel temp veranderd",
+    "da": "Kedlens temp ændret",
+    "de": "Kesseltemperatur geändert",
+    "es": "Temp de la caldera cambiada",
+    "fr": "Temp de la chaudière modifiée",
+    "it": "Temp caldaia modificata",
+    "no": "Kjeletemp endret",
+    "sv": "Pannans temperatur ändrad",
+    "pl": "Temp. kotła zmieniona",
+    "ru": "Температура котла изменена",
+    "ko": "보일러 온도 변경됨"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_temperature.boiler",
+      "type": "number",
+      "title": {
+        "en": "Boiler temp",
+        "nl": "Ketel temp",
+        "da": "Kedlens temp",
+        "de": "Kesseltemperatur",
+        "es": "Temp de la caldera",
+        "fr": "Temp de la chaudière",
+        "it": "Temp caldaia",
+        "no": "Kjeletemp",
+        "sv": "Pannans temperatur",
+        "pl": "Temp. kotła",
+        "ru": "Температура котла",
+        "ko": "보일러 온도"
+      },
+      "example": 65
+    }
+  ]
 }

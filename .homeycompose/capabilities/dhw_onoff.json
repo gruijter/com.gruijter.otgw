@@ -1,23 +1,63 @@
 {
-	"type": "boolean",
-	"title": {
-	  "en": "DHW On",
-	  "nl": "Tapwater Aan"
-	},
-	"desc": {
-		"en": "True when on"
-	},
-	"insights": true,
-	"insightsTitleTrue": {
-		"en": "DHW On",
-		"nl": "Tapwater Aan"
-	},
-	"insightsTitleFalse": {
-		"en": "DHW Off",
-		"nl": "Tapwater Uit"
-	},
-	"getable": true,
-	"setable": false,
-	"uiComponent": "sensor",
-	"icon": "./assets/dhw.svg"
+  "type": "boolean",
+  "title": {
+    "en": "DHW On",
+    "nl": "Tapwater Aan",
+    "da": "VVB Til",
+    "de": "WW An",
+    "es": "ACS Encendido",
+    "fr": "ECS Allumé",
+    "it": "ACS Acceso",
+    "no": "VVB På",
+    "sv": "VVB På",
+    "pl": "CWU Włączony",
+    "ru": "ГВС Включено",
+    "ko": "온수기 켜짐"
+  },
+  "desc": {
+    "en": "True when on",
+    "da": "Sand, når den er tændt",
+    "de": "Wahr, wenn an",
+    "es": "Verdadero cuando está encendido",
+    "fr": "Vrai quand allumé",
+    "it": "Vero quando acceso",
+    "no": "Sant når på",
+    "sv": "Sant när på",
+    "pl": "Prawda, gdy włączone",
+    "ru": "Истина, когда включено",
+    "ko": "켜졌을 때 참"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "DHW On",
+    "nl": "Tapwater Aan",
+    "da": "VVB Til",
+    "de": "WW An",
+    "es": "ACS Encendido",
+    "fr": "ECS Allumé",
+    "it": "ACS Acceso",
+    "no": "VVB På",
+    "sv": "VVB På",
+    "pl": "CWU Włączony",
+    "ru": "ГВС Включено",
+    "ko": "온수기 켜짐"
+  },
+  "insightsTitleFalse": {
+    "en": "DHW Off",
+    "nl": "Tapwater Uit",
+    "da": "VVB Fra",
+    "de": "WW Aus",
+    "es": "ACS Apagado",
+    "fr": "ECS Éteint",
+    "it": "ACS Spento",
+    "no": "VVB Av",
+    "sv": "VVB Av",
+    "pl": "CWU Wyłączony",
+    "ru": "ГВС Выключено",
+    "ko": "온수기 꺼짐"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "./assets/dhw.svg"
 }

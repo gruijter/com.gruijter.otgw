@@ -1,13 +1,36 @@
 {
-	"type": "number",
-	"title": {
-		"en": "Burner",
-		"nl": "Brander"
-	},
-	"insights": true,
-	"getable": true,
-	"uiComponent": "sensor",
-	"units": { "en": "Hours", "nl": "Uren" },
-	"decimals": 0,
-	"icon": "./assets/burner_hours.svg"
+  "type": "number",
+  "title": {
+    "en": "Burner",
+    "nl": "Brander",
+    "da": "Brænder",
+    "de": "Brenner",
+    "es": "Quemador",
+    "fr": "Brûleur",
+    "it": "Bruciatore",
+    "no": "Brenner",
+    "sv": "Brännare",
+    "pl": "Palnik",
+    "ru": "Горелка",
+    "ko": "버너"
+  },
+  "insights": true,
+  "getable": true,
+  "uiComponent": "sensor",
+  "units": {
+    "en": "Hours",
+    "nl": "Uren",
+    "da": "Timer",
+    "de": "Stunden",
+    "es": "Horas",
+    "fr": "Heures",
+    "it": "Ore",
+    "no": "Timer",
+    "sv": "Timmar",
+    "pl": "Godziny",
+    "ru": "Часы",
+    "ko": "시간"
+  },
+  "decimals": 0,
+  "icon": "./assets/burner_hours.svg"
 }

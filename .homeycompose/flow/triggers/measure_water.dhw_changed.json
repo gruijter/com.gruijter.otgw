@@ -1,25 +1,45 @@
 {
-	"title": { 
-		"en": "DHW flow changed",
-		"nl": "Tapwater flow veranderd"
-	},
-	"highlight": true,
-	"args": [
-		{
-				"type": "device",
-				"name": "device",
-				"filter": "driver_id=otgw"
-		}
-	],
-	"tokens": [
-		{
-			"name": "measure_water.dhw",
-			"type": "number",
-			"title": { 
-				"en": "DHW flow",
-				"nl": "Tapwater flow"
-			},
-			"example": 4.5
-		}
-	]
+  "title": {
+    "en": "DHW flow changed",
+    "nl": "Tapwater flow veranderd",
+    "da": "DHW-flow ændret",
+    "de": "DHW-Durchfluss geändert",
+    "es": "Flujo de ACS cambiado",
+    "fr": "Débit ECS modifié",
+    "it": "Flusso ACS modificato",
+    "no": "DHW-strøm endret",
+    "sv": "DHW-flöde ändrat",
+    "pl": "Przepływ CWU zmieniony",
+    "ru": "Поток ГВС изменен",
+    "ko": "온수 흐름 변경됨"
+  },
+  "highlight": true,
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=otgw"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "measure_water.dhw",
+      "type": "number",
+      "title": {
+        "en": "DHW flow",
+        "nl": "Tapwater flow",
+        "da": "DHW-flow",
+        "de": "DHW-Durchfluss",
+        "es": "Flujo de ACS",
+        "fr": "Débit ECS",
+        "it": "Flusso ACS",
+        "no": "DHW-strøm",
+        "sv": "DHW-flöde",
+        "pl": "Przepływ CWU",
+        "ru": "Поток ГВС",
+        "ko": "온수 흐름"
+      },
+      "example": 4.5
+    }
+  ]
 }
