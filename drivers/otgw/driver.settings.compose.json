@@ -230,6 +230,39 @@
     },
     "children": [
       {
+        "id": "class_thermostat",
+        "type": "checkbox",
+        "label": {
+          "en": "Thermostat class",
+          "nl": "Thermostaat class",
+          "da": "Termostatklasse",
+          "de": "Thermostatklasse",
+          "es": "Clase de termostato",
+          "fr": "Classe de thermostat",
+          "it": "Classe del termostato",
+          "no": "Termostatklasse",
+          "sv": "Termostatklass",
+          "pl": "Klasa termostatu",
+          "ru": "Класс термостата",
+          "ko": "온도 조절기 클래스"
+        },
+        "hint": {
+          "en": "When enabled the OTGW device will act as a thermostat in Homey.",
+          "nl": "Bij activering gedraagt het OTGW apparaat zich als thermostaat in Homey.",
+          "da": "Når aktiveret, vil OTGW-enheden fungere som en termostat i Homey.",
+          "de": "Wenn aktiviert, fungiert das OTGW-Gerät als Thermostat in Homey.",
+          "es": "Cuando está habilitado, el dispositivo OTGW actuará como un termostato en Homey.",
+          "fr": "Lorsque activé, l'appareil OTGW agira comme un thermostat dans Homey.",
+          "it": "Quando abilitato, il dispositivo OTGW funzionerà come un termostato in Homey.",
+          "no": "Når aktivert, vil OTGW-enheten fungere som en termostat i Homey.",
+          "sv": "När aktiverat kommer OTGW-enheten att fungera som en termostat i Homey.",
+          "pl": "Po włączeniu urządzenie OTGW będzie działać jako termostat w Homey.",
+          "ru": "Когда включено, устройство OTGW будет работать как термостат в Homey.",
+          "ko": "활성화되면 OTGW 장치가 Homey에서 온도 조절기로 작동합니다."
+        },
+        "value": false
+      },
+      {
         "id": "room_target_temp_control",
         "type": "checkbox",
         "label": {
@@ -333,6 +366,42 @@
         "max": 30,
         "step": 0.1,
         "value": 30
+      },
+      {
+        "id": "room_target_temp_step",
+        "type": "number",
+        "label": {
+          "en": "Step",
+          "nl": "Stap",
+          "da": "Trin",
+          "de": "Schritt",
+          "es": "Paso",
+          "fr": "Étape",
+          "it": "Passo",
+          "no": "Trinn",
+          "sv": "Steg",
+          "pl": "Krok",
+          "ru": "Шаг",
+          "ko": "단계"
+        },
+        "hint": {
+          "en": "When changing the step, the Homey app must be restarted to apply the change.",
+          "nl": "Bij het wijzigen van de stap moet de Homey-app worden herstart om de wijziging toe te passen.",
+          "da": "Når du ændrer trinnet, skal Homey-appen genstartes for at anvende ændringen.",
+          "de": "Beim Ändern des Schritts muss die Homey-App neu gestartet werden, um die Änderung zu übernehmen.",
+          "es": "Al cambiar el paso, la aplicación Homey debe reiniciarse para aplicar el cambio.",
+          "fr": "Lors de la modification de l'étape, l'application Homey doit être redémarrée pour appliquer le changement.",
+          "it": "Quando si modifica il passo, l'app Homey deve essere riavviata per applicare la modifica.",
+          "no": "Når du endrer trinnet, må Homey-appen startes på nytt for å bruke endringen.",
+          "sv": "När du ändrar steget måste Homey-appen startas om för att tillämpa ändringen.",
+          "pl": "Po zmianie kroku aplikacja Homey musi zostać ponownie uruchomiona, aby zastosować zmianę.",
+          "ru": "При изменении шага приложение Homey должно быть перезапущено, чтобы применить изменение.",
+          "ko": "단계를 변경하면 변경 사항을 적용하기 위해 Homey 앱을 다시 시작해야 합니다."
+        },
+        "min": 0.1,
+        "max": 1,
+        "step": 0.1,
+        "value": 0.1
       }
     ]
   },

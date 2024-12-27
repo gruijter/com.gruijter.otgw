@@ -126,6 +126,27 @@ class MyDevice extends Device {
         }
         await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
       }
+
+      // change to Thermostat or Other class
+      if (this.settings.class_thermostat && this.getClass() !== 'thermostat') {
+        this.log(`changing class to thermostat for ${this.getName()}`);
+        await this.setClass('thermostat');
+        await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+      } else if (!this.settings.class_thermostat && this.getClass() !== 'other') {
+        this.log(`changing class to other for ${this.getName()}`);
+        await this.setClass('other');
+        await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+      }
+
+      // set capability options for target_temp_step
+      if (this.getCapabilityOptions('target_temperature').step !== this.settings.room_target_temp_step) {
+        this.log(`changing target temp step for ${this.getName()} to`, this.settings.room_target_temp_step || 0.1);
+        await this.setCapabilityOptions('target_temperature', {
+          // min: this.settings.room_target_temp_min,
+          // max: this.settings.room_target_temp_max,
+          step: this.settings.room_target_temp_step || 0.1,
+        });
+      }
     } catch (error) {
       this.error(error);
     }

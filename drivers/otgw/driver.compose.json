@@ -2,7 +2,7 @@
   "name": {
     "en": "OTGW"
   },
-  "class": "other",
+  "class": "thermostat",
   "capabilities": [
     "measure_temperature",
     "target_temperature",
@@ -68,6 +68,9 @@
       },
       "uiComponent": "sensor",
       "insights": true
+    },
+    "target_temperature": {
+      "step": 0.1
     },
     "target_temperature.boiler": {
       "type": "number",

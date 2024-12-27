@@ -16,5 +16,8 @@
   },
   "2.0.0": {
     "en": "Changed room target temperature to Homey defaults. AI translation to all Homey languages."
+  },
+  "2.0.1": {
+    "en": "Added option to set device class to Thermostat. Added option to set room target temperature step."
   }
 }
