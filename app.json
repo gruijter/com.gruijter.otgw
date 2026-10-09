@@ -949,7 +949,7 @@
       "name": {
         "en": "OTGW"
       },
-      "class": "thermostat",
+      "class": "other",
       "capabilities": [
         "measure_temperature",
         "target_temperature",
