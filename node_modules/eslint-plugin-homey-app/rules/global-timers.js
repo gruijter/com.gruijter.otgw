@@ -3,6 +3,8 @@
 module.exports = {
   meta: {
     type: 'suggestion',
+    hasSuggestions: true,
+    schema: [],
     messages: {
       globalTimer:
         'Call to global {{ functionName }}(). You need to manually clear this when the app is destroyed.',
@@ -10,7 +12,7 @@ module.exports = {
     },
   },
   create(context) {
-    const sourceCode = context.getSourceCode();
+    const sourceCode = context.sourceCode;
 
     return {
       CallExpression(node) {

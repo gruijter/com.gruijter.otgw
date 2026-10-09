@@ -88,6 +88,17 @@ class MyDevice extends Device {
       this.log(`checking device migration for ${this.getName()}`);
 
       // store the capability states before migration
+      // TODO BUG (confirmed in production, see com.gruijter.enelogic issue #43): `Symbol(state)` is an
+      // undocumented internal Homey SDK property. On some Homey SDK/firmware versions this symbol does
+      // not exist on `this`, so `state` ends up `undefined` and `state[newCap]` further down throws
+      // "Cannot read properties of undefined (reading '<cap>')". Because migrate() then rejects, the
+      // device never finishes migrating and gets stuck forever on "Device is migrating. Please wait!"
+      // after every restart (each restart crashes on the next capability in the list).
+      // FIX: replace the two lines below with the public API, e.g.:
+      //   const existingCaps = this.getCapabilities();
+      //   const state = {};
+      //   existingCaps.forEach((cap) => { state[cap] = this.getCapabilityValue(cap); });
+      // (see com.gruijter.enelogic/drivers/LS120/device.js `migrate()` for the applied fix)
       const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
       const state = this[sym];
       // check and repair incorrect capability(order)
@@ -152,7 +163,7 @@ class MyDevice extends Device {
     }
   }
 
-  async onAdded() {
+  onAdded() {
     this.log('Device added', this.getName());
   }
 
@@ -161,6 +172,7 @@ class MyDevice extends Device {
     this.restartDevice(1000).catch((error) => this.error(error));
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   async onDeleted() {
     if (this.client) await this.client.end();
     this.log('Device deleted', this.getName());

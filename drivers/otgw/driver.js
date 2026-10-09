@@ -65,6 +65,7 @@ class MyDriver extends Driver {
     this.log('OTGW driver has been initialized');
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
   async onPair(session) {
     let settings = null;
     let mqttClient = null;

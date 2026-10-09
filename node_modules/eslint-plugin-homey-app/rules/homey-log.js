@@ -3,6 +3,8 @@
 module.exports = {
   meta: {
     type: 'suggestion',
+    hasSuggestions: true,
+    schema: [],
     messages: {
       unexpected: 'Unexpected console statement.',
       homeyLogFix: 'Consider using this.{{ propertyName }}() instead.',
@@ -10,7 +12,7 @@ module.exports = {
   },
 
   create(context) {
-    const sourceCode = context.getSourceCode();
+    const sourceCode = context.sourceCode;
 
     return {
       MemberExpression(node) {
