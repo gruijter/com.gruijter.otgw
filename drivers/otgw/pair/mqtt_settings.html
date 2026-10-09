@@ -25,10 +25,9 @@
 				password: document.getElementById('password').value,
 				topic: document.getElementById('topic').value,
 			};
-			const result = await Homey.emit('mqtt', settings);
+			await Homey.emit('mqtt', settings);
 			Homey.hideLoadingOverlay();
-			// Homey.alert(result, 'info');
-		} catch (error) { 
+		} catch (error) {
 			Homey.hideLoadingOverlay();
 			Homey.alert(error, 'error');
 		}

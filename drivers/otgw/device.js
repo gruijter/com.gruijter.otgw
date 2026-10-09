@@ -63,13 +63,13 @@ class MyDevice extends Device {
 
   async onInit() {
     try {
-      this.settings = await this.getSettings();
+      this.settings = this.getSettings();
       this.gwValueTopic = this.settings.topic; // OTGW/value/otgw-A31F222A38AD
       this.gwSetTopic = this.settings.topic.replace(/\/value\/([^/]+)$/, '/set/$1'); // OTGW/set/otgw-A31F222A38AD
 
       await this.migrate();
       await this.connectOTGW();
-      await this.registerListeners();
+      this.registerListeners();
 
       this.restarting = false;
       await this.setAvailable();
@@ -184,22 +184,24 @@ class MyDevice extends Device {
     }
   }
 
-  async sendCommand(command, source) {
-    if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
+  async publishCommand(command) {
+    if (!this.client || !this.client.connected) throw Error('MQTT is not connected');
     await this.client.publishAsync(`${this.gwSetTopic}/command`, command);
+  }
+
+  async sendCommand(command, source) {
+    await this.publishCommand(command);
     this.log(`Command sent by ${source}: ${command}`);
-    return Promise.resolve(true);
+    return true;
   }
 
   async setTargetTempRoom(temp, source) {
-    if (!this.settings.room_target_temp_control) return Promise.reject(Error('Control is disabled from settings'));
+    if (!this.settings.room_target_temp_control) throw Error('Control is disabled from settings');
     if (temp > this.settings.room_target_temp_max
-      || temp < this.settings.room_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
-    if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publishAsync(`${this.gwSetTopic}/command`, `TT=${temp}`);
-    // await this.client.publishAsync(`${this.gwSetTopic}/setpoint`, `${temp}`).catch(this.log);
+      || temp < this.settings.room_target_temp_min) throw Error('Value is outside min/max settings');
+    await this.publishCommand(`TT=${temp}`);
     this.log(`Room Target Temperature set by ${source} to ${temp}`);
-    return Promise.resolve(true);
+    return true;
   }
 
   async setTargetTempBoiler(temp, source) {
@@ -208,133 +210,111 @@ class MyDevice extends Device {
   }
 
   async setMaxTargetTempBoiler(temp, source) {
-    if (!this.settings.boiler_target_temp_control) return Promise.reject(Error('Control is disabled from settings'));
+    if (!this.settings.boiler_target_temp_control) throw Error('Control is disabled from settings');
     if (temp > this.settings.boiler_target_temp_max
-      || temp < this.settings.boiler_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
-    if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publishAsync(`${this.gwSetTopic}/command`, `SH=${temp}`);
+      || temp < this.settings.boiler_target_temp_min) throw Error('Value is outside min/max settings');
+    await this.publishCommand(`SH=${temp}`);
     this.log(`Boiler Target Temperature set by ${source} to ${temp}`);
-    return Promise.resolve(true);
+    return true;
   }
 
   async setTargetTempDhw(temp, source) {
-    if (!this.settings.dhw_target_temp_control) return Promise.reject(Error('Control is disabled from settings'));
+    if (!this.settings.dhw_target_temp_control) throw Error('Control is disabled from settings');
     if (temp > this.settings.dhw_target_temp_max
-      || temp < this.settings.dhw_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
-    if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publishAsync(`${this.gwSetTopic}/command`, `SW=${temp}`);
+      || temp < this.settings.dhw_target_temp_min) throw Error('Value is outside min/max settings');
+    await this.publishCommand(`SW=${temp}`);
     this.log(`DHW Target Temperature set by ${source} to ${temp}`);
-    return Promise.resolve(true);
+    return true;
   }
 
   async setDhwBlock(onoff, source) {
-    if (!this.settings.dhw_block_control) return Promise.reject(Error('Control is disabled from settings'));
-    if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publishAsync(`${this.gwSetTopic}/command`, `BW=${1 * onoff}`);
-    await this.client.publishAsync(`${this.gwSetTopic}/command`, `MW=${6 * onoff}`);
+    if (!this.settings.dhw_block_control) throw Error('Control is disabled from settings');
+    await this.publishCommand(`BW=${1 * onoff}`);
+    await this.publishCommand(`MW=${6 * onoff}`);
     this.log(`DHW blocking is set by ${source} to ${onoff}`);
-    return Promise.resolve(true);
+    return true;
   }
 
   async connectOTGW() {
-    try {
-      if (!this.settings.host) throw Error('No MQTT server configured');
-      await this.endClient();
+    if (!this.settings.host) throw Error('No MQTT server configured');
+    await this.endClient();
 
-      const handleMessage = async (topic, message) => {
-        try {
-          // console.log(`message received from topic: ${topic}`, message.toString());
-          if (!topic.includes(this.gwValueTopic)) throw Error(topic, message);
+    const handleMessage = (topic, message) => {
+      try {
+        if (!topic.includes(this.gwValueTopic)) throw Error(`Unexpected topic ${topic}`);
 
-          // Map the incoming value to a capability or setting
-          let short = topic.replace(this.gwValueTopic, '');
-          if (short === '') short = '/'; // OTGW online/offline
-          const mapFunc = map[short];
-          if (!mapFunc) return; // not included in Homey maping
-          const capVal = mapFunc(message.toString());
+        // Map the incoming value to a capability or setting
+        let short = topic.replace(this.gwValueTopic, '');
+        if (short === '') short = '/'; // OTGW online/offline
+        const mapFunc = map[short];
+        if (!mapFunc) return; // not included in Homey mapping
+        const capVal = mapFunc(message.toString());
 
-          // OTGW device info update
-          if (topic.includes('version')) {
-            this.setSetting(capVal[0], capVal[1]);
-            return;
-          }
-          // Capability update
-          this.setCapability(capVal[0], capVal[1]);
-        } catch (error) {
-          this.error(error);
+        // OTGW device info update
+        if (topic.includes('version')) {
+          this.setSetting(capVal[0], capVal[1]);
+          return;
         }
-      };
-
-      const subscribeTopics = async () => {
-        try {
-          this.log(`Subscribing to ${this.gwValueTopic}/#`);
-          await this.client.subscribeAsync([`${this.gwValueTopic}/#`]); // all values
-          if (!this.restarting) await this.setAvailable();
-          this.log('mqtt subscriptions ok');
-        } catch (error) {
-          this.error(error);
-        }
-      };
-
-      this.log('connecting to MQTT', this.driver.redact(this.settings));
-      const client = await this.driver.connectMQTT(this.settings);
-      if (this.stopped) {
-        await client.endAsync(true).catch((error) => this.error(error));
-        throw Error('Device was removed');
+        // Capability update
+        this.setCapability(capVal[0], capVal[1]);
+      } catch (error) {
+        this.error(error);
       }
-      this.client = client;
-      const isCurrent = () => this.client === client;
-      // mqtt.js reconnects and resubscribes by itself, so connection events only reflect availability
-      client
-        .on('error', (error) => this.error(error))
-        .on('offline', () => {
-          this.log('mqtt broker is offline');
-          if (isCurrent()) this.setUnavailable('MQTT broker is offline').catch(this.error);
-        })
-        .on('reconnect', () => this.log('mqtt is trying to reconnect'))
-        .on('close', () => {
-          this.log('mqtt closed (disconnected)');
-          if (isCurrent()) this.setUnavailable('MQTT disconnected').catch(this.error);
-        })
-        .on('end', () => this.log('mqtt client ended'))
-        .on('connect', () => {
-          if (isCurrent()) subscribeTopics().catch(this.error);
-        })
-        .on('message', (topic, message) => {
-          if (isCurrent()) handleMessage(topic, message).catch(this.error);
-        });
-      if (client.connected) await subscribeTopics();
-      return Promise.resolve(true);
-    } catch (error) {
-      return Promise.reject(error);
+    };
+
+    const subscribeTopics = async () => {
+      try {
+        this.log(`Subscribing to ${this.gwValueTopic}/#`);
+        await this.client.subscribeAsync([`${this.gwValueTopic}/#`]); // all values
+        if (!this.restarting) await this.setAvailable();
+        this.log('mqtt subscriptions ok');
+      } catch (error) {
+        this.error(error);
+      }
+    };
+
+    this.log('connecting to MQTT', this.driver.redact(this.settings));
+    const client = await this.driver.connectMQTT(this.settings);
+    if (this.stopped) {
+      await client.endAsync(true).catch((error) => this.error(error));
+      throw Error('Device was removed');
     }
+    this.client = client;
+    const isCurrent = () => this.client === client;
+    // mqtt.js reconnects and resubscribes by itself, so connection events only reflect availability
+    client
+      .on('error', (error) => this.error(error))
+      .on('offline', () => {
+        this.log('mqtt broker is offline');
+        if (isCurrent()) this.setUnavailable('MQTT broker is offline').catch(this.error);
+      })
+      .on('reconnect', () => this.log('mqtt is trying to reconnect'))
+      .on('close', () => {
+        this.log('mqtt closed (disconnected)');
+        if (isCurrent()) this.setUnavailable('MQTT disconnected').catch(this.error);
+      })
+      .on('end', () => this.log('mqtt client ended'))
+      .on('connect', () => {
+        if (isCurrent()) subscribeTopics().catch(this.error);
+      })
+      .on('message', (topic, message) => {
+        if (isCurrent()) handleMessage(topic, message);
+      });
+    if (client.connected) await subscribeTopics();
   }
 
   // register capability listeners
   registerListeners() {
-    try {
-      if (this.listenersSet) return true;
-      this.log('registering listeners');
+    if (this.listenersSet) return;
+    this.log('registering listeners');
 
-      // capabilityListeners will be overwritten, so no need to unregister them
-      this.registerCapabilityListener('target_temperature', (temp) => this.setTargetTempRoom(temp, 'app'));
-      this.registerCapabilityListener('target_temperature.dhw', (temp) => this.setTargetTempDhw(temp, 'app'));
-      this.registerCapabilityListener('target_temperature.boiler', (temp) => this.setTargetTempBoiler(temp, 'app'));
-      this.registerCapabilityListener('target_temperature.boiler_max', (temp) => this.setMaxTargetTempBoiler(temp, 'app'));
-      this.registerCapabilityListener('dhw_block_onoff', (onoff) => this.setDhwBlock(onoff, 'app'));
-
-      // this.registerMultipleCapabilityListener(['charge_target_slow', 'charge_target_fast'], async (values) => {
-      //  const slow = Number(values.charge_target_slow) || Number(this.getCapabilityValue('charge_target_slow'));
-      //  const fast = Number(values.charge_target_fast) || Number(this.getCapabilityValue('charge_target_fast'));
-      //  const targets = { slow, fast };
-      //  this.setChargeTargets(targets, 'app').catch(this.error);
-      // }, 10000);
-
-      this.listenersSet = true;
-      return Promise.resolve(true);
-    } catch (error) {
-      return Promise.reject(error);
-    }
+    // capabilityListeners will be overwritten, so no need to unregister them
+    this.registerCapabilityListener('target_temperature', (temp) => this.setTargetTempRoom(temp, 'app'));
+    this.registerCapabilityListener('target_temperature.dhw', (temp) => this.setTargetTempDhw(temp, 'app'));
+    this.registerCapabilityListener('target_temperature.boiler', (temp) => this.setTargetTempBoiler(temp, 'app'));
+    this.registerCapabilityListener('target_temperature.boiler_max', (temp) => this.setMaxTargetTempBoiler(temp, 'app'));
+    this.registerCapabilityListener('dhw_block_onoff', (onoff) => this.setDhwBlock(onoff, 'app'));
+    this.listenersSet = true;
   }
 
 }

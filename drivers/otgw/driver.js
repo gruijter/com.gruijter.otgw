@@ -85,12 +85,12 @@ class MyDriver extends Driver {
         if (discovered.length > 0) {
           this.log(discovered);
           await session.showView('list_devices');
-          return Promise.resolve(discovered);
+          return discovered;
         }
         throw Error('MQTT Broker OK, but no OTGW found');
       } catch (error) {
         if (mqttClient) mqttClient.end(true);
-        return Promise.reject(error);
+        throw error;
       }
     });
 
