@@ -4,13 +4,23 @@
 	Homey.setSubtitle('MQTT broker settings');
 	Homey.hideLoadingOverlay();
 
+	// switch between the default MQTT (1883) and MQTTS (8883) port, but keep a custom port
+	function onTlsChange() {
+		const tls = document.getElementById('tls').checked;
+		const port = document.getElementById('port');
+		const from = tls ? 1883 : 8883;
+		const to = tls ? 8883 : 1883;
+		if (port.value === '' || Number(port.value) === from) port.value = to;
+		port.placeholder = to;
+	}
+
 	async function save() {
 		try {
 			Homey.showLoadingOverlay();
 			const settings = {
 				host: document.getElementById('host').value,
-				port: Number(document.getElementById('port').value) || 1883,
 				tls: document.getElementById('tls').checked,
+				port: Number(document.getElementById('port').value) || (document.getElementById('tls').checked ? 8883 : 1883),
 				username: document.getElementById('username').value,
 				password: document.getElementById('password').value,
 				topic: document.getElementById('topic').value,
@@ -35,7 +45,7 @@
 </div>
 
 <label class="homey-form-checkbox">
-	<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" />
+	<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" onchange="onTlsChange()" />
 	<span class="homey-form-checkbox-checkmark"></span>
 	<span class="homey-form-checkbox-text">Secure TLS</span>
 </label>

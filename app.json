@@ -969,8 +969,7 @@
         "meter_burner_hours",
         "meter_burner_dhwhours",
         "alarm_fault",
-        "alarm_offline",
-        "dhw_block_onoff"
+        "alarm_offline"
       ],
       "capabilitiesOptions": {
         "measure_pressure.ch": {
@@ -1039,7 +1038,7 @@
           "min": 10,
           "max": 90,
           "step": 1,
-          "settable": true,
+          "setable": true,
           "insights": true
         },
         "target_temperature.boiler_max": {
@@ -1062,7 +1061,7 @@
           "min": 30,
           "max": 90,
           "step": 1,
-          "settable": true,
+          "setable": true,
           "insights": true
         },
         "measure_water.dhw": {
@@ -1128,7 +1127,7 @@
           "min": 40,
           "max": 65,
           "step": 1,
-          "settable": true,
+          "setable": true,
           "insights": true
         },
         "measure_temperature.return": {

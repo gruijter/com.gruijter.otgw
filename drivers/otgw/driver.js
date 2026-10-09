@@ -25,6 +25,7 @@ const util = require('util');
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
+// keep identical to the list in driver.compose.json
 const capabilities = [
   'measure_temperature',
   'target_temperature',
