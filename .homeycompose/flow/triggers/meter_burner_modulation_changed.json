@@ -11,7 +11,8 @@
     "sv": "Brännarmodulering ändrad",
     "pl": "Zmieniono modulację palnika",
     "ru": "Изменение модуляции горелки",
-    "ko": "버너 변조 변경"
+    "ko": "버너 변조 변경",
+    "ar": "تغير تعديل الموقد"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Brännarmodulering",
         "pl": "Modulacja palnika",
         "ru": "Модуляция горелки",
-        "ko": "버너 변조"
+        "ko": "버너 변조",
+        "ar": "تعديل الموقد"
       },
       "example": 25
     }

@@ -12,7 +12,8 @@
     "sv": "Brännare Startups",
     "pl": "Startupy Palników",
     "ru": "Стартапы Горелок",
-    "ko": "버너 스타트업"
+    "ko": "버너 스타트업",
+    "ar": "مرات تشغيل الموقد"
   },
   "insights": true,
   "getable": true,
@@ -29,7 +30,8 @@
     "sv": "",
     "pl": "",
     "ru": "",
-    "ko": ""
+    "ko": "",
+    "ar": ""
   },
   "decimals": 0,
   "icon": "./assets/burner_start.svg"

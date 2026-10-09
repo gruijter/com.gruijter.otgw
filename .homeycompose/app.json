@@ -8,6 +8,7 @@
   ],
   "name": {
     "en": "OpenTherm Gateway MQTT",
+    "nl": "OpenTherm Gateway MQTT",
     "da": "OpenTherm Gateway MQTT",
     "de": "OpenTherm Gateway MQTT",
     "es": "OpenTherm Gateway MQTT",
@@ -17,7 +18,8 @@
     "sv": "OpenTherm Gateway MQTT",
     "pl": "OpenTherm Gateway MQTT",
     "ru": "OpenTherm Gateway MQTT",
-    "ko": "오픈썸 게이트웨이 MQTT"
+    "ko": "오픈썸 게이트웨이 MQTT",
+    "ar": "OpenTherm Gateway MQTT"
   },
   "description": {
     "en": "Central Heater management for control freaks.",
@@ -31,7 +33,8 @@
     "sv": "Centralvärmehantering för kontrollfreaks.",
     "pl": "Zarządzanie ogrzewaniem centralnym dla fanatyków kontroli.",
     "ru": "Управление центральным отоплением для тех, кто любит контроль.",
-    "ko": "컨트롤 매니아를 위한 중앙 난방 관리."
+    "ko": "컨트롤 매니아를 위한 중앙 난방 관리.",
+    "ar": "إدارة غلاية التدفئة المركزية لعشاق التحكم."
   },
   "category": [
     "climate"
@@ -145,6 +148,15 @@
       "보일러",
       "온도 조절기",
       "중앙 난방"
+    ],
+    "ar": [
+      "OTGW",
+      "MQTT",
+      "OpenTherm",
+      "Gateway",
+      "غلاية",
+      "ترموستات",
+      "تدفئة مركزية"
     ]
   },
   "brandColor": "#0F556F",

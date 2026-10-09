@@ -1,8 +1,46 @@
+<form class="homey-form" onsubmit="save(); return false;">
+	<fieldset class="homey-form-fieldset">
+		<legend class="homey-form-legend" data-i18n="pair.legend"></legend>
+
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="host" data-i18n="pair.host"></label>
+			<input class="homey-form-input" id="host" type="text" data-i18n-placeholder="pair.hostPlaceholder" value="" />
+		</div>
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="port" data-i18n="pair.port"></label>
+			<input class="homey-form-input" id="port" type="number" placeholder="1883" value="1883" />
+		</div>
+
+		<fieldset class="homey-form-checkbox-set">
+			<label class="homey-form-checkbox">
+				<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" onchange="onTlsChange()" />
+				<span class="homey-form-checkbox-checkmark"></span>
+				<span class="homey-form-checkbox-text" data-i18n="pair.tls"></span>
+			</label>
+		</fieldset>
+
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="username" data-i18n="pair.username"></label>
+			<input class="homey-form-input" id="username" type="text" data-i18n-placeholder="pair.optional" value="" />
+		</div>
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="password" data-i18n="pair.password"></label>
+			<input class="homey-form-input" id="password" type="password" data-i18n-placeholder="pair.optional" value="" />
+		</div>
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="topic" data-i18n="pair.topic"></label>
+			<input class="homey-form-input" id="topic" type="text" data-i18n-placeholder="pair.topicPlaceholder" value="" />
+		</div>
+	</fieldset>
+
+	<button id="save" type="submit" class="homey-button-primary-full" data-i18n="pair.save"></button>
+</form>
 
 <script>
-	Homey.setTitle('OpenTherm Gateway');
-	Homey.setSubtitle('MQTT broker settings');
+	Homey.setTitle(Homey.__('pair.title'));
 	Homey.hideLoadingOverlay();
+	document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = Homey.__(el.dataset.i18n); });
+	document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => { el.placeholder = Homey.__(el.dataset.i18nPlaceholder); });
 
 	// switch between the default MQTT (1883) and MQTTS (8883) port, but keep a custom port
 	function onTlsChange() {
@@ -15,51 +53,24 @@
 	}
 
 	async function save() {
+		const button = document.getElementById('save');
+		if (button.classList.contains('is-loading')) return;
+		button.classList.add('is-loading');
 		try {
-			Homey.showLoadingOverlay();
+			const tls = document.getElementById('tls').checked;
 			const settings = {
-				host: document.getElementById('host').value,
-				tls: document.getElementById('tls').checked,
-				port: Number(document.getElementById('port').value) || (document.getElementById('tls').checked ? 8883 : 1883),
+				host: document.getElementById('host').value.trim(),
+				tls,
+				port: Number(document.getElementById('port').value) || (tls ? 8883 : 1883),
 				username: document.getElementById('username').value,
 				password: document.getElementById('password').value,
 				topic: document.getElementById('topic').value,
 			};
 			await Homey.emit('mqtt', settings);
-			Homey.hideLoadingOverlay();
 		} catch (error) {
-			Homey.hideLoadingOverlay();
-			Homey.alert(error, 'error');
+			Homey.alert(error.message || error, 'error');
+		} finally {
+			button.classList.remove('is-loading');
 		}
 	}
 </script>
-
-<div class="homey-form-group">
-	<label class="homey-form-label" for="host">IP address or URL</label>
-	<input class="homey-form-input" id="host" type="text" placeholder="e.g. 10.0.0.100" value="" />
-</div>
-<div class="homey-form-group">
-	<label class="homey-form-label" for="port">Port</label>
-	<input class="homey-form-input" id="port" type="number" placeholder="1883" value=1883 />
-</div>
-
-<label class="homey-form-checkbox">
-	<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" onchange="onTlsChange()" />
-	<span class="homey-form-checkbox-checkmark"></span>
-	<span class="homey-form-checkbox-text">Secure TLS</span>
-</label>
-
-<div class="homey-form-group">
-	<label class="homey-form-label" for="username">Username</label>
-	<input class="homey-form-input" id="username" type="text" placeholder="optional" value="" />
-</div>
-<div class="homey-form-group">
-	<label class="homey-form-label" for="password">Password</label>
-	<input class="homey-form-input" id="password" type="password" value="" />
-</div>
-<div class="homey-form-group">
-	<label class="homey-form-label" for="topic">OTGW TOP Topic</label>
-	<input class="homey-form-input" id="topic" type="text" placeholder="defaults to OTGW" value="" />
-</div>
-<button class="homey-button-primary-full" onclick="save()" >SAVE</button>
-

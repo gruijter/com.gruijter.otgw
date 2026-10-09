@@ -11,7 +11,8 @@
     "sv": "Centralvärme påslagen",
     "pl": "Centralne ogrzewanie włączone",
     "ru": "Центральное отопление включено",
-    "ko": "중앙 난방 켜짐"
+    "ko": "중앙 난방 켜짐",
+    "ar": "تم تشغيل التدفئة المركزية"
   },
   "highlight": true,
   "args": [

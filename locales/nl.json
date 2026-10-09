@@ -1,1 +1,31 @@
-{}
+{
+  "pair": {
+    "title": "OpenTherm Gateway",
+    "legend": "MQTT broker",
+    "host": "IP-adres of URL",
+    "hostPlaceholder": "bv. 10.0.0.100",
+    "port": "Poort",
+    "tls": "TLS gebruiken",
+    "username": "Gebruikersnaam",
+    "password": "Wachtwoord",
+    "optional": "optioneel",
+    "topic": "OTGW hoofdtopic",
+    "topicPlaceholder": "standaard OTGW",
+    "save": "Opslaan"
+  },
+  "migrating": "Apparaat wordt gemigreerd. Even geduld!",
+  "errors": {
+    "noHost": "Geen MQTT broker ingesteld",
+    "timeout": "Verbinding met MQTT broker __host__ verlopen",
+    "noGateway": "MQTT broker OK, maar geen OTGW gevonden",
+    "connectFailed": "Kan niet verbinden met MQTT broker: __error__",
+    "controlDisabled": "Bediening is uitgeschakeld in de apparaatinstellingen",
+    "outOfRange": "Waarde valt buiten de min/max instellingen",
+    "notConnected": "MQTT is niet verbonden",
+    "boilerSetpoint": "Het regelsetpoint van de ketel kan niet worden ingesteld"
+  },
+  "status": {
+    "brokerOffline": "MQTT broker is offline",
+    "disconnected": "MQTT verbinding verbroken"
+  }
+}

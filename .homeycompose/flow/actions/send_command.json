@@ -12,10 +12,23 @@
     "sv": "Skicka ett kommando",
     "pl": "Wyślij polecenie",
     "ru": "Отправьте команду",
-    "ko": "명령 보내기"
+    "ko": "명령 보내기",
+    "ar": "إرسال أمر"
   },
   "hint": {
-    "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
+    "en": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "nl": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "de": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "fr": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "es": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "it": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "da": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "sv": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "no": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "pl": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "ru": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "ar": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands",
+    "ko": "https://github.com/rvdbreemen/OTGW-firmware/wiki/Using-the-MQTT-set-commands"
   },
   "titleFormatted": {
     "en": "Send command: [[command]]",
@@ -29,7 +42,8 @@
     "sv": "Skicka kommando: [[command]]",
     "pl": "Wyślij polecenie: [[command]]",
     "ru": "Отправить команду: [[command]]",
-    "ko": "명령 보내기: [[command]]"
+    "ko": "명령 보내기: [[command]]",
+    "ar": "إرسال أمر: [[command]]"
   },
   "highlight": true,
   "args": [

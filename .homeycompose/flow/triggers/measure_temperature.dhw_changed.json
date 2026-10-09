@@ -11,7 +11,8 @@
     "sv": "VVC-temperatur ändrad",
     "pl": "Temp CWU zmieniona",
     "ru": "Температура ГВС изменена",
-    "ko": "DHW 온도 변경됨"
+    "ko": "DHW 온도 변경됨",
+    "ar": "تغيرت درجة حرارة الماء الساخن"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "VVC-temperatur",
         "pl": "Temp CWU",
         "ru": "Температура ГВС",
-        "ko": "DHW 온도"
+        "ko": "DHW 온도",
+        "ar": "درجة حرارة الماء الساخن"
       },
       "example": 58
     }

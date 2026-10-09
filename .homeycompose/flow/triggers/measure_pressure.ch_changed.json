@@ -11,7 +11,8 @@
     "sv": "CH vattentryck ändrat",
     "pl": "Ciśnienie wody CH zmienione",
     "ru": "Давление воды CH изменилось",
-    "ko": "CH 수압 변경됨"
+    "ko": "CH 수압 변경됨",
+    "ar": "تغير ضغط ماء التدفئة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "CH vattentryck",
         "pl": "Ciśnienie wody CH",
         "ru": "Давление воды CH",
-        "ko": "CH 수압"
+        "ko": "CH 수압",
+        "ar": "ضغط ماء التدفئة"
       },
       "example": 1.5
     }

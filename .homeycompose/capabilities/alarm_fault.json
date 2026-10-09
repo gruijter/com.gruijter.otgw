@@ -12,10 +12,12 @@
     "sv": "Fel",
     "pl": "Błąd",
     "ru": "Ошибка",
-    "ko": "고장"
+    "ko": "고장",
+    "ar": "عطل"
   },
   "desc": {
     "en": "True when fault",
+    "nl": "Waar bij storing",
     "da": "Sand, når fejl",
     "de": "Wahr bei Fehler",
     "es": "Verdadero cuando hay fallo",
@@ -25,7 +27,8 @@
     "sv": "Sant vid fel",
     "pl": "Prawda, gdy błąd",
     "ru": "Истина при ошибке",
-    "ko": "고장일 때 참"
+    "ko": "고장일 때 참",
+    "ar": "صحيح عند وجود عطل"
   },
   "insights": true,
   "insightsTitleTrue": {
@@ -40,7 +43,8 @@
     "sv": "Fellarm På",
     "pl": "Alarm błędu Włączony",
     "ru": "Тревога об ошибке Вкл",
-    "ko": "고장 알람 켜짐"
+    "ko": "고장 알람 켜짐",
+    "ar": "إنذار العطل مفعّل"
   },
   "insightsTitleFalse": {
     "en": "Fault Alarm Off",
@@ -54,7 +58,8 @@
     "sv": "Fellarm Av",
     "pl": "Alarm błędu Wyłączony",
     "ru": "Тревога об ошибке Выкл",
-    "ko": "고장 알람 꺼짐"
+    "ko": "고장 알람 꺼짐",
+    "ar": "إنذار العطل متوقف"
   },
   "getable": true,
   "setable": false,

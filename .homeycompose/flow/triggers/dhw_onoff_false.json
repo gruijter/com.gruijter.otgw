@@ -11,7 +11,8 @@
     "sv": "VV avstängd",
     "pl": "CWU wyłączony",
     "ru": "ГВС выключено",
-    "ko": "급탕 끄기"
+    "ko": "급탕 끄기",
+    "ar": "تم إيقاف الماء الساخن"
   },
   "highlight": true,
   "args": [

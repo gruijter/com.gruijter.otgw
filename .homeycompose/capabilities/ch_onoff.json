@@ -12,10 +12,12 @@
     "sv": "Centralvärme på",
     "pl": "Centralne ogrzewanie włączone",
     "ru": "Центральное отопление включено",
-    "ko": "중앙 난방 켜짐"
+    "ko": "중앙 난방 켜짐",
+    "ar": "التدفئة المركزية قيد التشغيل"
   },
   "desc": {
     "en": "True when on",
+    "nl": "Waar wanneer aan",
     "da": "Sandt når tændt",
     "de": "Wahr, wenn eingeschaltet",
     "es": "Verdadero cuando está encendido",
@@ -25,7 +27,8 @@
     "sv": "Sant när på",
     "pl": "Prawda, gdy włączone",
     "ru": "Истина, когда включено",
-    "ko": "켜져 있을 때 진실"
+    "ko": "켜져 있을 때 진실",
+    "ar": "صحيح عند التشغيل"
   },
   "insights": true,
   "insightsTitleTrue": {
@@ -40,7 +43,8 @@
     "sv": "Centralvärme på",
     "pl": "Centralne ogrzewanie włączone",
     "ru": "Центральное отопление включено",
-    "ko": "중앙 난방 켜짐"
+    "ko": "중앙 난방 켜짐",
+    "ar": "التدفئة المركزية قيد التشغيل"
   },
   "insightsTitleFalse": {
     "en": "Central Heating Off",
@@ -54,7 +58,8 @@
     "sv": "Centralvärme av",
     "pl": "Centralne ogrzewanie wyłączone",
     "ru": "Центральное отопление выключено",
-    "ko": "중앙 난방 꺼짐"
+    "ko": "중앙 난방 꺼짐",
+    "ar": "التدفئة المركزية متوقفة"
   },
   "getable": true,
   "setable": false,

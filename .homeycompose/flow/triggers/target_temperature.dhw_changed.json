@@ -11,7 +11,8 @@
     "sv": "DHW måltantemp ändrad",
     "pl": "Zmieniono temperaturę docelową CWU",
     "ru": "Температура цели ГВС изменена",
-    "ko": "DHW 목표 온도 변경됨"
+    "ko": "DHW 목표 온도 변경됨",
+    "ar": "تغيرت درجة حرارة الماء الساخن المستهدفة"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "DHW måltantemperatur",
         "pl": "Temperatura docelowa CWU",
         "ru": "Целевая температура ГВС",
-        "ko": "DHW 목표 온도"
+        "ko": "DHW 목표 온도",
+        "ar": "درجة حرارة الماء الساخن المستهدفة"
       },
       "example": 58
     }

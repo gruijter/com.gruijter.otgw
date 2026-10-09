@@ -1,6 +1,18 @@
 {
   "name": {
-    "en": "OTGW"
+    "en": "OTGW",
+    "nl": "OTGW",
+    "de": "OTGW",
+    "fr": "OTGW",
+    "es": "OTGW",
+    "it": "OTGW",
+    "da": "OTGW",
+    "sv": "OTGW",
+    "no": "OTGW",
+    "pl": "OTGW",
+    "ru": "OTGW",
+    "ar": "OTGW",
+    "ko": "OTGW"
   },
   "class": "other",
   "capabilities": [
@@ -39,11 +51,23 @@
         "sv": "CH vattentryck",
         "pl": "Ciśnienie wody CH",
         "ru": "Давление воды CH",
-        "ko": "CH 물 압력"
+        "ko": "CH 물 압력",
+        "ar": "ضغط ماء التدفئة"
       },
       "units": {
         "en": "Bar",
-        "nl": "Bar"
+        "nl": "Bar",
+        "de": "Bar",
+        "fr": "bar",
+        "es": "bar",
+        "it": "bar",
+        "da": "bar",
+        "sv": "bar",
+        "no": "bar",
+        "pl": "bar",
+        "ru": "бар",
+        "ar": "بار",
+        "ko": "bar"
       },
       "decimals": 2,
       "uiComponent": "sensor",
@@ -63,7 +87,8 @@
         "sv": "Panna temp",
         "pl": "Tempora kotła",
         "ru": "Температура котла",
-        "ko": "보일러 온도"
+        "ko": "보일러 온도",
+        "ar": "درجة حرارة الغلاية"
       },
       "uiComponent": "sensor",
       "insights": true
@@ -85,7 +110,8 @@
         "sv": "Målpanna temp",
         "pl": "Cel temp. kotła",
         "ru": "Целевая темп котла",
-        "ko": "보일러 목표 온도"
+        "ko": "보일러 목표 온도",
+        "ar": "درجة حرارة الغلاية المستهدفة"
       },
       "uiComponent": "sensor",
       "min": 10,
@@ -108,7 +134,8 @@
         "sv": "Panna max måltemp",
         "pl": "Max temp. kotła",
         "ru": "Макс целевая темп котла",
-        "ko": "보일러 최대 목표 온도"
+        "ko": "보일러 최대 목표 온도",
+        "ar": "أقصى درجة حرارة مستهدفة للغلاية"
       },
       "uiComponent": "thermostat",
       "min": 30,
@@ -131,11 +158,23 @@
         "sv": "DHW-flöde",
         "pl": "Przepływ CWU",
         "ru": "Поток ГВС",
-        "ko": "온수 흐름"
+        "ko": "온수 흐름",
+        "ar": "تدفق الماء الساخن"
       },
       "units": {
         "en": "L/min",
-        "nl": "L/min"
+        "nl": "L/min",
+        "de": "L/min",
+        "fr": "L/min",
+        "es": "L/min",
+        "it": "L/min",
+        "da": "L/min",
+        "sv": "L/min",
+        "no": "L/min",
+        "pl": "L/min",
+        "ru": "л/мин",
+        "ar": "لتر/دقيقة",
+        "ko": "L/min"
       },
       "decimals": 2,
       "uiComponent": "sensor",
@@ -155,7 +194,8 @@
         "sv": "DHW temp",
         "pl": "Temp CWU",
         "ru": "Температура ГВС",
-        "ko": "온수 온도"
+        "ko": "온수 온도",
+        "ar": "درجة حرارة الماء الساخن"
       },
       "uiComponent": "sensor",
       "insights": true
@@ -174,7 +214,8 @@
         "sv": "DHW måltemp",
         "pl": "Cel temp. CWU",
         "ru": "Целевая температура ГВС",
-        "ko": "온수 목표 온도"
+        "ko": "온수 목표 온도",
+        "ar": "درجة حرارة الماء الساخن المستهدفة"
       },
       "uiComponent": "thermostat",
       "min": 40,
@@ -197,7 +238,8 @@
         "sv": "Returtemp",
         "pl": "Temp powrotu",
         "ru": "Температура возврата",
-        "ko": "리턴 온도"
+        "ko": "리턴 온도",
+        "ar": "درجة حرارة الماء الراجع"
       },
       "uiComponent": "sensor",
       "insights": true

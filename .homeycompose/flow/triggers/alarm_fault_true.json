@@ -11,7 +11,8 @@
     "sv": "Felfunktion larm aktiverat",
     "pl": "Alarm awarii włączony",
     "ru": "Сигнал об ошибке включен",
-    "ko": "오류 알람이 켜졌습니다"
+    "ko": "오류 알람이 켜졌습니다",
+    "ar": "تم تشغيل إنذار العطل"
   },
   "highlight": true,
   "args": [

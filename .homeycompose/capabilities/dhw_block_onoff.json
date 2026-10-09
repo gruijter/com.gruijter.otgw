@@ -12,10 +12,12 @@
     "sv": "VVB Blockering",
     "pl": "Blokowanie CWU",
     "ru": "Блокировка ГВС",
-    "ko": "DHW 차단"
+    "ko": "DHW 차단",
+    "ar": "حظر الماء الساخن"
   },
   "desc": {
     "en": "True when on",
+    "nl": "Waar wanneer aan",
     "da": "Sand når tændt",
     "de": "Wahr, wenn eingeschaltet",
     "es": "Verdadero cuando está encendido",
@@ -25,7 +27,8 @@
     "sv": "Sant när på",
     "pl": "Prawda, gdy włączone",
     "ru": "Истина, когда включено",
-    "ko": "켜져 있을 때 참"
+    "ko": "켜져 있을 때 참",
+    "ar": "صحيح عند التشغيل"
   },
   "insights": true,
   "insightsTitleTrue": {
@@ -40,7 +43,8 @@
     "sv": "VVB Blockering På",
     "pl": "Blokowanie CWU Włączone",
     "ru": "Блокировка ГВС Включено",
-    "ko": "DHW 차단 켜짐"
+    "ko": "DHW 차단 켜짐",
+    "ar": "حظر الماء الساخن مفعّل"
   },
   "insightsTitleFalse": {
     "en": "DHW Blocking Off",
@@ -54,7 +58,8 @@
     "sv": "VVB Blockering Av",
     "pl": "Blokowanie CWU Wyłączone",
     "ru": "Блокировка ГВС Выключено",
-    "ko": "DHW 차단 꺼짐"
+    "ko": "DHW 차단 꺼짐",
+    "ar": "حظر الماء الساخن متوقف"
   },
   "getable": true,
   "setable": true,

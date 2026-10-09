@@ -11,7 +11,8 @@
     "sv": "Ställ in max måltemperatur för pannvatten",
     "pl": "Ustaw maksymalną docelową temperaturę wody w kotle",
     "ru": "Установить макс. целевую темп. котельной воды",
-    "ko": "보일러 물의 최대 목표 온도 설정"
+    "ko": "보일러 물의 최대 목표 온도 설정",
+    "ar": "ضبط أقصى درجة حرارة مستهدفة لماء الغلاية"
   },
   "titleFormatted": {
     "en": "Set max target temp boiler [[temp]]",
@@ -25,7 +26,8 @@
     "sv": "Ställ in max måltemperatur för panna [[temp]]",
     "pl": "Ustaw maksymalną docelową temperaturę kotła [[temp]]",
     "ru": "Установить макс. целевую темп. котла [[temp]]",
-    "ko": "보일러 [[temp]]의 최대 목표 온도 설정"
+    "ko": "보일러 [[temp]]의 최대 목표 온도 설정",
+    "ar": "ضبط أقصى درجة حرارة مستهدفة للغلاية [[temp]]"
   },
   "highlight": true,
   "args": [

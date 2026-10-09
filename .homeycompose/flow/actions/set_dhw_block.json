@@ -12,7 +12,8 @@
     "sv": "Blockera VVB",
     "pl": "Zablokuj CWU",
     "ru": "Блокировать ГВС",
-    "ko": "온수 차단"
+    "ko": "온수 차단",
+    "ar": "حظر الماء الساخن"
   },
   "titleFormatted": {
     "en": "Block DHW [[block]]",
@@ -26,7 +27,8 @@
     "sv": "Blockera VVB [[block]]",
     "pl": "Zablokuj CWU [[block]]",
     "ru": "Блокировать ГВС [[block]]",
-    "ko": "온수 차단 [[block]]"
+    "ko": "온수 차단 [[block]]",
+    "ar": "حظر الماء الساخن [[block]]"
   },
   "args": [
     {

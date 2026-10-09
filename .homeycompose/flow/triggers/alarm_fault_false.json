@@ -11,7 +11,8 @@
     "sv": "Felalarm avstängd",
     "pl": "Alarm awarii wyłączony",
     "ru": "Сигнализация ошибки отключена",
-    "ko": "고장 경보 해제됨"
+    "ko": "고장 경보 해제됨",
+    "ar": "تم إيقاف إنذار العطل"
   },
   "highlight": true,
   "args": [

@@ -3,6 +3,7 @@
     "type": "group",
     "label": {
       "en": "Gateway information",
+      "nl": "Gateway informatie",
       "da": "Gateway-information",
       "de": "Gateway-Informationen",
       "es": "Información del gateway",
@@ -12,7 +13,8 @@
       "sv": "Gateway-information",
       "pl": "Informacje o bramie",
       "ru": "Информация о шлюзе",
-      "ko": "게이트웨이 정보"
+      "ko": "게이트웨이 정보",
+      "ar": "معلومات البوابة"
     },
     "children": [
       {
@@ -20,6 +22,7 @@
         "type": "label",
         "label": {
           "en": "Unique ID",
+          "nl": "Unieke ID",
           "da": "Unik ID",
           "de": "Eindeutige ID",
           "es": "ID único",
@@ -29,7 +32,8 @@
           "sv": "Unik ID",
           "pl": "Unikalne ID",
           "ru": "Уникальный ID",
-          "ko": "고유 ID"
+          "ko": "고유 ID",
+          "ar": "المعرّف الفريد"
         },
         "value": ""
       },
@@ -38,6 +42,7 @@
         "type": "label",
         "label": {
           "en": "OTGW Firmware",
+          "nl": "OTGW firmware",
           "da": "OTGW Firmware",
           "de": "OTGW-Firmware",
           "es": "Firmware OTGW",
@@ -47,7 +52,8 @@
           "sv": "OTGW Firmware",
           "pl": "Oprogramowanie OTGW",
           "ru": "Прошивка OTGW",
-          "ko": "OTGW 펌웨어"
+          "ko": "OTGW 펌웨어",
+          "ar": "البرنامج الثابت لـ OTGW"
         },
         "value": ""
       },
@@ -56,6 +62,7 @@
         "type": "label",
         "label": {
           "en": "PIC Firmware",
+          "nl": "PIC firmware",
           "da": "PIC Firmware",
           "de": "PIC-Firmware",
           "es": "Firmware PIC",
@@ -65,7 +72,8 @@
           "sv": "PIC Firmware",
           "pl": "Oprogramowanie PIC",
           "ru": "Прошивка PIC",
-          "ko": "PIC 펌웨어"
+          "ko": "PIC 펌웨어",
+          "ar": "البرنامج الثابت لـ PIC"
         },
         "value": ""
       }
@@ -75,6 +83,7 @@
     "type": "group",
     "label": {
       "en": "MQTT settings",
+      "nl": "MQTT instellingen",
       "da": "MQTT-indstillinger",
       "de": "MQTT-Einstellungen",
       "es": "Configuraciones MQTT",
@@ -84,7 +93,8 @@
       "sv": "MQTT-inställningar",
       "pl": "Ustawienia MQTT",
       "ru": "Настройки MQTT",
-      "ko": "MQTT 설정"
+      "ko": "MQTT 설정",
+      "ar": "إعدادات MQTT"
     },
     "children": [
       {
@@ -92,6 +102,7 @@
         "type": "text",
         "label": {
           "en": "Host",
+          "nl": "Host",
           "da": "Vært",
           "de": "Host",
           "es": "Anfitrión",
@@ -101,7 +112,8 @@
           "sv": "Värd",
           "pl": "Host",
           "ru": "Хост",
-          "ko": "호스트"
+          "ko": "호스트",
+          "ar": "المضيف"
         },
         "value": ""
       },
@@ -110,6 +122,7 @@
         "type": "number",
         "label": {
           "en": "Port",
+          "nl": "Poort",
           "da": "Port",
           "de": "Port",
           "es": "Puerto",
@@ -119,7 +132,8 @@
           "sv": "Port",
           "pl": "Port",
           "ru": "Порт",
-          "ko": "포트"
+          "ko": "포트",
+          "ar": "المنفذ"
         },
         "value": 1883
       },
@@ -128,6 +142,7 @@
         "type": "checkbox",
         "label": {
           "en": "Use TLS",
+          "nl": "TLS gebruiken",
           "da": "Brug TLS",
           "de": "TLS verwenden",
           "es": "Usar TLS",
@@ -137,7 +152,8 @@
           "sv": "Använd TLS",
           "pl": "Użyj TLS",
           "ru": "Использовать TLS",
-          "ko": "TLS 사용"
+          "ko": "TLS 사용",
+          "ar": "استخدام TLS"
         },
         "value": false
       },
@@ -146,6 +162,7 @@
         "type": "text",
         "label": {
           "en": "Username",
+          "nl": "Gebruikersnaam",
           "da": "Brugernavn",
           "de": "Benutzername",
           "es": "Nombre de usuario",
@@ -155,7 +172,8 @@
           "sv": "Användarnamn",
           "pl": "Nazwa użytkownika",
           "ru": "Имя пользователя",
-          "ko": "사용자 이름"
+          "ko": "사용자 이름",
+          "ar": "اسم المستخدم"
         },
         "value": ""
       },
@@ -164,6 +182,7 @@
         "type": "password",
         "label": {
           "en": "Password",
+          "nl": "Wachtwoord",
           "da": "Adgangskode",
           "de": "Passwort",
           "es": "Contraseña",
@@ -173,7 +192,8 @@
           "sv": "Lösenord",
           "pl": "Hasło",
           "ru": "Пароль",
-          "ko": "비밀번호"
+          "ko": "비밀번호",
+          "ar": "كلمة المرور"
         },
         "value": ""
       },
@@ -192,7 +212,8 @@
           "sv": "Basämne",
           "pl": "Temat podstawowy",
           "ru": "Базовая тема",
-          "ko": "기본 주제"
+          "ko": "기본 주제",
+          "ar": "الموضوع الأساسي"
         },
         "hint": {
           "en": "The MQTT Topic where the Gateway is uniquely subscribed. E.g. OTGW/value/otgw-A31F222A38AD",
@@ -206,7 +227,8 @@
           "sv": "MQTT-ämnet där Gateway är unikt prenumererat. T.ex. OTGW/value/otgw-A31F222A38AD",
           "pl": "Temat MQTT, na który Gateway jest unikalnie subskrybowany. Np. OTGW/value/otgw-A31F222A38AD",
           "ru": "Тема MQTT, на которую шлюз подписан уникально. Например OTGW/value/otgw-A31F222A38AD",
-          "ko": "게이트웨이가 고유하게 구독하는 MQTT 주제입니다. 예: OTGW/value/otgw-A31F222A38AD"
+          "ko": "게이트웨이가 고유하게 구독하는 MQTT 주제입니다. 예: OTGW/value/otgw-A31F222A38AD",
+          "ar": "موضوع MQTT الفريد الخاص بالبوابة. مثال: OTGW/value/otgw-A31F222A38AD"
         },
         "value": ""
       }
@@ -226,7 +248,8 @@
       "sv": "Rumtemperaturkontroll",
       "pl": "Sterowanie temp. pomieszczenia",
       "ru": "Контроль температуры в комнате",
-      "ko": "실내 온도 제어"
+      "ko": "실내 온도 제어",
+      "ar": "التحكم في حرارة الغرفة"
     },
     "children": [
       {
@@ -244,7 +267,8 @@
           "sv": "Termostatklass",
           "pl": "Klasa termostatu",
           "ru": "Класс термостата",
-          "ko": "온도 조절기 클래스"
+          "ko": "온도 조절기 클래스",
+          "ar": "فئة الترموستات"
         },
         "hint": {
           "en": "When enabled the OTGW device will act as a thermostat in Homey.",
@@ -258,7 +282,8 @@
           "sv": "När aktiverat kommer OTGW-enheten att fungera som en termostat i Homey.",
           "pl": "Po włączeniu urządzenie OTGW będzie działać jako termostat w Homey.",
           "ru": "Когда включено, устройство OTGW будет работать как термостат в Homey.",
-          "ko": "활성화되면 OTGW 장치가 Homey에서 온도 조절기로 작동합니다."
+          "ko": "활성화되면 OTGW 장치가 Homey에서 온도 조절기로 작동합니다.",
+          "ar": "عند التفعيل، يعمل جهاز OTGW كترموستات في Homey."
         },
         "value": false
       },
@@ -277,7 +302,8 @@
           "sv": "Aktivera Temp-kontroll",
           "pl": "Włącz sterowanie temperaturą",
           "ru": "Включить контроль температуры",
-          "ko": "온도 제어 사용"
+          "ko": "온도 제어 사용",
+          "ar": "تفعيل التحكم في الحرارة"
         },
         "hint": {
           "en": "When enabled you will be able to control the room target temperature from Homey, but only if your Thermostat supports override.",
@@ -291,7 +317,8 @@
           "sv": "När aktiverat kommer du att kunna styra rummets måltavla temperatur från Homey, men bara om din termostat stöder överstyrning.",
           "pl": "Po włączeniu będziesz mógł sterować docelową temperaturą pomieszczenia z poziomu Homey, ale tylko jeśli Twój Termostat obsługuje nadpisanie.",
           "ru": "После включения вы сможете управлять целевой температурой помещения с помощью Homey, но только если ваш термостат поддерживает переопределение.",
-          "ko": "활성화하면 Thermostat이 재정의를 지원하는 경우에만 Homey에서 방 목표 온도를 제어할 수 있습니다."
+          "ko": "활성화하면 Thermostat이 재정의를 지원하는 경우에만 Homey에서 방 목표 온도를 제어할 수 있습니다.",
+          "ar": "عند التفعيل يمكنك ضبط درجة حرارة الغرفة المستهدفة من Homey، ولكن فقط إذا كان الترموستات يدعم التجاوز."
         },
         "value": false
       },
@@ -310,7 +337,8 @@
           "sv": "Min Rumstemperatur",
           "pl": "Minimalna Temp. Pomieszczenia",
           "ru": "Минимальная Температура в Комнате",
-          "ko": "실내 최저 온도"
+          "ko": "실내 최저 온도",
+          "ar": "أدنى حرارة للغرفة"
         },
         "hint": {
           "en": "You will not be able to set a lower value from Homey",
@@ -324,7 +352,8 @@
           "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey",
           "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey",
           "ru": "Вы не сможете установить более низкое значение с помощью Homey",
-          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다"
+          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다",
+          "ar": "لن تتمكن من ضبط قيمة أقل من Homey"
         },
         "min": 1,
         "max": 30,
@@ -346,7 +375,8 @@
           "sv": "Max Rumstemperatur",
           "pl": "Maksymalna Temp. Pomieszczenia",
           "ru": "Максимальная Температура в Комнате",
-          "ko": "실내 최고 온도"
+          "ko": "실내 최고 온도",
+          "ar": "أقصى حرارة للغرفة"
         },
         "hint": {
           "en": "You will not be able to set a higher value from Homey",
@@ -360,7 +390,8 @@
           "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey",
           "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey",
           "ru": "Вы не сможете установить более высокое значение с помощью Homey",
-          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다"
+          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다",
+          "ar": "لن تتمكن من ضبط قيمة أعلى من Homey"
         },
         "min": 1,
         "max": 30,
@@ -382,7 +413,8 @@
           "sv": "Steg",
           "pl": "Krok",
           "ru": "Шаг",
-          "ko": "단계"
+          "ko": "단계",
+          "ar": "الخطوة"
         },
         "hint": {
           "en": "When changing the step, the Homey app must be restarted to apply the change.",
@@ -396,7 +428,8 @@
           "sv": "När du ändrar steget måste Homey-appen startas om för att tillämpa ändringen.",
           "pl": "Po zmianie kroku aplikacja Homey musi zostać ponownie uruchomiona, aby zastosować zmianę.",
           "ru": "При изменении шага приложение Homey должно быть перезапущено, чтобы применить изменение.",
-          "ko": "단계를 변경하면 변경 사항을 적용하기 위해 Homey 앱을 다시 시작해야 합니다."
+          "ko": "단계를 변경하면 변경 사항을 적용하기 위해 Homey 앱을 다시 시작해야 합니다.",
+          "ar": "عند تغيير الخطوة، يجب إعادة تشغيل تطبيق Homey لتطبيق التغيير."
         },
         "min": 0.1,
         "max": 1,
@@ -419,7 +452,8 @@
       "sv": "DHW temp-kontroll",
       "pl": "Sterowanie temp. CWU",
       "ru": "Контроль температуры вт",
-      "ko": "DHW 온도 제어"
+      "ko": "DHW 온도 제어",
+      "ar": "التحكم في حرارة الماء الساخن"
     },
     "children": [
       {
@@ -437,7 +471,8 @@
           "sv": "Aktivera DHW-blockering",
           "pl": "Włącz blokowanie CWU",
           "ru": "Включить блокировку DHW",
-          "ko": "DHW 차단 활성화"
+          "ko": "DHW 차단 활성화",
+          "ar": "تفعيل حظر الماء الساخن"
         },
         "hint": {
           "en": "When enabled you will be able to block the use of DHW from Homey, but only if your Boiler supports this.",
@@ -451,7 +486,8 @@
           "sv": "När aktiverat kommer du att kunna blockera användningen av DHW från Homey, men bara om din panna stöder detta.",
           "pl": "Po włączeniu będziesz mógł blokować korzystanie z CWU z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje.",
           "ru": "Когда это включено, вы сможете блокировать использование ГВС от Homey, но только если ваш котел поддерживает эту функцию.",
-          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 사용을 차단할 수 있습니다."
+          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 사용을 차단할 수 있습니다.",
+          "ar": "عند التفعيل يمكنك حظر استخدام الماء الساخن من Homey، ولكن فقط إذا كانت الغلاية تدعم ذلك."
         },
         "value": false
       },
@@ -470,7 +506,8 @@
           "sv": "Aktivera Temp-kontroll",
           "pl": "Włącz kontrolę temperatury",
           "ru": "Включить контроль температуры",
-          "ko": "온도 제어 사용"
+          "ko": "온도 제어 사용",
+          "ar": "تفعيل التحكم في الحرارة"
         },
         "hint": {
           "en": "When enabled you will be able to control the DHW target temperature from Homey, but only if your Boiler supports this. WARNING: LEGIONELLA DANGER!",
@@ -484,7 +521,8 @@
           "sv": "När aktiverat kommer du att kunna styra DHW-måltemperaturen från Homey, men bara om din panna stöder detta. VARNING: LEGIONELLAFARA!",
           "pl": "Po włączeniu będziesz mógł kontrolować docelową temperaturę CWU z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
           "ru": "Когда это включено, вы сможете регулировать целевую температуру горячей воды от Homey, но только если ваш котел это поддерживает. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
-          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 목표 온도를 제어할 수 있습니다. 경고: 레지오넬라 위험!"
+          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 DHW 목표 온도를 제어할 수 있습니다. 경고: 레지오넬라 위험!",
+          "ar": "عند التفعيل يمكنك ضبط درجة حرارة الماء الساخن المستهدفة من Homey، ولكن فقط إذا كانت الغلاية تدعم ذلك. تحذير: خطر الليجيونيلا!"
         },
         "value": false
       },
@@ -503,7 +541,8 @@
           "sv": "Min DHW Temperatur",
           "pl": "Minimalna temp. CWU",
           "ru": "Минимальная температура ГВС",
-          "ko": "DHW 최저 온도"
+          "ko": "DHW 최저 온도",
+          "ar": "أدنى حرارة للماء الساخن"
         },
         "hint": {
           "en": "You will not be able to set a lower value from Homey. WARNING: LEGIONELLA DANGER!",
@@ -517,7 +556,8 @@
           "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey. VARNING: LEGIONELLA FARA!",
           "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
           "ru": "Вы не сможете установить более низкое значение с помощью Homey. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
-          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!"
+          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!",
+          "ar": "لن تتمكن من ضبط قيمة أقل من Homey. تحذير: خطر الليجيونيلا!"
         },
         "min": 40,
         "max": 65,
@@ -539,7 +579,8 @@
           "sv": "Max DHW Temperatur",
           "pl": "Maksymalna temp. CWU",
           "ru": "Максимальная температура ГВС",
-          "ko": "DHW 최고 온도"
+          "ko": "DHW 최고 온도",
+          "ar": "أقصى حرارة للماء الساخن"
         },
         "hint": {
           "en": "You will not be able to set a higher value from Homey. WARNING: LEGIONELLA DANGER!",
@@ -553,7 +594,8 @@
           "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey. VARNING: LEGIONELLA FARA!",
           "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey. OSTRZEŻENIE: ZAGROŻENIE LEGIONELLĄ!",
           "ru": "Вы не сможете установить более высокое значение с помощью Homey. ПРЕДУПРЕЖДЕНИЕ: ОПАСНОСТЬ ЛЕГИОНЕЛЛЫ!",
-          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!"
+          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다. 경고: 레지오넬라 위험!",
+          "ar": "لن تتمكن من ضبط قيمة أعلى من Homey. تحذير: خطر الليجيونيلا!"
         },
         "min": 40,
         "max": 65,
@@ -576,7 +618,8 @@
       "sv": "Pannans temp-kontroll",
       "pl": "Sterowanie temp. docelową kotła",
       "ru": "Контроль целевой температуры котла",
-      "ko": "보일러 목표 온도 제어"
+      "ko": "보일러 목표 온도 제어",
+      "ar": "التحكم في حرارة الغلاية المستهدفة"
     },
     "children": [
       {
@@ -594,7 +637,8 @@
           "sv": "Aktivera Temp-kontroll",
           "pl": "Włącz kontrolę temperatury",
           "ru": "Включить контроль температуры",
-          "ko": "온도 제어 사용"
+          "ko": "온도 제어 사용",
+          "ar": "تفعيل التحكم في الحرارة"
         },
         "hint": {
           "en": "When enabled you will be able to control the Boiler Water maximum temperature from Homey, but only if your Boiler supports this.",
@@ -608,7 +652,8 @@
           "sv": "När aktiverat kommer du att kunna styra den maximala pannvattentemperaturen från Homey, men bara om din panna stöder detta.",
           "pl": "Po włączeniu będziesz mógł kontrolować maksymalną temperaturę wody w kotle z poziomu Homey, ale tylko jeśli Twój kocioł to obsługuje.",
           "ru": "Когда это включено, вы сможете регулировать максимальную температуру котловой воды от Homey, но только если ваш котел это поддерживает.",
-          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 보일러의 최대 온도를 제어할 수 있습니다."
+          "ko": "활성화하면 보일러가 이를 지원하는 경우에만 Homey에서 보일러의 최대 온도를 제어할 수 있습니다.",
+          "ar": "عند التفعيل يمكنك ضبط أقصى درجة حرارة لماء الغلاية من Homey، ولكن فقط إذا كانت الغلاية تدعم ذلك."
         },
         "value": false
       },
@@ -627,7 +672,8 @@
           "sv": "Min Pannans Temp",
           "pl": "Minimalna temp. kotła",
           "ru": "Минимальная температура котла",
-          "ko": "보일러 최저 온도"
+          "ko": "보일러 최저 온도",
+          "ar": "أدنى حرارة للغلاية"
         },
         "hint": {
           "en": "You will not be able to set a lower value from Homey.",
@@ -641,7 +687,8 @@
           "sv": "Du kommer inte att kunna ställa in ett lägre värde från Homey.",
           "pl": "Nie będziesz w stanie ustawić niższej wartości z poziomu Homey.",
           "ru": "Вы не сможете установить более низкое значение с помощью Homey.",
-          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다."
+          "ko": "Homey에서 더 낮은 값을 설정할 수 없습니다.",
+          "ar": "لن تتمكن من ضبط قيمة أقل من Homey."
         },
         "min": 30,
         "max": 90,
@@ -652,7 +699,7 @@
         "id": "boiler_target_temp_max",
         "type": "number",
         "label": {
-          "en": "RooBoilerm Max Temp",
+          "en": "Boiler Max Temp",
           "nl": "CV Max Temperatuur",
           "da": "Maksimum kedlet Temp",
           "de": "Maximale Kesseltemperatur",
@@ -663,7 +710,8 @@
           "sv": "Max Pannans Temp",
           "pl": "Maksymalna temp. kotła",
           "ru": "Максимальная температура котла",
-          "ko": "보일러 최고 온도"
+          "ko": "보일러 최고 온도",
+          "ar": "أقصى حرارة للغلاية"
         },
         "hint": {
           "en": "You will not be able to set a higher value from Homey.",
@@ -677,7 +725,8 @@
           "sv": "Du kommer inte att kunna ställa in ett högre värde från Homey.",
           "pl": "Nie będziesz w stanie ustawić wyższej wartości z poziomu Homey.",
           "ru": "Вы не сможете установить более высокое значение с помощью Homey.",
-          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다."
+          "ko": "Homey에서 더 높은 값을 설정할 수 없습니다.",
+          "ar": "لن تتمكن من ضبط قيمة أعلى من Homey."
         },
         "min": 30,
         "max": 90,

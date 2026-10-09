@@ -1,1 +1,31 @@
-{}
+{
+  "pair": {
+    "title": "OpenTherm Gateway",
+    "legend": "MQTT 브로커",
+    "host": "IP 주소 또는 URL",
+    "hostPlaceholder": "예: 10.0.0.100",
+    "port": "포트",
+    "tls": "TLS 사용",
+    "username": "사용자 이름",
+    "password": "비밀번호",
+    "optional": "선택 사항",
+    "topic": "OTGW 상위 토픽",
+    "topicPlaceholder": "기본값 OTGW",
+    "save": "저장"
+  },
+  "migrating": "기기를 마이그레이션하는 중입니다. 잠시 기다려 주세요!",
+  "errors": {
+    "noHost": "MQTT 브로커가 설정되지 않았습니다",
+    "timeout": "MQTT 브로커 __host__ 연결 시간이 초과되었습니다",
+    "noGateway": "MQTT 브로커는 정상이지만 OTGW를 찾을 수 없습니다",
+    "connectFailed": "MQTT 브로커에 연결할 수 없습니다: __error__",
+    "controlDisabled": "기기 설정에서 제어가 비활성화되어 있습니다",
+    "outOfRange": "값이 최소/최대 설정을 벗어났습니다",
+    "notConnected": "MQTT가 연결되지 않았습니다",
+    "boilerSetpoint": "보일러 제어 설정값은 설정할 수 없습니다"
+  },
+  "status": {
+    "brokerOffline": "MQTT 브로커가 오프라인입니다",
+    "disconnected": "MQTT 연결이 끊어졌습니다"
+  }
+}

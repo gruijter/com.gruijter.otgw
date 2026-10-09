@@ -11,7 +11,8 @@
     "sv": "Centralvärme avstängd",
     "pl": "Ogrzewanie centralne wyłączone",
     "ru": "Центральное отопление выключено",
-    "ko": "중앙 난방 꺼짐"
+    "ko": "중앙 난방 꺼짐",
+    "ar": "تم إيقاف التدفئة المركزية"
   },
   "highlight": true,
   "args": [

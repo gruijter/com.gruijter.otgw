@@ -78,7 +78,7 @@ class MyDevice extends Device {
       this.error(error);
       if (this.stopped) return;
       this.restarting = false;
-      await this.setUnavailable(error.message || 'MQTT is not connected').catch((err) => this.error(err));
+      await this.setUnavailable(error.message || this.homey.__('errors.notConnected')).catch((err) => this.error(err));
       this.restartDevice(60 * 1000).catch(this.error);
     }
   }
@@ -88,9 +88,7 @@ class MyDevice extends Device {
       this.log(`checking device migration for ${this.getName()}`);
       const correctCaps = [...this.driver.ds.deviceCapabilities];
       if (this.settings.dhw_block_control) correctCaps.push('dhw_block_onoff');
-      const rebuilt = await DeviceMigrator.migrateCapabilities(this, correctCaps, {
-        unavailableMessage: 'Device is migrating. Please wait!',
-      });
+      const rebuilt = await DeviceMigrator.migrateCapabilities(this, correctCaps);
 
       // change to Thermostat or Other class
       const deviceClass = this.settings.class_thermostat ? 'thermostat' : 'other';
@@ -119,7 +117,7 @@ class MyDevice extends Device {
         const testClient = await this.driver.connectMQTT(newSettings);
         await testClient.endAsync(true);
       } catch (error) {
-        throw Error(`Could not connect to MQTT broker: ${error.message || error}`);
+        throw Error(this.homey.__('errors.connectFailed', { error: error.message || error }));
       }
     }
     this.restartDevice(1000).catch((error) => this.error(error));
@@ -185,7 +183,7 @@ class MyDevice extends Device {
   }
 
   async publishCommand(command) {
-    if (!this.client || !this.client.connected) throw Error('MQTT is not connected');
+    if (!this.client || !this.client.connected) throw Error(this.homey.__('errors.notConnected'));
     await this.client.publishAsync(`${this.gwSetTopic}/command`, command);
   }
 
@@ -196,9 +194,9 @@ class MyDevice extends Device {
   }
 
   async setTargetTempRoom(temp, source) {
-    if (!this.settings.room_target_temp_control) throw Error('Control is disabled from settings');
+    if (!this.settings.room_target_temp_control) throw Error(this.homey.__('errors.controlDisabled'));
     if (temp > this.settings.room_target_temp_max
-      || temp < this.settings.room_target_temp_min) throw Error('Value is outside min/max settings');
+      || temp < this.settings.room_target_temp_min) throw Error(this.homey.__('errors.outOfRange'));
     await this.publishCommand(`TT=${temp}`);
     this.log(`Room Target Temperature set by ${source} to ${temp}`);
     return true;
@@ -206,29 +204,29 @@ class MyDevice extends Device {
 
   async setTargetTempBoiler(temp, source) {
     this.error('Trying to set the TargetTempBoiler');
-    throw Error('Setting the Boiler Control Point is not possible.');
+    throw Error(this.homey.__('errors.boilerSetpoint'));
   }
 
   async setMaxTargetTempBoiler(temp, source) {
-    if (!this.settings.boiler_target_temp_control) throw Error('Control is disabled from settings');
+    if (!this.settings.boiler_target_temp_control) throw Error(this.homey.__('errors.controlDisabled'));
     if (temp > this.settings.boiler_target_temp_max
-      || temp < this.settings.boiler_target_temp_min) throw Error('Value is outside min/max settings');
+      || temp < this.settings.boiler_target_temp_min) throw Error(this.homey.__('errors.outOfRange'));
     await this.publishCommand(`SH=${temp}`);
     this.log(`Boiler Target Temperature set by ${source} to ${temp}`);
     return true;
   }
 
   async setTargetTempDhw(temp, source) {
-    if (!this.settings.dhw_target_temp_control) throw Error('Control is disabled from settings');
+    if (!this.settings.dhw_target_temp_control) throw Error(this.homey.__('errors.controlDisabled'));
     if (temp > this.settings.dhw_target_temp_max
-      || temp < this.settings.dhw_target_temp_min) throw Error('Value is outside min/max settings');
+      || temp < this.settings.dhw_target_temp_min) throw Error(this.homey.__('errors.outOfRange'));
     await this.publishCommand(`SW=${temp}`);
     this.log(`DHW Target Temperature set by ${source} to ${temp}`);
     return true;
   }
 
   async setDhwBlock(onoff, source) {
-    if (!this.settings.dhw_block_control) throw Error('Control is disabled from settings');
+    if (!this.settings.dhw_block_control) throw Error(this.homey.__('errors.controlDisabled'));
     await this.publishCommand(`BW=${1 * onoff}`);
     await this.publishCommand(`MW=${6 * onoff}`);
     this.log(`DHW blocking is set by ${source} to ${onoff}`);
@@ -236,7 +234,7 @@ class MyDevice extends Device {
   }
 
   async connectOTGW() {
-    if (!this.settings.host) throw Error('No MQTT server configured');
+    if (!this.settings.host) throw Error(this.homey.__('errors.noHost'));
     await this.endClient();
 
     const handleMessage = (topic, message) => {
@@ -286,12 +284,12 @@ class MyDevice extends Device {
       .on('error', (error) => this.error(error))
       .on('offline', () => {
         this.log('mqtt broker is offline');
-        if (isCurrent()) this.setUnavailable('MQTT broker is offline').catch(this.error);
+        if (isCurrent()) this.setUnavailable(this.homey.__('status.brokerOffline')).catch(this.error);
       })
       .on('reconnect', () => this.log('mqtt is trying to reconnect'))
       .on('close', () => {
         this.log('mqtt closed (disconnected)');
-        if (isCurrent()) this.setUnavailable('MQTT disconnected').catch(this.error);
+        if (isCurrent()) this.setUnavailable(this.homey.__('status.disconnected')).catch(this.error);
       })
       .on('end', () => this.log('mqtt client ended'))
       .on('connect', () => {

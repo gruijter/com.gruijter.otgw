@@ -12,10 +12,12 @@
     "sv": "VVB På",
     "pl": "CWU Włączony",
     "ru": "ГВС Включено",
-    "ko": "온수기 켜짐"
+    "ko": "온수기 켜짐",
+    "ar": "الماء الساخن قيد التشغيل"
   },
   "desc": {
     "en": "True when on",
+    "nl": "Waar wanneer aan",
     "da": "Sand, når den er tændt",
     "de": "Wahr, wenn an",
     "es": "Verdadero cuando está encendido",
@@ -25,7 +27,8 @@
     "sv": "Sant när på",
     "pl": "Prawda, gdy włączone",
     "ru": "Истина, когда включено",
-    "ko": "켜졌을 때 참"
+    "ko": "켜졌을 때 참",
+    "ar": "صحيح عند التشغيل"
   },
   "insights": true,
   "insightsTitleTrue": {
@@ -40,7 +43,8 @@
     "sv": "VVB På",
     "pl": "CWU Włączony",
     "ru": "ГВС Включено",
-    "ko": "온수기 켜짐"
+    "ko": "온수기 켜짐",
+    "ar": "الماء الساخن قيد التشغيل"
   },
   "insightsTitleFalse": {
     "en": "DHW Off",
@@ -54,7 +58,8 @@
     "sv": "VVB Av",
     "pl": "CWU Wyłączony",
     "ru": "ГВС Выключено",
-    "ko": "온수기 꺼짐"
+    "ko": "온수기 꺼짐",
+    "ar": "الماء الساخن متوقف"
   },
   "getable": true,
   "setable": false,

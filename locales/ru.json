@@ -1,1 +1,31 @@
-{}
+{
+  "pair": {
+    "title": "OpenTherm Gateway",
+    "legend": "MQTT-брокер",
+    "host": "IP-адрес или URL",
+    "hostPlaceholder": "напр. 10.0.0.100",
+    "port": "Порт",
+    "tls": "Использовать TLS",
+    "username": "Имя пользователя",
+    "password": "Пароль",
+    "optional": "необязательно",
+    "topic": "Основной топик OTGW",
+    "topicPlaceholder": "по умолчанию OTGW",
+    "save": "Сохранить"
+  },
+  "migrating": "Выполняется миграция устройства. Пожалуйста, подождите!",
+  "errors": {
+    "noHost": "MQTT-брокер не настроен",
+    "timeout": "Истекло время подключения к MQTT-брокеру __host__",
+    "noGateway": "MQTT-брокер в порядке, но OTGW не найден",
+    "connectFailed": "Не удалось подключиться к MQTT-брокеру: __error__",
+    "controlDisabled": "Управление отключено в настройках устройства",
+    "outOfRange": "Значение выходит за пределы настроек мин./макс.",
+    "notConnected": "MQTT не подключён",
+    "boilerSetpoint": "Невозможно задать уставку управления котлом"
+  },
+  "status": {
+    "brokerOffline": "MQTT-брокер не в сети",
+    "disconnected": "MQTT отключён"
+  }
+}

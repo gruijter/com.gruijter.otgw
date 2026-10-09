@@ -11,7 +11,8 @@
     "sv": "Flamma släckt",
     "pl": "Płomień zgaszony",
     "ru": "Пламя потушено",
-    "ko": "불꽃이 꺼짐"
+    "ko": "불꽃이 꺼짐",
+    "ar": "انطفأ اللهب"
   },
   "highlight": true,
   "args": [

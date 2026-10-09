@@ -11,7 +11,8 @@
     "sv": "VV slått på",
     "pl": "CWU włączone",
     "ru": "ГВС включен",
-    "ko": "온수 켜짐"
+    "ko": "온수 켜짐",
+    "ar": "تم تشغيل الماء الساخن"
   },
   "highlight": true,
   "args": [

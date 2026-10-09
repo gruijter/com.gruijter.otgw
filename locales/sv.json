@@ -1,1 +1,31 @@
-{}
+{
+  "pair": {
+    "title": "OpenTherm Gateway",
+    "legend": "MQTT-broker",
+    "host": "IP-adress eller URL",
+    "hostPlaceholder": "t.ex. 10.0.0.100",
+    "port": "Port",
+    "tls": "Använd TLS",
+    "username": "Användarnamn",
+    "password": "Lösenord",
+    "optional": "valfritt",
+    "topic": "OTGW-huvudtopic",
+    "topicPlaceholder": "standard OTGW",
+    "save": "Spara"
+  },
+  "migrating": "Enheten migreras. Vänta!",
+  "errors": {
+    "noHost": "Ingen MQTT-broker konfigurerad",
+    "timeout": "Anslutningen till MQTT-broker __host__ tog för lång tid",
+    "noGateway": "MQTT-broker OK, men ingen OTGW hittades",
+    "connectFailed": "Kunde inte ansluta till MQTT-broker: __error__",
+    "controlDisabled": "Styrning är inaktiverad i enhetsinställningarna",
+    "outOfRange": "Värdet ligger utanför min/max-inställningarna",
+    "notConnected": "MQTT är inte ansluten",
+    "boilerSetpoint": "Pannans styrbörvärde kan inte ställas in"
+  },
+  "status": {
+    "brokerOffline": "MQTT-broker är offline",
+    "disconnected": "MQTT frånkopplad"
+  }
+}

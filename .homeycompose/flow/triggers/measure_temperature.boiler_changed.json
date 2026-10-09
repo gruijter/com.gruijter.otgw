@@ -11,7 +11,8 @@
     "sv": "Pannans temperatur ändrad",
     "pl": "Temp. kotła zmieniona",
     "ru": "Температура котла изменена",
-    "ko": "보일러 온도 변경됨"
+    "ko": "보일러 온도 변경됨",
+    "ar": "تغيرت درجة حرارة الغلاية"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "Pannans temperatur",
         "pl": "Temp. kotła",
         "ru": "Температура котла",
-        "ko": "보일러 온도"
+        "ko": "보일러 온도",
+        "ar": "درجة حرارة الغلاية"
       },
       "example": 65
     }

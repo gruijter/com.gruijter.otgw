@@ -12,7 +12,8 @@
     "sv": "Brännarmodulering",
     "pl": "Modulacja Palnika",
     "ru": "Модуляция Горелки",
-    "ko": "버너 변조"
+    "ko": "버너 변조",
+    "ar": "تعديل الموقد"
   },
   "insights": true,
   "getable": true,
@@ -29,7 +30,8 @@
     "sv": "%",
     "pl": "%",
     "ru": "%",
-    "ko": "%"
+    "ko": "%",
+    "ar": "%"
   },
   "decimals": 0,
   "icon": "./assets/burner_mod.svg"

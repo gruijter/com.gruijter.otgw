@@ -11,7 +11,8 @@
     "sv": "Offline-larm aktiverat",
     "pl": "Alarm offline włączony",
     "ru": "Оффлайн-сигнализация включена",
-    "ko": "오프라인 알람이 켜졌습니다"
+    "ko": "오프라인 알람이 켜졌습니다",
+    "ar": "تم تشغيل إنذار عدم الاتصال"
   },
   "highlight": true,
   "args": [

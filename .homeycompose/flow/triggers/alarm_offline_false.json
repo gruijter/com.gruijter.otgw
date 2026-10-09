@@ -11,7 +11,8 @@
     "sv": "Offline Alarm avstängd",
     "pl": "Alarm offline wyłączony",
     "ru": "Офлайн сигнализация отключена",
-    "ko": "오프라인 경보 꺼짐"
+    "ko": "오프라인 경보 꺼짐",
+    "ar": "تم إيقاف إنذار عدم الاتصال"
   },
   "highlight": true,
   "args": [

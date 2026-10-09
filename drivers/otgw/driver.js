@@ -87,7 +87,7 @@ class MyDriver extends Driver {
           await session.showView('list_devices');
           return discovered;
         }
-        throw Error('MQTT Broker OK, but no OTGW found');
+        throw Error(this.homey.__('errors.noGateway'));
       } catch (error) {
         if (mqttClient) mqttClient.end(true);
         throw error;
@@ -120,7 +120,7 @@ class MyDriver extends Driver {
   connectMQTT(mqttSettings, timeoutMs = 10000) {
     return new Promise((resolve, reject) => {
       if (!mqttSettings || !mqttSettings.host) {
-        reject(Error('No MQTT broker host configured'));
+        reject(Error(this.homey.__('errors.noHost')));
         return;
       }
       const protocol = mqttSettings.tls ? 'mqtts' : 'mqtt';
@@ -151,7 +151,7 @@ class MyDriver extends Driver {
         reject(error);
       };
       onConnect = () => finish();
-      timer = this.homey.setTimeout(() => finish(Error(`Connection to MQTT broker ${host} timed out`)), timeoutMs);
+      timer = this.homey.setTimeout(() => finish(Error(this.homey.__('errors.timeout', { host }))), timeoutMs);
       client.once('connect', onConnect).once('error', finish);
     });
   }

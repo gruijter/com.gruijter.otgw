@@ -1,0 +1,31 @@
+{
+  "pair": {
+    "title": "OpenTherm Gateway",
+    "legend": "وسيط MQTT",
+    "host": "عنوان IP أو URL",
+    "hostPlaceholder": "مثال: 10.0.0.100",
+    "port": "المنفذ",
+    "tls": "استخدام TLS",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "optional": "اختياري",
+    "topic": "الموضوع الرئيسي لـ OTGW",
+    "topicPlaceholder": "الافتراضي OTGW",
+    "save": "حفظ"
+  },
+  "migrating": "جارٍ ترحيل الجهاز. يرجى الانتظار!",
+  "errors": {
+    "noHost": "لم يتم تكوين وسيط MQTT",
+    "timeout": "انتهت مهلة الاتصال بوسيط MQTT __host__",
+    "noGateway": "وسيط MQTT يعمل، ولكن لم يتم العثور على OTGW",
+    "connectFailed": "تعذر الاتصال بوسيط MQTT: __error__",
+    "controlDisabled": "التحكم معطل في إعدادات الجهاز",
+    "outOfRange": "القيمة خارج إعدادات الحد الأدنى/الأقصى",
+    "notConnected": "MQTT غير متصل",
+    "boilerSetpoint": "لا يمكن ضبط نقطة التحكم في الغلاية"
+  },
+  "status": {
+    "brokerOffline": "وسيط MQTT غير متصل",
+    "disconnected": "تم قطع اتصال MQTT"
+  }
+}

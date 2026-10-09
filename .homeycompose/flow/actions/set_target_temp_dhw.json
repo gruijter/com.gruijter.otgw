@@ -12,7 +12,8 @@
     "sv": "Sätt måltemperatur VVB",
     "pl": "Ustaw docelową temperaturę CWU",
     "ru": "Установить целевую температуру ГВС",
-    "ko": "온수 목표 온도 설정"
+    "ko": "온수 목표 온도 설정",
+    "ar": "ضبط درجة حرارة الماء الساخن المستهدفة"
   },
   "titleFormatted": {
     "en": "Set target temperature DHW [[temp]]",
@@ -26,7 +27,8 @@
     "sv": "Sätt måltemperatur VVB [[temp]]",
     "pl": "Ustaw docelową temperaturę CWU [[temp]]",
     "ru": "Установить целевую температуру ГВС [[temp]]",
-    "ko": "온수 목표 온도 설정 [[temp]]"
+    "ko": "온수 목표 온도 설정 [[temp]]",
+    "ar": "ضبط درجة حرارة الماء الساخن المستهدفة [[temp]]"
   },
   "highlight": true,
   "args": [

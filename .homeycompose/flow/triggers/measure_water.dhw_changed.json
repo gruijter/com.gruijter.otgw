@@ -11,7 +11,8 @@
     "sv": "DHW-flöde ändrat",
     "pl": "Przepływ CWU zmieniony",
     "ru": "Поток ГВС изменен",
-    "ko": "온수 흐름 변경됨"
+    "ko": "온수 흐름 변경됨",
+    "ar": "تغير تدفق الماء الساخن"
   },
   "highlight": true,
   "args": [
@@ -37,7 +38,8 @@
         "sv": "DHW-flöde",
         "pl": "Przepływ CWU",
         "ru": "Поток ГВС",
-        "ko": "온수 흐름"
+        "ko": "온수 흐름",
+        "ar": "تدفق الماء الساخن"
       },
       "example": 4.5
     }

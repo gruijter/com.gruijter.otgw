@@ -12,7 +12,8 @@
     "sv": "VV-brännare",
     "pl": "Palnik CWU",
     "ru": "Горелка ГВС",
-    "ko": "온수기 버너"
+    "ko": "온수기 버너",
+    "ar": "موقد الماء الساخن"
   },
   "insights": true,
   "getable": true,
@@ -29,7 +30,8 @@
     "sv": "Timmar",
     "pl": "Godziny",
     "ru": "Часы",
-    "ko": "시간"
+    "ko": "시간",
+    "ar": "ساعات"
   },
   "decimals": 0,
   "icon": "./assets/burner_hours.svg"

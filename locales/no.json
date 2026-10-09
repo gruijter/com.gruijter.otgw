@@ -1,1 +1,31 @@
-{}
+{
+  "pair": {
+    "title": "OpenTherm Gateway",
+    "legend": "MQTT-broker",
+    "host": "IP-adresse eller URL",
+    "hostPlaceholder": "f.eks. 10.0.0.100",
+    "port": "Port",
+    "tls": "Bruk TLS",
+    "username": "Brukernavn",
+    "password": "Passord",
+    "optional": "valgfritt",
+    "topic": "OTGW-hovedtopic",
+    "topicPlaceholder": "standard OTGW",
+    "save": "Lagre"
+  },
+  "migrating": "Enheten migreres. Vennligst vent!",
+  "errors": {
+    "noHost": "Ingen MQTT-broker konfigurert",
+    "timeout": "Tilkoblingen til MQTT-broker __host__ fikk tidsavbrudd",
+    "noGateway": "MQTT-broker OK, men ingen OTGW funnet",
+    "connectFailed": "Kunne ikke koble til MQTT-broker: __error__",
+    "controlDisabled": "Styring er deaktivert i enhetsinnstillingene",
+    "outOfRange": "Verdien er utenfor min/maks-innstillingene",
+    "notConnected": "MQTT er ikke tilkoblet",
+    "boilerSetpoint": "Kjelens styringssettpunkt kan ikke stilles inn"
+  },
+  "status": {
+    "brokerOffline": "MQTT-broker er frakoblet",
+    "disconnected": "MQTT frakoblet"
+  }
+}

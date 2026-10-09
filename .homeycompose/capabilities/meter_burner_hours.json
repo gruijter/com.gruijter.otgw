@@ -12,7 +12,8 @@
     "sv": "Brännare",
     "pl": "Palnik",
     "ru": "Горелка",
-    "ko": "버너"
+    "ko": "버너",
+    "ar": "الموقد"
   },
   "insights": true,
   "getable": true,
@@ -29,7 +30,8 @@
     "sv": "Timmar",
     "pl": "Godziny",
     "ru": "Часы",
-    "ko": "시간"
+    "ko": "시간",
+    "ar": "ساعات"
   },
   "decimals": 0,
   "icon": "./assets/burner_hours.svg"

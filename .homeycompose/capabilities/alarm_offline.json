@@ -12,10 +12,12 @@
     "sv": "Offline",
     "pl": "Offline",
     "ru": "Офлайн",
-    "ko": "오프라인"
+    "ko": "오프라인",
+    "ar": "غير متصل"
   },
   "desc": {
     "en": "True when offline",
+    "nl": "Waar wanneer offline",
     "da": "Sand, når offline",
     "de": "Wahr, wenn offline",
     "es": "Verdadero cuando está desconectado",
@@ -25,7 +27,8 @@
     "sv": "Sant när offline",
     "pl": "Prawda, gdy offline",
     "ru": "Истина, когда офлайн",
-    "ko": "오프라인일 때 참"
+    "ko": "오프라인일 때 참",
+    "ar": "صحيح عند عدم الاتصال"
   },
   "insights": true,
   "insightsTitleTrue": {
@@ -40,7 +43,8 @@
     "sv": "OTGW Offline",
     "pl": "OTGW offline",
     "ru": "OTGW офлайн",
-    "ko": "OTGW 오프라인"
+    "ko": "OTGW 오프라인",
+    "ar": "OTGW غير متصل"
   },
   "insightsTitleFalse": {
     "en": "OTGW Online",
@@ -54,7 +58,8 @@
     "sv": "OTGW Online",
     "pl": "OTGW online",
     "ru": "OTGW онлайн",
-    "ko": "OTGW 온라인"
+    "ko": "OTGW 온라인",
+    "ar": "OTGW متصل"
   },
   "getable": true,
   "setable": false,
