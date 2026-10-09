@@ -24,7 +24,6 @@ const DeviceMigrator = require('../../lib/DeviceMigrator');
 
 // map a topic and its value to a capability or setting
 const map = {
-  // For capabilities
   '/Tboiler': (val) => ['measure_temperature.boiler', Number(val)], // 36.68
   '/TSet': (val) => ['target_temperature.boiler', Number(val)], // 57
   '/MaxTSet': (val) => ['target_temperature.boiler_max', Number(val)], // 57
@@ -54,7 +53,7 @@ const map = {
   '/fault': (val) => ['alarm_fault', val !== 'OFF'], // OFF
   '/': (val) => ['alarm_offline', val !== 'online'], // online / offline
 
-  // For other purposes
+  // device settings
   '/otgw-firmware/version': (val) => ['firmware_otgw', val], // 0.9.5+4eb7d24 (30-05-2022)
   '/otgw-pic/version': (val) => ['firmware_pic', val], // 6.4
 };
@@ -90,7 +89,6 @@ class MyDevice extends Device {
       if (this.settings.dhw_block_control) correctCaps.push('dhw_block_onoff');
       const rebuilt = await DeviceMigrator.migrateCapabilities(this, correctCaps);
 
-      // change to Thermostat or Other class
       const deviceClass = this.settings.class_thermostat ? 'thermostat' : 'other';
       if (this.getClass() !== deviceClass) {
         this.log(`changing class to ${deviceClass} for ${this.getName()}`);
@@ -241,19 +239,16 @@ class MyDevice extends Device {
       try {
         if (!topic.includes(this.gwValueTopic)) throw Error(`Unexpected topic ${topic}`);
 
-        // Map the incoming value to a capability or setting
         let short = topic.replace(this.gwValueTopic, '');
         if (short === '') short = '/'; // OTGW online/offline
         const mapFunc = map[short];
-        if (!mapFunc) return; // not included in Homey mapping
+        if (!mapFunc) return;
         const capVal = mapFunc(message.toString());
 
-        // OTGW device info update
         if (topic.includes('version')) {
           this.setSetting(capVal[0], capVal[1]);
           return;
         }
-        // Capability update
         this.setCapability(capVal[0], capVal[1]);
       } catch (error) {
         this.error(error);
@@ -263,7 +258,7 @@ class MyDevice extends Device {
     const subscribeTopics = async () => {
       try {
         this.log(`Subscribing to ${this.gwValueTopic}/#`);
-        await this.client.subscribeAsync([`${this.gwValueTopic}/#`]); // all values
+        await this.client.subscribeAsync([`${this.gwValueTopic}/#`]);
         if (!this.restarting) await this.setAvailable();
         this.log('mqtt subscriptions ok');
       } catch (error) {
@@ -301,12 +296,10 @@ class MyDevice extends Device {
     if (client.connected) await subscribeTopics();
   }
 
-  // register capability listeners
   registerListeners() {
     if (this.listenersSet) return;
     this.log('registering listeners');
 
-    // capabilityListeners will be overwritten, so no need to unregister them
     this.registerCapabilityListener('target_temperature', (temp) => this.setTargetTempRoom(temp, 'app'));
     this.registerCapabilityListener('target_temperature.dhw', (temp) => this.setTargetTempDhw(temp, 'app'));
     this.registerCapabilityListener('target_temperature.boiler', (temp) => this.setTargetTempBoiler(temp, 'app'));

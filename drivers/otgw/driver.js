@@ -54,7 +54,7 @@ const capabilities = [
   'alarm_fault',
   'alarm_offline',
 
-  // 'dhw_block_onoff', // Is added on demand from device settings
+  // dhw_block_onoff is added on demand from device settings
 ];
 
 class MyDriver extends Driver {
@@ -75,11 +75,9 @@ class MyDriver extends Driver {
     session.setHandler('mqtt', async (mqttSettings) => {
       try {
         this.log('MQTT settings', this.redact(mqttSettings));
-        // Check MQTT settings
         mqttClient = await this.connectMQTT(mqttSettings);
         settings = mqttSettings;
 
-        // Discover OTGW gateway on MQTT broker
         discovered = await this.discoverGateways(mqttClient, `${this.valueTopic(settings)}+`);
         await mqttClient.endAsync(true);
         if (discovered.length > 0) {
@@ -156,19 +154,18 @@ class MyDriver extends Driver {
     });
   }
 
-  // returns a list of OT gateways found on the MQTT broker
   async discoverGateways(mqttClient, searchTopic) {
     const gateways = [];
     const messageListener = (topic, message) => {
       this.log(`message received from topic: ${topic}`, message.toString());
-      const gatewayUID = topic.split('/').pop(); // <top topic>/value/otgw-A31F222A38AD > UID = otgw-A31F222A38AD
+      const gatewayUID = topic.split('/').pop(); // <top topic>/value/<uid>
       if (gatewayUID && !gateways.includes(gatewayUID)) gateways.push(gatewayUID);
     };
     const errorListener = (error) => this.error(error);
     mqttClient.on('error', errorListener);
     mqttClient.on('message', messageListener);
     await mqttClient.subscribeAsync(searchTopic);
-    await setTimeoutPromise(5000); // wait 5 secs for discovery
+    await setTimeoutPromise(5000); // discovery window
     await mqttClient.unsubscribeAsync(searchTopic);
     mqttClient.removeListener('message', messageListener);
     mqttClient.removeListener('error', errorListener);

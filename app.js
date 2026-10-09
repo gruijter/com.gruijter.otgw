@@ -29,7 +29,6 @@ class MyApp extends Homey.App {
   }
 
   registerFlowListeners() {
-    // action cards
     const setMaxTargetTempBoiler = this.homey.flow.getActionCard('set_max_target_temp_boiler');
     setMaxTargetTempBoiler.registerRunListener((args) => args.device.setMaxTargetTempBoiler(args.temp, 'flow'));
 
