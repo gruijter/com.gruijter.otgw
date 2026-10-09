@@ -174,12 +174,12 @@ class MyDevice extends Device {
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   async onDeleted() {
-    if (this.client) await this.client.end();
+    if (this.client) await this.client.endAsync();
     this.log('Device deleted', this.getName());
   }
 
   async onUninit() {
-    if (this.client) await this.client.end();
+    if (this.client) await this.client.endAsync();
     this.log('Device unInit', this.getName());
   }
 
@@ -187,7 +187,7 @@ class MyDevice extends Device {
     // this.destroyListeners();
     if (this.restarting) return;
     this.restarting = true;
-    if (this.client) await this.client.end();
+    if (this.client) await this.client.endAsync();
     const dly = delay || 1000 * 5;
     this.log(`Device will restart in ${dly / 1000} seconds`);
     // this.setUnavailable('Device is restarting');
@@ -218,7 +218,7 @@ class MyDevice extends Device {
 
   async sendCommand(command, source) {
     if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publish(`${this.gwSetTopic}/command`, command);
+    await this.client.publishAsync(`${this.gwSetTopic}/command`, command);
     this.log(`Command sent by ${source}: ${command}`);
     return Promise.resolve(true);
   }
@@ -228,8 +228,8 @@ class MyDevice extends Device {
     if (temp > this.settings.room_target_temp_max
       || temp < this.settings.room_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
     if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publish(`${this.gwSetTopic}/command`, `TT=${temp}`);
-    // await this.client.publish(`${this.gwSetTopic}/setpoint`, `${temp}`).catch(this.log);
+    await this.client.publishAsync(`${this.gwSetTopic}/command`, `TT=${temp}`);
+    // await this.client.publishAsync(`${this.gwSetTopic}/setpoint`, `${temp}`).catch(this.log);
     this.log(`Room Target Temperature set by ${source} to ${temp}`);
     return Promise.resolve(true);
   }
@@ -244,7 +244,7 @@ class MyDevice extends Device {
     if (temp > this.settings.boiler_target_temp_max
       || temp < this.settings.boiler_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
     if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publish(`${this.gwSetTopic}/command`, `SH=${temp}`);
+    await this.client.publishAsync(`${this.gwSetTopic}/command`, `SH=${temp}`);
     this.log(`Boiler Target Temperature set by ${source} to ${temp}`);
     return Promise.resolve(true);
   }
@@ -254,7 +254,7 @@ class MyDevice extends Device {
     if (temp > this.settings.dhw_target_temp_max
       || temp < this.settings.dhw_target_temp_min) return Promise.reject(Error('Value is outside min/max settings'));
     if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publish(`${this.gwSetTopic}/command`, `SW=${temp}`);
+    await this.client.publishAsync(`${this.gwSetTopic}/command`, `SW=${temp}`);
     this.log(`DHW Target Temperature set by ${source} to ${temp}`);
     return Promise.resolve(true);
   }
@@ -262,8 +262,8 @@ class MyDevice extends Device {
   async setDhwBlock(onoff, source) {
     if (!this.settings.dhw_block_control) return Promise.reject(Error('Control is disabled from settings'));
     if (!this.client || !this.client.connected) return Promise.reject(Error('MQTT is not connected'));
-    await this.client.publish(`${this.gwSetTopic}/command`, `BW=${1 * onoff}`);
-    await this.client.publish(`${this.gwSetTopic}/command`, `MW=${6 * onoff}`);
+    await this.client.publishAsync(`${this.gwSetTopic}/command`, `BW=${1 * onoff}`);
+    await this.client.publishAsync(`${this.gwSetTopic}/command`, `MW=${6 * onoff}`);
     this.log(`DHW blocking is set by ${source} to ${onoff}`);
     return Promise.resolve(true);
   }
@@ -271,7 +271,7 @@ class MyDevice extends Device {
   async connectOTGW() {
     try {
       if (!this.settings.host) throw Error('No MQTT server configured');
-      if (this.client) await this.client.end();
+      if (this.client) await this.client.endAsync();
 
       const handleMessage = async (topic, message) => {
         try {
@@ -300,7 +300,7 @@ class MyDevice extends Device {
       const subscribeTopics = async () => {
         try {
           this.log(`Subscribing to ${this.gwValueTopic}/#`);
-          await this.client.subscribe([`${this.gwValueTopic}/#`]); // all values
+          await this.client.subscribeAsync([`${this.gwValueTopic}/#`]); // all values
           this.log('mqtt subscriptions ok');
         } catch (error) {
           this.error(error);

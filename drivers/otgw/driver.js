@@ -20,7 +20,7 @@ along with com.gruijter.otgw.  If not, see <http://www.gnu.org/licenses/>.
 'use strict';
 
 const { Driver } = require('homey');
-const MQTT = require('async-mqtt');
+const mqtt = require('mqtt');
 const util = require('util');
 
 const setTimeoutPromise = util.promisify(setTimeout);
@@ -81,7 +81,7 @@ class MyDriver extends Driver {
         // Discover OTGW gateway on MQTT broker
         const searchTopic = settings.topic === '' ? 'OTGW/value/+' : `${settings.topic}/value/+`;
         discovered = await this.discoverGateways(mqttClient, searchTopic);
-        await mqttClient.end();
+        await mqttClient.endAsync();
         if (discovered.length > 0) {
           this.log(discovered);
           await session.showView('list_devices');
@@ -133,7 +133,7 @@ class MyDriver extends Driver {
         clean: true,
         queueQoSZero: false,
       };
-      const mqttClient = await MQTT.connectAsync(host, options);
+      const mqttClient = await mqtt.connectAsync(host, options);
       return Promise.resolve(mqttClient);
     } catch (error) {
       this.error(error);
@@ -150,10 +150,10 @@ class MyDriver extends Driver {
       if (gatewayUID && !gateways.includes(gatewayUID)) gateways.push(gatewayUID);
     };
     mqttClient.on('message', messageListener);
-    await mqttClient.subscribe(searchTopic || 'OTGW/value/+');
+    await mqttClient.subscribeAsync(searchTopic || 'OTGW/value/+');
     await setTimeoutPromise(5000); // wait 5 secs for discovery
-    await mqttClient.unsubscribe(searchTopic || 'OTGW/value/+');
-    await mqttClient.removeListener('message', messageListener);
+    await mqttClient.unsubscribeAsync(searchTopic || 'OTGW/value/+');
+    mqttClient.removeListener('message', messageListener);
     return Promise.all(gateways);
   }
 
