@@ -20,10 +20,7 @@ along with com.gruijter.otgw.  If not, see <http://www.gnu.org/licenses/>.
 'use strict';
 
 const { Device } = require('homey');
-const util = require('util');
 const DeviceMigrator = require('../../lib/DeviceMigrator');
-
-const setTimeoutPromise = util.promisify(setTimeout);
 
 // map a topic and its value to a capability or setting
 const map = {
@@ -68,7 +65,7 @@ class MyDevice extends Device {
     try {
       this.settings = await this.getSettings();
       this.gwValueTopic = this.settings.topic; // OTGW/value/otgw-A31F222A38AD
-      this.gwSetTopic = this.settings.topic.replace('value', 'set'); // OTGW/set/otgw-A31F222A38AD
+      this.gwSetTopic = this.settings.topic.replace(/\/value\/([^/]+)$/, '/set/$1'); // OTGW/set/otgw-A31F222A38AD
 
       await this.migrate();
       await this.connectOTGW();
@@ -79,6 +76,7 @@ class MyDevice extends Device {
       this.log('OTGW has been initialized');
     } catch (error) {
       this.error(error);
+      if (this.stopped) return;
       this.restarting = false;
       await this.setUnavailable(error.message || 'MQTT is not connected').catch((err) => this.error(err));
       this.restartDevice(60 * 1000).catch(this.error);
@@ -114,7 +112,7 @@ class MyDevice extends Device {
   }
 
   async onSettings({ newSettings, changedKeys }) {
-    this.log('Settings changed', changedKeys, newSettings);
+    this.log('Settings changed', changedKeys, this.driver.redact(newSettings));
     const mqttKeys = ['host', 'port', 'tls', 'username', 'password'];
     if (mqttKeys.some((key) => changedKeys.includes(key))) {
       try {
@@ -129,13 +127,20 @@ class MyDevice extends Device {
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   async onDeleted() {
-    await this.endClient();
+    await this.stop();
     this.log('Device deleted', this.getName());
   }
 
   async onUninit() {
-    await this.endClient();
+    await this.stop();
     this.log('Device unInit', this.getName());
+  }
+
+  // the instance is not used again after delete/uninit, so no restart may run after this
+  async stop() {
+    this.stopped = true;
+    this.homey.clearTimeout(this.restartTimer);
+    await this.endClient();
   }
 
   // detach before ending, so events of the old client no longer touch this device
@@ -147,14 +152,14 @@ class MyDevice extends Device {
   }
 
   async restartDevice(delay) {
-    if (this.restarting) return;
+    if (this.restarting || this.stopped) return;
     this.restarting = true;
     await this.endClient();
     const dly = delay || 1000 * 5;
     this.log(`Device will restart in ${dly / 1000} seconds`);
-    // this.setUnavailable('Device is restarting');
-    await setTimeoutPromise(dly);
-    this.onInit().catch((error) => this.error(error));
+    this.restartTimer = this.homey.setTimeout(() => {
+      this.onInit().catch((error) => this.error(error));
+    }, dly);
   }
 
   setCapability(capability, value) {
@@ -271,8 +276,12 @@ class MyDevice extends Device {
         }
       };
 
-      this.log('connecting to MQTT', this.settings);
+      this.log('connecting to MQTT', this.driver.redact(this.settings));
       const client = await this.driver.connectMQTT(this.settings);
+      if (this.stopped) {
+        await client.endAsync(true).catch((error) => this.error(error));
+        throw Error('Device was removed');
+      }
       this.client = client;
       const isCurrent = () => this.client === client;
       // mqtt.js reconnects and resubscribes by itself, so connection events only reflect availability

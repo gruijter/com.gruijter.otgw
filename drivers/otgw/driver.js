@@ -73,14 +73,13 @@ class MyDriver extends Driver {
 
     session.setHandler('mqtt', async (mqttSettings) => {
       try {
-        this.log(mqttSettings);
+        this.log('MQTT settings', this.redact(mqttSettings));
         // Check MQTT settings
         mqttClient = await this.connectMQTT(mqttSettings);
         settings = mqttSettings;
 
         // Discover OTGW gateway on MQTT broker
-        const searchTopic = settings.topic === '' ? 'OTGW/value/+' : `${settings.topic}/value/+`;
-        discovered = await this.discoverGateways(mqttClient, searchTopic);
+        discovered = await this.discoverGateways(mqttClient, `${this.valueTopic(settings)}+`);
         await mqttClient.endAsync(true);
         if (discovered.length > 0) {
           this.log(discovered);
@@ -95,24 +94,25 @@ class MyDriver extends Driver {
     });
 
     session.setHandler('list_devices', async () => {
-      const devices = [];
-      const baseTopic = settings.topic === '' ? 'OTGW/value/' : `${settings.topic}/value/`;
-      discovered.forEach((gatewayUID) => {
-        const id = gatewayUID;
-        settings.uid = gatewayUID;
-        settings.topic = baseTopic + gatewayUID;
-        const device = {
-          name: `OTGW ${id}`,
-          data: {
-            id, // `OTGW_${Math.random().toString(16).substring(2, 8)}`,
-          },
-          capabilities,
-          settings,
-        };
-        devices.push(device);
-      });
-      return devices;
+      const valueTopic = this.valueTopic(settings);
+      return discovered.map((uid) => ({
+        name: `OTGW ${uid}`,
+        data: { id: uid },
+        capabilities,
+        settings: { ...settings, uid, topic: valueTopic + uid },
+      }));
     });
+  }
+
+  // OTGW/value/ or <top topic>/value/
+  valueTopic(mqttSettings) {
+    const top = (mqttSettings.topic || '').trim().replace(/\/+$/, '') || 'OTGW';
+    return `${top}/value/`;
+  }
+
+  // settings without the broker password, for logging
+  redact(mqttSettings) {
+    return { ...mqttSettings, password: mqttSettings.password ? '***' : '' };
   }
 
   // returns a connected MQTT client, or rejects on the first error or after timeoutMs
@@ -160,18 +160,18 @@ class MyDriver extends Driver {
     const gateways = [];
     const messageListener = (topic, message) => {
       this.log(`message received from topic: ${topic}`, message.toString());
-      const gatewayUID = topic.split('/')[2]; // OTGW/value/otgw-A31F222A38AD > UID = otgw-A31F222A38AD
+      const gatewayUID = topic.split('/').pop(); // <top topic>/value/otgw-A31F222A38AD > UID = otgw-A31F222A38AD
       if (gatewayUID && !gateways.includes(gatewayUID)) gateways.push(gatewayUID);
     };
     const errorListener = (error) => this.error(error);
     mqttClient.on('error', errorListener);
     mqttClient.on('message', messageListener);
-    await mqttClient.subscribeAsync(searchTopic || 'OTGW/value/+');
+    await mqttClient.subscribeAsync(searchTopic);
     await setTimeoutPromise(5000); // wait 5 secs for discovery
-    await mqttClient.unsubscribeAsync(searchTopic || 'OTGW/value/+');
+    await mqttClient.unsubscribeAsync(searchTopic);
     mqttClient.removeListener('message', messageListener);
     mqttClient.removeListener('error', errorListener);
-    return Promise.all(gateways);
+    return gateways;
   }
 
 }
