@@ -81,7 +81,7 @@ class MyDriver extends Driver {
         // Discover OTGW gateway on MQTT broker
         const searchTopic = settings.topic === '' ? 'OTGW/value/+' : `${settings.topic}/value/+`;
         discovered = await this.discoverGateways(mqttClient, searchTopic);
-        await mqttClient.endAsync();
+        await mqttClient.endAsync(true);
         if (discovered.length > 0) {
           this.log(discovered);
           await session.showView('list_devices');
@@ -89,7 +89,7 @@ class MyDriver extends Driver {
         }
         throw Error('MQTT Broker OK, but no OTGW found');
       } catch (error) {
-        if (mqttClient) mqttClient.end();
+        if (mqttClient) mqttClient.end(true);
         return Promise.reject(error);
       }
     });
@@ -115,30 +115,44 @@ class MyDriver extends Driver {
     });
   }
 
-  // returns a connected MQTT client
-  async connectMQTT(mqttSettings) {
-    try {
-      if (!mqttSettings) throw Error('mqttSettings are required');
+  // returns a connected MQTT client, or rejects on the first error or after timeoutMs
+  connectMQTT(mqttSettings, timeoutMs = 10000) {
+    return new Promise((resolve, reject) => {
+      if (!mqttSettings || !mqttSettings.host) {
+        reject(Error('No MQTT broker host configured'));
+        return;
+      }
       const protocol = mqttSettings.tls ? 'mqtts' : 'mqtt';
       const host = `${protocol}://${mqttSettings.host}:${mqttSettings.port}`;
       const options = {
         clientId: `Homey_${Math.random().toString(16).substring(2, 8)}`,
         username: mqttSettings.username,
         password: mqttSettings.password,
-        // protocolId: 'MQTT',
-        // protocolVersion: 4,
         rejectUnauthorized: false,
         keepalive: 60,
         reconnectPeriod: 10000,
         clean: true,
         queueQoSZero: false,
       };
-      const mqttClient = await mqtt.connectAsync(host, options);
-      return Promise.resolve(mqttClient);
-    } catch (error) {
-      this.error(error);
-      return Promise.reject(error);
-    }
+      const client = mqtt.connect(host, options);
+      let timer;
+      let onConnect;
+      const finish = (error) => {
+        this.homey.clearTimeout(timer);
+        client.off('connect', onConnect);
+        client.off('error', finish);
+        if (!error) {
+          resolve(client);
+          return;
+        }
+        client.end(true);
+        this.error(error);
+        reject(error);
+      };
+      onConnect = () => finish();
+      timer = this.homey.setTimeout(() => finish(Error(`Connection to MQTT broker ${host} timed out`)), timeoutMs);
+      client.once('connect', onConnect).once('error', finish);
+    });
   }
 
   // returns a list of OT gateways found on the MQTT broker
@@ -149,11 +163,14 @@ class MyDriver extends Driver {
       const gatewayUID = topic.split('/')[2]; // OTGW/value/otgw-A31F222A38AD > UID = otgw-A31F222A38AD
       if (gatewayUID && !gateways.includes(gatewayUID)) gateways.push(gatewayUID);
     };
+    const errorListener = (error) => this.error(error);
+    mqttClient.on('error', errorListener);
     mqttClient.on('message', messageListener);
     await mqttClient.subscribeAsync(searchTopic || 'OTGW/value/+');
     await setTimeoutPromise(5000); // wait 5 secs for discovery
     await mqttClient.unsubscribeAsync(searchTopic || 'OTGW/value/+');
     mqttClient.removeListener('message', messageListener);
+    mqttClient.removeListener('error', errorListener);
     return Promise.all(gateways);
   }
 

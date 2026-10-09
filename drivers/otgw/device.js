@@ -1,4 +1,3 @@
-/* eslint-disable no-await-in-loop */
 /*
 Copyright 2023 - 2024, Robin de Gruijter (gruijter@hotmail.com)
 
@@ -22,6 +21,7 @@ along with com.gruijter.otgw.  If not, see <http://www.gnu.org/licenses/>.
 
 const { Device } = require('homey');
 const util = require('util');
+const DeviceMigrator = require('../../lib/DeviceMigrator');
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
@@ -79,6 +79,8 @@ class MyDevice extends Device {
       this.log('OTGW has been initialized');
     } catch (error) {
       this.error(error);
+      this.restarting = false;
+      await this.setUnavailable(error.message || 'MQTT is not connected').catch((err) => this.error(err));
       this.restartDevice(60 * 1000).catch(this.error);
     }
   }
@@ -86,78 +88,22 @@ class MyDevice extends Device {
   async migrate() {
     try {
       this.log(`checking device migration for ${this.getName()}`);
-
-      // store the capability states before migration
-      // TODO BUG (confirmed in production, see com.gruijter.enelogic issue #43): `Symbol(state)` is an
-      // undocumented internal Homey SDK property. On some Homey SDK/firmware versions this symbol does
-      // not exist on `this`, so `state` ends up `undefined` and `state[newCap]` further down throws
-      // "Cannot read properties of undefined (reading '<cap>')". Because migrate() then rejects, the
-      // device never finishes migrating and gets stuck forever on "Device is migrating. Please wait!"
-      // after every restart (each restart crashes on the next capability in the list).
-      // FIX: replace the two lines below with the public API, e.g.:
-      //   const existingCaps = this.getCapabilities();
-      //   const state = {};
-      //   existingCaps.forEach((cap) => { state[cap] = this.getCapabilityValue(cap); });
-      // (see com.gruijter.enelogic/drivers/LS120/device.js `migrate()` for the applied fix)
-      const sym = Object.getOwnPropertySymbols(this).find((s) => String(s) === 'Symbol(state)');
-      const state = this[sym];
-      // check and repair incorrect capability(order)
-      const correctCaps = this.driver.ds.deviceCapabilities;
-      for (let index = 0; index < correctCaps.length; index += 1) {
-        const caps = this.getCapabilities();
-        const newCap = correctCaps[index];
-        if (caps[index] !== newCap) {
-          this.setUnavailable('Device is migrating. Please wait!').catch((error) => this.error(error));
-          // remove all caps from here
-          for (let i = index; i < caps.length; i += 1) {
-            this.log(`removing capability ${caps[i]} for ${this.getName()}`);
-            await this.removeCapability(caps[i])
-              .catch((error) => this.log(error));
-            await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
-          }
-          // add the new cap
-          this.log(`adding capability ${newCap} for ${this.getName()}`);
-          await this.addCapability(newCap);
-          // restore capability state
-          if (state[newCap]) this.log(`${this.getName()} restoring value ${newCap} to ${state[newCap]}`);
-          // else this.log(`${this.getName()} has gotten a new capability ${newCap}!`);
-          if (state[newCap] !== undefined) this.setCapability(newCap, state[newCap]);
-          await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
-        }
-      }
-
-      // add optional DHW_block onoff
-      if (this.settings.dhw_block_control !== this.getCapabilities().includes('dhw_block_onoff')) {
-        if (this.settings.dhw_block_control) {
-          this.log(`adding capability dhw_block_onoff for ${this.getName()}`);
-          await this.addCapability('dhw_block_onoff');
-        } else {
-          this.log(`removing capability dhw_block_onoff for ${this.getName()}`);
-          await this.removeCapability('dhw_block_onoff').catch((error) => this.log(error));
-        }
-        await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
-      }
+      const correctCaps = [...this.driver.ds.deviceCapabilities];
+      if (this.settings.dhw_block_control) correctCaps.push('dhw_block_onoff');
+      const rebuilt = await DeviceMigrator.migrateCapabilities(this, correctCaps, {
+        unavailableMessage: 'Device is migrating. Please wait!',
+      });
 
       // change to Thermostat or Other class
-      if (this.settings.class_thermostat && this.getClass() !== 'thermostat') {
-        this.log(`changing class to thermostat for ${this.getName()}`);
-        await this.setClass('thermostat');
-        await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
-      } else if (!this.settings.class_thermostat && this.getClass() !== 'other') {
-        this.log(`changing class to other for ${this.getName()}`);
-        await this.setClass('other');
-        await setTimeoutPromise(2 * 1000); // wait a bit for Homey to settle
+      const deviceClass = this.settings.class_thermostat ? 'thermostat' : 'other';
+      if (this.getClass() !== deviceClass) {
+        this.log(`changing class to ${deviceClass} for ${this.getName()}`);
+        await this.setClass(deviceClass);
       }
 
-      // set capability options for target_temp_step
-      if (this.getCapabilityOptions('target_temperature').step !== this.settings.room_target_temp_step) {
-        this.log(`changing target temp step for ${this.getName()} to`, this.settings.room_target_temp_step || 0.1);
-        await this.setCapabilityOptions('target_temperature', {
-          // min: this.settings.room_target_temp_min,
-          // max: this.settings.room_target_temp_max,
-          step: this.settings.room_target_temp_step || 0.1,
-        });
-      }
+      await DeviceMigrator.syncCapabilityOptions(this, {
+        target_temperature: { step: this.settings.room_target_temp_step || 0.1 },
+      }, { force: rebuilt });
     } catch (error) {
       this.error(error);
     }
@@ -167,27 +113,43 @@ class MyDevice extends Device {
     this.log('Device added', this.getName());
   }
 
-  async onSettings({ newSettings }) { // oldSettings changedKeys
-    this.log('Settings changed', newSettings);
+  async onSettings({ newSettings, changedKeys }) {
+    this.log('Settings changed', changedKeys, newSettings);
+    const mqttKeys = ['host', 'port', 'tls', 'username', 'password'];
+    if (mqttKeys.some((key) => changedKeys.includes(key))) {
+      try {
+        const testClient = await this.driver.connectMQTT(newSettings);
+        await testClient.endAsync(true);
+      } catch (error) {
+        throw Error(`Could not connect to MQTT broker: ${error.message || error}`);
+      }
+    }
     this.restartDevice(1000).catch((error) => this.error(error));
   }
 
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   async onDeleted() {
-    if (this.client) await this.client.endAsync();
+    await this.endClient();
     this.log('Device deleted', this.getName());
   }
 
   async onUninit() {
-    if (this.client) await this.client.endAsync();
+    await this.endClient();
     this.log('Device unInit', this.getName());
   }
 
+  // detach before ending, so events of the old client no longer touch this device
+  async endClient() {
+    if (!this.client) return;
+    const { client } = this;
+    this.client = null;
+    await client.endAsync(true).catch((error) => this.error(error));
+  }
+
   async restartDevice(delay) {
-    // this.destroyListeners();
     if (this.restarting) return;
     this.restarting = true;
-    if (this.client) await this.client.endAsync();
+    await this.endClient();
     const dly = delay || 1000 * 5;
     this.log(`Device will restart in ${dly / 1000} seconds`);
     // this.setUnavailable('Device is restarting');
@@ -205,11 +167,12 @@ class MyDevice extends Device {
   }
 
   setSetting(setting, value) {
+    this.settings = this.getSettings();
     if (this.settings && this.settings[setting] !== value) {
       const settings = {};
       settings[setting] = value;
       this.log('New setting:', settings);
-      this.setSettings(settings, value)
+      this.setSettings(settings)
         .catch((error) => {
           this.log(error, setting, value);
         });
@@ -271,7 +234,7 @@ class MyDevice extends Device {
   async connectOTGW() {
     try {
       if (!this.settings.host) throw Error('No MQTT server configured');
-      if (this.client) await this.client.endAsync();
+      await this.endClient();
 
       const handleMessage = async (topic, message) => {
         try {
@@ -301,6 +264,7 @@ class MyDevice extends Device {
         try {
           this.log(`Subscribing to ${this.gwValueTopic}/#`);
           await this.client.subscribeAsync([`${this.gwValueTopic}/#`]); // all values
+          if (!this.restarting) await this.setAvailable();
           this.log('mqtt subscriptions ok');
         } catch (error) {
           this.error(error);
@@ -308,16 +272,29 @@ class MyDevice extends Device {
       };
 
       this.log('connecting to MQTT', this.settings);
-      this.client = await this.driver.connectMQTT(this.settings);
-      this.client
+      const client = await this.driver.connectMQTT(this.settings);
+      this.client = client;
+      const isCurrent = () => this.client === client;
+      // mqtt.js reconnects and resubscribes by itself, so connection events only reflect availability
+      client
         .on('error', (error) => this.error(error))
-        .on('offline', () => this.log('mqtt broker is offline'))
+        .on('offline', () => {
+          this.log('mqtt broker is offline');
+          if (isCurrent()) this.setUnavailable('MQTT broker is offline').catch(this.error);
+        })
         .on('reconnect', () => this.log('mqtt is trying to reconnect'))
-        .on('close', () => this.log('mqtt closed (disconnected)'))
+        .on('close', () => {
+          this.log('mqtt closed (disconnected)');
+          if (isCurrent()) this.setUnavailable('MQTT disconnected').catch(this.error);
+        })
         .on('end', () => this.log('mqtt client ended'))
-        .on('connect', subscribeTopics)
-        .on('message', handleMessage);
-      if (this.client.connected) await subscribeTopics();
+        .on('connect', () => {
+          if (isCurrent()) subscribeTopics().catch(this.error);
+        })
+        .on('message', (topic, message) => {
+          if (isCurrent()) handleMessage(topic, message).catch(this.error);
+        });
+      if (client.connected) await subscribeTopics();
       return Promise.resolve(true);
     } catch (error) {
       return Promise.reject(error);
