@@ -148,12 +148,19 @@ class MyDevice extends Device {
   }
 
   async restartDevice(delay) {
-    if (this.restarting || this.stopped) return;
-    this.restarting = true;
-    await this.endClient();
+    if (this.stopped) return;
+    if (this.restartTimer) {
+      // a waiting retry is replaced, so a settings change does not wait for it
+      this.homey.clearTimeout(this.restartTimer);
+    } else {
+      if (this.restarting) return;
+      this.restarting = true;
+      await this.endClient();
+    }
     const dly = delay || 1000 * 5;
     this.log(`Device will restart in ${dly / 1000} seconds`);
     this.restartTimer = this.homey.setTimeout(() => {
+      this.restartTimer = null;
       this.onInit().catch((error) => this.error(error));
     }, dly);
   }
