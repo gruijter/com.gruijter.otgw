@@ -23,6 +23,7 @@
     "controlDisabled": "Steuerung ist in den Geräteeinstellungen deaktiviert",
     "outOfRange": "Wert liegt außerhalb der Min/Max-Einstellungen",
     "notConnected": "MQTT ist nicht verbunden",
+    "gatewayOffline": "OTGW ist offline",
     "boilerSetpoint": "Der Regelsollwert des Kessels kann nicht eingestellt werden"
   },
   "status": {

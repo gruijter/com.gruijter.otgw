@@ -23,6 +23,7 @@
     "controlDisabled": "التحكم معطل في إعدادات الجهاز",
     "outOfRange": "القيمة خارج إعدادات الحد الأدنى/الأقصى",
     "notConnected": "MQTT غير متصل",
+    "gatewayOffline": "OTGW غير متصل",
     "boilerSetpoint": "لا يمكن ضبط نقطة التحكم في الغلاية"
   },
   "status": {

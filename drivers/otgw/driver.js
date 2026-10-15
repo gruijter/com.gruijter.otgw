@@ -21,6 +21,7 @@ along with com.gruijter.otgw.  If not, see <http://www.gnu.org/licenses/>.
 
 const { Driver } = require('homey');
 const mqtt = require('mqtt');
+const net = require('net');
 const util = require('util');
 const BrokerScanner = require('../../lib/BrokerScanner');
 
@@ -112,6 +113,10 @@ class MyDriver extends Driver {
   async scanBrokers() {
     try {
       const localIp = (await this.homey.cloud.getLocalAddress()).split(':')[0];
+      if (!net.isIPv4(localIp)) {
+        this.log(`no broker scan, local address ${localIp} is not IPv4`);
+        return [];
+      }
       const started = Date.now();
       const brokers = await BrokerScanner.scan(localIp);
       this.log(`broker scan of ${localIp}/24 took ${Date.now() - started} ms`, brokers);
@@ -185,7 +190,7 @@ class MyDriver extends Driver {
     mqttClient.on('error', errorListener);
     mqttClient.on('message', messageListener);
     await mqttClient.subscribeAsync(searchTopic);
-    await setTimeoutPromise(5000); // discovery window
+    await setTimeoutPromise(1500); // the retained status messages arrive right after subscribing
     await mqttClient.unsubscribeAsync(searchTopic);
     mqttClient.removeListener('message', messageListener);
     mqttClient.removeListener('error', errorListener);

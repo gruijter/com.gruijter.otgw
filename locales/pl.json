@@ -23,6 +23,7 @@
     "controlDisabled": "Sterowanie jest wyłączone w ustawieniach urządzenia",
     "outOfRange": "Wartość jest poza ustawieniami min/maks",
     "notConnected": "MQTT nie jest połączony",
+    "gatewayOffline": "OTGW jest offline",
     "boilerSetpoint": "Nie można ustawić wartości zadanej sterowania kotła"
   },
   "status": {

@@ -189,6 +189,7 @@ class MyDevice extends Device {
 
   async publishCommand(command) {
     if (!this.client || !this.client.connected) throw Error(this.homey.__('errors.notConnected'));
+    if (this.getCapabilityValue('alarm_offline')) throw Error(this.homey.__('errors.gatewayOffline'));
     await this.client.publishAsync(`${this.gwSetTopic}/command`, command);
   }
 

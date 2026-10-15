@@ -23,6 +23,7 @@
     "controlDisabled": "Le contrôle est désactivé dans les paramètres de l'appareil",
     "outOfRange": "La valeur est en dehors des paramètres min/max",
     "notConnected": "MQTT n'est pas connecté",
+    "gatewayOffline": "OTGW est hors ligne",
     "boilerSetpoint": "La consigne de régulation de la chaudière ne peut pas être réglée"
   },
   "status": {

@@ -23,6 +23,7 @@
     "controlDisabled": "Styrning är inaktiverad i enhetsinställningarna",
     "outOfRange": "Värdet ligger utanför min/max-inställningarna",
     "notConnected": "MQTT är inte ansluten",
+    "gatewayOffline": "OTGW är offline",
     "boilerSetpoint": "Pannans styrbörvärde kan inte ställas in"
   },
   "status": {

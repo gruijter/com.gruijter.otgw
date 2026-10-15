@@ -23,6 +23,7 @@
     "controlDisabled": "Bediening is uitgeschakeld in de apparaatinstellingen",
     "outOfRange": "Waarde valt buiten de min/max instellingen",
     "notConnected": "MQTT is niet verbonden",
+    "gatewayOffline": "OTGW is offline",
     "boilerSetpoint": "Het regelsetpoint van de ketel kan niet worden ingesteld"
   },
   "status": {

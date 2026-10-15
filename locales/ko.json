@@ -23,6 +23,7 @@
     "controlDisabled": "기기 설정에서 제어가 비활성화되어 있습니다",
     "outOfRange": "값이 최소/최대 설정을 벗어났습니다",
     "notConnected": "MQTT가 연결되지 않았습니다",
+    "gatewayOffline": "OTGW가 오프라인입니다",
     "boilerSetpoint": "보일러 제어 설정값은 설정할 수 없습니다"
   },
   "status": {

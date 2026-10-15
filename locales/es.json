@@ -23,6 +23,7 @@
     "controlDisabled": "El control está desactivado en los ajustes del dispositivo",
     "outOfRange": "El valor está fuera de los ajustes mín./máx.",
     "notConnected": "MQTT no está conectado",
+    "gatewayOffline": "OTGW está desconectado",
     "boilerSetpoint": "No se puede ajustar la consigna de control de la caldera"
   },
   "status": {

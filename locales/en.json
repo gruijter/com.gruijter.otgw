@@ -23,6 +23,7 @@
     "controlDisabled": "Control is disabled in the device settings",
     "outOfRange": "Value is outside the min/max settings",
     "notConnected": "MQTT is not connected",
+    "gatewayOffline": "OTGW is offline",
     "boilerSetpoint": "The boiler control setpoint cannot be set"
   },
   "status": {

@@ -23,6 +23,7 @@
     "controlDisabled": "Styring er deaktivert i enhetsinnstillingene",
     "outOfRange": "Verdien er utenfor min/maks-innstillingene",
     "notConnected": "MQTT er ikke tilkoblet",
+    "gatewayOffline": "OTGW er frakoblet",
     "boilerSetpoint": "Kjelens styringssettpunkt kan ikke stilles inn"
   },
   "status": {

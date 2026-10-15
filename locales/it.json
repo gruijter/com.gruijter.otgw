@@ -23,6 +23,7 @@
     "controlDisabled": "Il controllo è disattivato nelle impostazioni del dispositivo",
     "outOfRange": "Il valore è fuori dalle impostazioni min/max",
     "notConnected": "MQTT non è connesso",
+    "gatewayOffline": "OTGW è offline",
     "boilerSetpoint": "Il setpoint di controllo della caldaia non può essere impostato"
   },
   "status": {
