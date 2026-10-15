@@ -22,5 +22,8 @@
   },
   "2.1.0": {
     "en": "Improved MQTT stability. Fixed pairing of multiple gateways and custom topics. Fixed reconnect after changing settings. Port follows TLS setting during pairing. Default device class set to Other. Translation fixes."
+  },
+  "2.1.1": {
+    "en": "Fixed blank screen during pairing. MQTT broker IP auto-discovery. Offline gateways marked during pairing. Faster gateway discovery. Error when sending commands to an offline gateway. MQTT library updated."
   }
 }
