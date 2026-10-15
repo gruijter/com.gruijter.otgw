@@ -1,4 +1,4 @@
-<form class="homey-form" onsubmit="save(); return false;">
+<form class="homey-form" onsubmit="return false;">
 	<fieldset class="homey-form-fieldset">
 		<legend class="homey-form-legend" data-i18n="pair.legend"></legend>
 
@@ -13,7 +13,7 @@
 
 		<fieldset class="homey-form-checkbox-set">
 			<label class="homey-form-checkbox">
-				<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" onchange="onTlsChange()" />
+				<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" />
 				<span class="homey-form-checkbox-checkmark"></span>
 				<span class="homey-form-checkbox-text" data-i18n="pair.tls"></span>
 			</label>
@@ -33,7 +33,7 @@
 		</div>
 	</fieldset>
 
-	<button id="save" type="submit" class="homey-button-primary-full" data-i18n="pair.save"></button>
+	<button id="save" class="homey-button-primary-full" data-i18n="pair.save"></button>
 </form>
 
 <script>
@@ -73,4 +73,7 @@
 			button.classList.remove('is-loading');
 		}
 	}
+
+	document.getElementById('tls').addEventListener('change', onTlsChange);
+	document.getElementById('save').addEventListener('click', save);
 </script>

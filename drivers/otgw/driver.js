@@ -94,8 +94,8 @@ class MyDriver extends Driver {
 
     session.setHandler('list_devices', async () => {
       const valueTopic = this.valueTopic(settings);
-      return discovered.map((uid) => ({
-        name: `OTGW ${uid}`,
+      return discovered.map(({ uid, online }) => ({
+        name: online ? `OTGW ${uid}` : `OTGW ${uid} (${this.homey.__('pair.offline')})`,
         data: { id: uid },
         capabilities,
         settings: { ...settings, uid, topic: valueTopic + uid },
@@ -155,11 +155,12 @@ class MyDriver extends Driver {
   }
 
   async discoverGateways(mqttClient, searchTopic) {
-    const gateways = [];
+    const gateways = new Map();
+    // <top topic>/value/<uid> holds the retained online/offline status
     const messageListener = (topic, message) => {
       this.log(`message received from topic: ${topic}`, message.toString());
-      const gatewayUID = topic.split('/').pop(); // <top topic>/value/<uid>
-      if (gatewayUID && !gateways.includes(gatewayUID)) gateways.push(gatewayUID);
+      const uid = topic.split('/').pop();
+      if (uid) gateways.set(uid, message.toString() !== 'offline');
     };
     const errorListener = (error) => this.error(error);
     mqttClient.on('error', errorListener);
@@ -169,7 +170,7 @@ class MyDriver extends Driver {
     await mqttClient.unsubscribeAsync(searchTopic);
     mqttClient.removeListener('message', messageListener);
     mqttClient.removeListener('error', errorListener);
-    return gateways;
+    return [...gateways].map(([uid, online]) => ({ uid, online }));
   }
 
 }

@@ -11,6 +11,7 @@
     "optional": "facoltativo",
     "topic": "Topic principale OTGW",
     "topicPlaceholder": "predefinito OTGW",
+    "offline": "offline",
     "save": "Salva"
   },
   "migrating": "Migrazione del dispositivo in corso. Attendere!",

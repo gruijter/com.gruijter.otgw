@@ -11,6 +11,7 @@
     "optional": "valgfritt",
     "topic": "OTGW-hovedtopic",
     "topicPlaceholder": "standard OTGW",
+    "offline": "frakoblet",
     "save": "Lagre"
   },
   "migrating": "Enheten migreres. Vennligst vent!",

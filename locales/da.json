@@ -11,6 +11,7 @@
     "optional": "valgfrit",
     "topic": "OTGW-hovedtopic",
     "topicPlaceholder": "standard OTGW",
+    "offline": "offline",
     "save": "Gem"
   },
   "migrating": "Enheden migreres. Vent venligst!",

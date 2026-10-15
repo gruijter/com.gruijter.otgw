@@ -11,6 +11,7 @@
     "optional": "선택 사항",
     "topic": "OTGW 상위 토픽",
     "topicPlaceholder": "기본값 OTGW",
+    "offline": "오프라인",
     "save": "저장"
   },
   "migrating": "기기를 마이그레이션하는 중입니다. 잠시 기다려 주세요!",

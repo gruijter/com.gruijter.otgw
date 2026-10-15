@@ -11,6 +11,7 @@
     "optional": "optioneel",
     "topic": "OTGW hoofdtopic",
     "topicPlaceholder": "standaard OTGW",
+    "offline": "offline",
     "save": "Opslaan"
   },
   "migrating": "Apparaat wordt gemigreerd. Even geduld!",

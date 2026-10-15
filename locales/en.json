@@ -11,6 +11,7 @@
     "optional": "optional",
     "topic": "OTGW top topic",
     "topicPlaceholder": "defaults to OTGW",
+    "offline": "offline",
     "save": "Save"
   },
   "migrating": "Device is migrating. Please wait!",

@@ -11,6 +11,7 @@
     "optional": "opcjonalnie",
     "topic": "Główny topic OTGW",
     "topicPlaceholder": "domyślnie OTGW",
+    "offline": "offline",
     "save": "Zapisz"
   },
   "migrating": "Trwa migracja urządzenia. Proszę czekać!",

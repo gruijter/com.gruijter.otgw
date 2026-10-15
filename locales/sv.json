@@ -11,6 +11,7 @@
     "optional": "valfritt",
     "topic": "OTGW-huvudtopic",
     "topicPlaceholder": "standard OTGW",
+    "offline": "offline",
     "save": "Spara"
   },
   "migrating": "Enheten migreras. Vänta!",
