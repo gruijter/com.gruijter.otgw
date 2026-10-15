@@ -12,7 +12,7 @@
     "topic": "Topic principale OTGW",
     "topicPlaceholder": "predefinito OTGW",
     "offline": "offline",
-    "save": "Salva"
+    "continue": "Continua"
   },
   "migrating": "Migrazione del dispositivo in corso. Attendere!",
   "errors": {

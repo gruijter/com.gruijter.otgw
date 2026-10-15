@@ -12,7 +12,7 @@
     "topic": "OTGW-hovedtopic",
     "topicPlaceholder": "standard OTGW",
     "offline": "frakoblet",
-    "save": "Lagre"
+    "continue": "Fortsett"
   },
   "migrating": "Enheten migreres. Vennligst vent!",
   "errors": {

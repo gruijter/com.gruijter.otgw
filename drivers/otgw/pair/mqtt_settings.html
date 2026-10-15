@@ -33,7 +33,7 @@
 		</div>
 	</fieldset>
 
-	<button id="save" class="homey-button-primary-full" data-i18n="pair.save"></button>
+	<button id="continue" class="homey-button-primary-full" data-i18n="pair.continue"></button>
 </form>
 
 <script>
@@ -52,8 +52,8 @@
 		port.placeholder = to;
 	}
 
-	async function save() {
-		const button = document.getElementById('save');
+	async function connect() {
+		const button = document.getElementById('continue');
 		if (button.classList.contains('is-loading')) return;
 		button.classList.add('is-loading');
 		try {
@@ -85,6 +85,6 @@
 	}
 
 	document.getElementById('tls').addEventListener('change', onTlsChange);
-	document.getElementById('save').addEventListener('click', save);
+	document.getElementById('continue').addEventListener('click', connect);
 	discoverBrokers();
 </script>

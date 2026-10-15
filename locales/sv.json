@@ -12,7 +12,7 @@
     "topic": "OTGW-huvudtopic",
     "topicPlaceholder": "standard OTGW",
     "offline": "offline",
-    "save": "Spara"
+    "continue": "Fortsätt"
   },
   "migrating": "Enheten migreras. Vänta!",
   "errors": {

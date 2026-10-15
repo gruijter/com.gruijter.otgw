@@ -12,7 +12,7 @@
     "topic": "OTGW-hovedtopic",
     "topicPlaceholder": "standard OTGW",
     "offline": "offline",
-    "save": "Gem"
+    "continue": "Fortsæt"
   },
   "migrating": "Enheden migreres. Vent venligst!",
   "errors": {
