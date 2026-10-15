@@ -74,6 +74,17 @@
 		}
 	}
 
+	// fill in the first broker found on the network, unless the user already typed a host
+	async function discoverBrokers() {
+		const brokers = await Homey.emit('discover_brokers').catch(() => []);
+		if (!brokers.length || document.getElementById('host').value) return;
+		const [broker] = brokers;
+		document.getElementById('host').value = broker.host;
+		document.getElementById('port').value = broker.port;
+		document.getElementById('tls').checked = broker.tls;
+	}
+
 	document.getElementById('tls').addEventListener('change', onTlsChange);
 	document.getElementById('save').addEventListener('click', save);
+	discoverBrokers();
 </script>

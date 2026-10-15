@@ -22,6 +22,7 @@ along with com.gruijter.otgw.  If not, see <http://www.gnu.org/licenses/>.
 const { Driver } = require('homey');
 const mqtt = require('mqtt');
 const util = require('util');
+const BrokerScanner = require('../../lib/BrokerScanner');
 
 const setTimeoutPromise = util.promisify(setTimeout);
 
@@ -71,6 +72,10 @@ class MyDriver extends Driver {
     let settings = null;
     let mqttClient = null;
     let discovered = [];
+    // started right away, so the result is ready when the view asks for it
+    const brokerScan = this.scanBrokers();
+
+    session.setHandler('discover_brokers', () => brokerScan);
 
     session.setHandler('mqtt', async (mqttSettings) => {
       try {
@@ -101,6 +106,20 @@ class MyDriver extends Driver {
         settings: { ...settings, uid, topic: valueTopic + uid },
       }));
     });
+  }
+
+  // MQTT brokers on the /24 subnet of Homey, never rejects
+  async scanBrokers() {
+    try {
+      const localIp = (await this.homey.cloud.getLocalAddress()).split(':')[0];
+      const started = Date.now();
+      const brokers = await BrokerScanner.scan(localIp);
+      this.log(`broker scan of ${localIp}/24 took ${Date.now() - started} ms`, brokers);
+      return brokers;
+    } catch (error) {
+      this.error(error);
+      return [];
+    }
   }
 
   // OTGW/value/ or <top topic>/value/
