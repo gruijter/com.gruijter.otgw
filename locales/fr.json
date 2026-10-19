@@ -14,6 +14,10 @@
     "offline": "hors ligne",
     "continue": "Continuer"
   },
+  "repair": {
+    "select": "Choisir la passerelle",
+    "save": "Enregistrer"
+  },
   "migrating": "Migration de l'appareil en cours. Veuillez patienter !",
   "errors": {
     "noHost": "Aucun broker MQTT configuré",

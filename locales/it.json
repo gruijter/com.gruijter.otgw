@@ -14,6 +14,10 @@
     "offline": "offline",
     "continue": "Continua"
   },
+  "repair": {
+    "select": "Seleziona gateway",
+    "save": "Salva"
+  },
   "migrating": "Migrazione del dispositivo in corso. Attendere!",
   "errors": {
     "noHost": "Nessun broker MQTT configurato",

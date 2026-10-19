@@ -74,6 +74,18 @@
 		}
 	}
 
+	// the current device settings when repairing, null when pairing
+	async function prefill() {
+		const settings = await Homey.emit('get_settings').catch(() => null);
+		if (!settings) return;
+		document.getElementById('host').value = settings.host || '';
+		document.getElementById('port').value = settings.port || (settings.tls ? 8883 : 1883);
+		document.getElementById('tls').checked = !!settings.tls;
+		document.getElementById('username').value = settings.username || '';
+		document.getElementById('password').value = settings.password || '';
+		document.getElementById('topic').value = settings.topic || '';
+	}
+
 	// fill in the first broker found on the network, unless the user already typed a host
 	async function discoverBrokers() {
 		const brokers = await Homey.emit('discover_brokers').catch(() => []);
@@ -86,5 +98,5 @@
 
 	document.getElementById('tls').addEventListener('change', onTlsChange);
 	document.getElementById('continue').addEventListener('click', connect);
-	discoverBrokers();
+	prefill().then(discoverBrokers);
 </script>

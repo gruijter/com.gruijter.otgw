@@ -14,6 +14,10 @@
     "offline": "오프라인",
     "continue": "계속"
   },
+  "repair": {
+    "select": "게이트웨이 선택",
+    "save": "저장"
+  },
   "migrating": "기기를 마이그레이션하는 중입니다. 잠시 기다려 주세요!",
   "errors": {
     "noHost": "MQTT 브로커가 설정되지 않았습니다",

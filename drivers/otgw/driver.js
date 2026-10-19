@@ -71,31 +71,19 @@ class MyDriver extends Driver {
   // eslint-disable-next-line @typescript-eslint/no-misused-promises
   async onPair(session) {
     let settings = null;
-    let mqttClient = null;
     let discovered = [];
     // started right away, so the result is ready when the view asks for it
     const brokerScan = this.scanBrokers();
 
     session.setHandler('discover_brokers', () => brokerScan);
 
-    session.setHandler('mqtt', async (mqttSettings) => {
-      try {
-        this.log('MQTT settings', this.redact(mqttSettings));
-        mqttClient = await this.connectMQTT(mqttSettings);
-        settings = mqttSettings;
+    session.setHandler('get_settings', () => null);
 
-        discovered = await this.discoverGateways(mqttClient, `${this.valueTopic(settings)}+`);
-        await mqttClient.endAsync(true);
-        if (discovered.length > 0) {
-          this.log(discovered);
-          await session.showView('list_devices');
-          return discovered;
-        }
-        throw Error(this.homey.__('errors.noGateway'));
-      } catch (error) {
-        if (mqttClient) mqttClient.end(true);
-        throw error;
-      }
+    session.setHandler('mqtt', async (mqttSettings) => {
+      discovered = await this.findGateways(mqttSettings);
+      settings = mqttSettings;
+      await session.showView('list_devices');
+      return discovered;
     });
 
     session.setHandler('list_devices', async () => {
@@ -107,6 +95,64 @@ class MyDriver extends Driver {
         settings: { ...settings, uid, topic: valueTopic + uid },
       }));
     });
+  }
+
+  // links an existing device to another gateway, e.g. after the OTGW got a new board (new uid).
+  // data.id cannot be changed by an app; the device only uses the uid and topic settings.
+  // eslint-disable-next-line @typescript-eslint/no-misused-promises
+  async onRepair(session, device) {
+    this.log('Repairing of device started', device.getName());
+    let settings = null;
+    let discovered = [];
+    const brokerScan = this.scanBrokers();
+
+    session.setHandler('discover_brokers', () => brokerScan);
+
+    session.setHandler('get_settings', () => {
+      const {
+        host, port, tls, username, password, topic,
+      } = device.getSettings();
+      return {
+        host, port, tls, username, password, topic: (topic || '').replace(/\/value\/[^/]+$/, ''),
+      };
+    });
+
+    session.setHandler('mqtt', async (mqttSettings) => {
+      discovered = await this.findGateways(mqttSettings);
+      settings = mqttSettings;
+      await session.showView('select_gateway');
+      return discovered;
+    });
+
+    session.setHandler('list_gateways', () => ({ gateways: discovered, current: device.getSettings().uid }));
+
+    session.setHandler('select_gateway', async (uid) => {
+      if (!settings || !discovered.some((gw) => gw.uid === uid)) throw Error(this.homey.__('errors.noGateway'));
+      const newSettings = { ...settings, uid, topic: this.valueTopic(settings) + uid };
+      this.log('new settings:', this.redact(newSettings));
+      await device.setSettings(newSettings);
+      device.restartDevice(1000).catch((error) => this.error(error));
+      return true;
+    });
+
+    session.setHandler('disconnect', () => this.log('Repairing of device ended', device.getName()));
+  }
+
+  // gateways announced under <top topic>/value/ on the broker, rejects when there are none
+  async findGateways(mqttSettings) {
+    let mqttClient = null;
+    try {
+      this.log('MQTT settings', this.redact(mqttSettings));
+      mqttClient = await this.connectMQTT(mqttSettings);
+      const gateways = await this.discoverGateways(mqttClient, `${this.valueTopic(mqttSettings)}+`);
+      await mqttClient.endAsync(true);
+      this.log(gateways);
+      if (gateways.length === 0) throw Error(this.homey.__('errors.noGateway'));
+      return gateways;
+    } catch (error) {
+      if (mqttClient) mqttClient.end(true);
+      throw error;
+    }
   }
 
   // MQTT brokers on the /24 subnet of Homey, never rejects

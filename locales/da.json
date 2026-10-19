@@ -14,6 +14,10 @@
     "offline": "offline",
     "continue": "Fortsæt"
   },
+  "repair": {
+    "select": "Vælg gateway",
+    "save": "Gem"
+  },
   "migrating": "Enheden migreres. Vent venligst!",
   "errors": {
     "noHost": "Ingen MQTT-broker konfigureret",

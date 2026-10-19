@@ -1279,6 +1279,14 @@
           "template": "add_devices"
         }
       ],
+      "repair": [
+        {
+          "id": "mqtt_settings"
+        },
+        {
+          "id": "select_gateway"
+        }
+      ],
       "id": "otgw",
       "settings": [
         {

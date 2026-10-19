@@ -1,0 +1,63 @@
+<form class="homey-form" onsubmit="return false;">
+	<fieldset class="homey-form-fieldset">
+		<legend class="homey-form-legend" data-i18n="repair.select"></legend>
+		<fieldset class="homey-form-radio-set" id="gateways"></fieldset>
+	</fieldset>
+
+	<button id="save" class="homey-button-primary-full is-disabled" disabled data-i18n="repair.save"></button>
+</form>
+
+<script>
+	Homey.setTitle(Homey.__('pair.title'));
+	document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = Homey.__(el.dataset.i18n); });
+
+	function addGateway({ uid, online }, checked) {
+		const label = document.createElement('label');
+		label.className = 'homey-form-radio';
+		const input = document.createElement('input');
+		input.className = 'homey-form-radio-input';
+		input.type = 'radio';
+		input.name = 'gateway';
+		input.value = uid;
+		input.checked = checked;
+		const checkmark = document.createElement('span');
+		checkmark.className = 'homey-form-radio-checkmark';
+		const text = document.createElement('span');
+		text.className = 'homey-form-radio-text';
+		text.textContent = online ? `OTGW ${uid}` : `OTGW ${uid} (${Homey.__('pair.offline')})`;
+		label.append(input, checkmark, text);
+		document.getElementById('gateways').append(label);
+	}
+
+	// preselect the first online gateway other than the current one
+	async function listGateways() {
+		const { gateways, current } = await Homey.emit('list_gateways');
+		const preferred = gateways.find((gw) => gw.online && gw.uid !== current) || gateways[0];
+		gateways.forEach((gw) => addGateway(gw, gw === preferred));
+		const button = document.getElementById('save');
+		button.disabled = false;
+		button.classList.remove('is-disabled');
+		Homey.hideLoadingOverlay();
+	}
+
+	async function save() {
+		const button = document.getElementById('save');
+		const selected = document.querySelector('input[name="gateway"]:checked');
+		if (!selected || button.classList.contains('is-loading')) return;
+		button.classList.add('is-loading');
+		try {
+			await Homey.emit('select_gateway', selected.value);
+			Homey.done();
+		} catch (error) {
+			Homey.alert(error.message || error, 'error');
+		} finally {
+			button.classList.remove('is-loading');
+		}
+	}
+
+	document.getElementById('save').addEventListener('click', save);
+	listGateways().catch((error) => {
+		Homey.hideLoadingOverlay();
+		Homey.alert(error.message || error, 'error');
+	});
+</script>

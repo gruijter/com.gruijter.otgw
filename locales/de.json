@@ -14,6 +14,10 @@
     "offline": "offline",
     "continue": "Weiter"
   },
+  "repair": {
+    "select": "Gateway auswählen",
+    "save": "Speichern"
+  },
   "migrating": "Gerät wird migriert. Bitte warten!",
   "errors": {
     "noHost": "Kein MQTT-Broker konfiguriert",

@@ -1,0 +1,102 @@
+<form class="homey-form" onsubmit="return false;">
+	<fieldset class="homey-form-fieldset">
+		<legend class="homey-form-legend" data-i18n="pair.legend"></legend>
+
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="host" data-i18n="pair.host"></label>
+			<input class="homey-form-input" id="host" type="text" data-i18n-placeholder="pair.hostPlaceholder" value="" />
+		</div>
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="port" data-i18n="pair.port"></label>
+			<input class="homey-form-input" id="port" type="number" placeholder="1883" value="1883" />
+		</div>
+
+		<fieldset class="homey-form-checkbox-set">
+			<label class="homey-form-checkbox">
+				<input class="homey-form-checkbox-input" type="checkbox" id="tls" name="tls" />
+				<span class="homey-form-checkbox-checkmark"></span>
+				<span class="homey-form-checkbox-text" data-i18n="pair.tls"></span>
+			</label>
+		</fieldset>
+
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="username" data-i18n="pair.username"></label>
+			<input class="homey-form-input" id="username" type="text" data-i18n-placeholder="pair.optional" value="" />
+		</div>
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="password" data-i18n="pair.password"></label>
+			<input class="homey-form-input" id="password" type="password" data-i18n-placeholder="pair.optional" value="" />
+		</div>
+		<div class="homey-form-group">
+			<label class="homey-form-label" for="topic" data-i18n="pair.topic"></label>
+			<input class="homey-form-input" id="topic" type="text" data-i18n-placeholder="pair.topicPlaceholder" value="" />
+		</div>
+	</fieldset>
+
+	<button id="continue" class="homey-button-primary-full" data-i18n="pair.continue"></button>
+</form>
+
+<script>
+	Homey.setTitle(Homey.__('pair.title'));
+	Homey.hideLoadingOverlay();
+	document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = Homey.__(el.dataset.i18n); });
+	document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => { el.placeholder = Homey.__(el.dataset.i18nPlaceholder); });
+
+	// switch between the default MQTT (1883) and MQTTS (8883) port, but keep a custom port
+	function onTlsChange() {
+		const tls = document.getElementById('tls').checked;
+		const port = document.getElementById('port');
+		const from = tls ? 1883 : 8883;
+		const to = tls ? 8883 : 1883;
+		if (port.value === '' || Number(port.value) === from) port.value = to;
+		port.placeholder = to;
+	}
+
+	async function connect() {
+		const button = document.getElementById('continue');
+		if (button.classList.contains('is-loading')) return;
+		button.classList.add('is-loading');
+		try {
+			const tls = document.getElementById('tls').checked;
+			const settings = {
+				host: document.getElementById('host').value.trim(),
+				tls,
+				port: Number(document.getElementById('port').value) || (tls ? 8883 : 1883),
+				username: document.getElementById('username').value,
+				password: document.getElementById('password').value,
+				topic: document.getElementById('topic').value,
+			};
+			await Homey.emit('mqtt', settings);
+		} catch (error) {
+			Homey.alert(error.message || error, 'error');
+		} finally {
+			button.classList.remove('is-loading');
+		}
+	}
+
+	// the current device settings when repairing, null when pairing
+	async function prefill() {
+		const settings = await Homey.emit('get_settings').catch(() => null);
+		if (!settings) return;
+		document.getElementById('host').value = settings.host || '';
+		document.getElementById('port').value = settings.port || (settings.tls ? 8883 : 1883);
+		document.getElementById('tls').checked = !!settings.tls;
+		document.getElementById('username').value = settings.username || '';
+		document.getElementById('password').value = settings.password || '';
+		document.getElementById('topic').value = settings.topic || '';
+	}
+
+	// fill in the first broker found on the network, unless the user already typed a host
+	async function discoverBrokers() {
+		const brokers = await Homey.emit('discover_brokers').catch(() => []);
+		if (!brokers.length || document.getElementById('host').value) return;
+		const [broker] = brokers;
+		document.getElementById('host').value = broker.host;
+		document.getElementById('port').value = broker.port;
+		document.getElementById('tls').checked = broker.tls;
+	}
+
+	document.getElementById('tls').addEventListener('change', onTlsChange);
+	document.getElementById('continue').addEventListener('click', connect);
+	prefill().then(discoverBrokers);
+</script>
